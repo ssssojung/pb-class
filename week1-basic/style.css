@@ -1,0 +1,227 @@
+
+body,html{
+    min-width: 1440px; 
+    margin: 0 auto;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #161414;
+}
+section h2{
+    margin-bottom: 64px;
+}
+section>div.title{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+h3{
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+/* a p,p{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+}
+
+a span,span{
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #979797;
+} */
+.m0{
+    margin: 0 !important;
+}
+section{
+    max-width: 1360px; 
+    margin: 0 auto;
+    padding-top: 120px;
+}
+header{
+    display: flex;
+    padding: 32px auto;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    background-color: #030406;
+    padding: 32px 0;
+}
+#gnb li{
+    padding: 0 24px;
+}
+#gnb a{
+    color: white;
+    opacity: 0.7;
+}
+.user{
+    display: flex;
+    text-align: right;
+}
+.user>div{
+    margin-right: 5px;
+}
+.user a>img{
+    border-radius: 50%;
+    position: relative;
+}
+.user a::before{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #FF0000;
+    border: 1px solid #161414;
+    width: 12px; 
+    height: 12px;
+    border-radius: 50%;
+}
+.user>span{
+    opacity: 0.5;
+}
+.btn_more {
+    background-color:#F6F4FF;
+    line-height: 16px;
+    border-radius: 12px;
+    padding: 12px 34px 12px 10px; 
+    display: flex;
+    align-items: center;
+    color: #7B61FF;
+    position: relative
+}
+/* .btn_more{color: #7B61FF; position: relative;} */
+.btn_more>span::after{
+    content: url(./img/icon/btn_more_icon.svg);
+    padding: 0 10px;
+    position: absolute;
+}
+#main{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    max-width: 100vw;
+    height: auto;
+    height: 737px;
+    color: white;
+    border-radius: 0 0 35px 35px;
+}
+#main  .searchBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 12px;
+    margin: 120px 120px;
+}
+ul{
+    display: flex;
+    /* ul에 넣지말고 클래스를 만들어서 넣어주기 */
+}
+#popular>ul>li{
+    width:200px;height: 180px; margin-right: 32px;
+}
+#hotels>ul>li,#travel>ul>li,#activities>ul>li{width:316px;height: 380px;margin-right: 32px;}
+#hotels li span::before{content:url(./img/icon/mapicon.svg);}
+#hotels a> div{
+    gap: 4px;
+    display: flex;justify-content: space-between; 
+}
+
+#travel .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#travel .postinfo{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+}
+#travel .postinfo>li:first-child::before{content: url(./img/icon/travel-icon-1.svg);margin-right: 6px;}
+#travel .postinfo>li:nth-child(2)::before{content: url(./img/icon/travel-icon-2.svg);margin-right: 6px;}
+#travel .postinfo>li:last-child::before{content: url(./img/icon/travel-icon-3.svg);margin-right: 6px;}
+#about{
+    display: flex; 
+    gap: 32px; 
+    padding-bottom: 120px; 
+    justify-content: center;
+}
+#about>div{
+    max-width:548px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 32px;
+}
+#about span.textbox{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+}
+#about img{border-radius: 12px;}
+footer{
+    padding: 120px 271px; 
+    /* width: 1376px; */
+    /* margin: 0 auto; */
+    background-color: #F9F9F9;
+    display: flex;
+    gap: 64px;
+}
+footer .ft_menu{
+    display: flex;
+    justify-content: space-between;
+    gap: 64px;
+}
+footer .ft_menu p{width: 125.83px; padding-bottom: 8px}
+
+footer .ft_menu_item{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+footer span,label{
+    color: #979797;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+.inputBox{
+    display: flex;
+    background-color: white;
+    border-radius: 12px;
+    padding: 16px 0;
+    max-width: 300px;
+}
+.inputBox>img{padding: 16px;}
+.inputBox input[type=text]{
+    border: transparent;
+}
+.inputBox input::placeholder{
+    color: #161414;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+.inputBox+input{
+    padding: 20px;
+    background-color: #7B61FF;
+    border-radius: 12px;
+    /* display: inline; */
+}
