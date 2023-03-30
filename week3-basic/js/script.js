@@ -14,12 +14,6 @@ tabs.forEach(tab => {
     target.classList.add('active')
     tab.classList.add('active')
   })
-  tab.addEventListener('mouseout',()=>{
-    const target = document.querySelector(tab.dataset.tabTarget)
-    tabContents.forEach(tabContent => {
-      tabContent.classList.remove('active')
-    });
-  })
 })
 
 
