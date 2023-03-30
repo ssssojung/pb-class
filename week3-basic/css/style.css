@@ -43,8 +43,9 @@ nav{
   .tatb-conent{
     background-color: #999;
     position: absolute;
-    height: 0;
-    transition: all 0.4s;
+    height:0;
+    overflow:hidden;
+    transition:height ease-out 1s 0s;
   }
   .tatb-conent a{
     display: block;
