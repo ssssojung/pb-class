@@ -1,6 +1,5 @@
 const $tab1 = document.querySelectorAll('.tabs');
 const $tab2 = document.querySelectorAll('.tab');
-const tab2Con = document.querySelectorAll('.tab>ul');
 
 $tab1.forEach((tab, index) => {
 
@@ -46,4 +45,8 @@ window.addEventListener('click',(e)=>{
   }
 });
 
-//menu
+//tabmenu
+const $depth1 = document.querySelectorAll('#depth1>li');
+const $depth2 = document.querySelectorAll('#depth2>li');
+
+

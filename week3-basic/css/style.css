@@ -37,14 +37,14 @@ nav{
 
     /* display: none; */
     max-height: 0;
-    transition: max-height 0.3s ease-in;
+    transition: max-height 0.5s ease-in;
     transition-delay: 0.1s;
     overflow: hidden;
   }
   .tab.active{
     /* display: block; */
     max-height: 300px;
-    transition:max-height 0.3s ease-out;
+    transition:max-height 0.5s ease-out;
   }
   .tab>ul{
     display: flex;
@@ -192,4 +192,29 @@ nav{
 }
 #modal .kakao{
     background-color: #fae500;
+}
+#tabmenu{
+  width: 300px;
+}
+#depth1{
+  display: flex;
+}
+#depth1>li{
+  text-align: center;
+  width: 100px;
+}
+#depth1>li.active{
+  color: slateblue;
+}
+#depth2{
+  width: 300px;
+}
+
+#depth2>li{
+  display: none;
+}
+#depth2>li.active{
+  display: block;
+  width: 100%;
+  height: 200px;
 }
