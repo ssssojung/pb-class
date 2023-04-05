@@ -7,19 +7,16 @@ header{
     align-items: center;
 }
 nav{
-
     width: 1200px;
-    
-
+    position: relative;
 }
 
-  .tabs {
+  .tabs_contents {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
   }
-  .tabs li {
+  .tabs{
     display: flex;
     flex-direction: column;
     padding: 8px 12px;
@@ -27,53 +24,42 @@ nav{
     color: #999;
     border-bottom: 2px solid transparent;
   }
-  .tabs li:hover {
-    color: #555;
-    transition: 0.5s;
-  }
-  
-  li.active {
+  .tabs.show {
     color: slateblue;
     border-bottom: 2px solid slateblue;
   }
-  li.active:hover {
-    background: slateblue;
-    color: #fff;
-  }
-  .tatb-conent{
-    background-color: #999;
+  .tab{
+    background-color: #eee;
+    width: 100%;
     position: absolute;
-    height:0;
-    overflow:hidden;
-    transition:height ease-out 1s 0s;
-  }
-  .tatb-conent a{
-    display: block;
-  }
-  [data-tab-content] {
-    display: none;
-    
-    
-  }
-  
-  .active[data-tab-content] {
-    display: block;
-    position: absolute;
-    width: 1000px;
-  }
-  .active[data-tab-content]>ul{
     display: flex;
-    justify-content: space-around;
-    width: 1200px;
+    justify-content: center;
 
+    /* display: none; */
+    max-height: 0;
+    transition: max-height 0.3s ease-in;
+    transition-delay: 0.1s;
+    overflow: hidden;
   }
-  .active[data-tab-content] li{
+  .tab.active{
+    /* display: block; */
+    max-height: 300px;
+    transition:max-height 0.3s ease-out;
+  }
+  .tab>ul{
+    display: flex;
+    justify-content: center;
+  }
+  .tab li{
     padding: 20px;
     
   }
-  .active[data-tab-content] a{
+  .tab a{
     display: block;
     margin-bottom: 20px;
+  }
+  .tab a:hover{
+    color: slateblue;
   }
 
 /*모달창 */
@@ -113,8 +99,8 @@ nav{
    justify-content: center;
 }
 #modal #close-area {
-    display: flex;
-    justify-content: end;
+    display: inline-block;
+    float: right;
     cursor: pointer;
 }
 #modal .content {
