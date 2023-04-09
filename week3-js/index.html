@@ -37,13 +37,6 @@
             <li>현재 offsetTop : <span id="scrollnum">0</span></li>
         </ul>
     </div>
-
-    <style>
-        
-
-        
-
-    </style>
     <script>
         //모달
         const $modalB = document.querySelector('#modal_btn');
@@ -76,7 +69,7 @@
 
         $numBtn.forEach((btn, index)=>{
             btn.addEventListener('click',()=>{
-                num.textContent = index+1 + "번 버튼 클릭"
+                num.textContent = `${index + 1}번 버튼 클릭`
             })
         });
 

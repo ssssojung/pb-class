@@ -26,11 +26,6 @@ $tab2.forEach((tab, index) => {
   })
 });
 
-
-
-
-
-
 //modal
 const modal = document.querySelector("#modal");
 const $btnModal = document.querySelector("#btn-modal");
@@ -48,5 +43,3 @@ window.addEventListener('click',(e)=>{
 //tabmenu
 const $depth1 = document.querySelectorAll('#depth1>li');
 const $depth2 = document.querySelectorAll('#depth2>li');
-
-
