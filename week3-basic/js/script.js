@@ -42,4 +42,18 @@ window.addEventListener('click',(e)=>{
 
 //tabmenu
 const $depth1 = document.querySelectorAll('#depth1>li');
-const $depth2 = document.querySelectorAll('#depth2>li');
+const depth2 = document.querySelectorAll('#depth2>li');
+const showContent = (num) => {
+  depth2.forEach((item)=>{
+    item.classList.remove('active');
+  });
+  depth2[num].classList.add('active');
+};
+
+$depth1.forEach((item,index)=>{
+  item.addEventListener('click',(e)=>{
+    e.preventDefault();
+    //링크 기본 속성 제거
+    showContent(index);
+  });
+});
