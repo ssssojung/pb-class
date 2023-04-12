@@ -26,6 +26,42 @@ $toggleBtn.addEventListener('click',()=>{
     user.classList.toggle('active');
 });
 
+//스크롤 감지 헤더
+const hd = document.querySelector("#hd");
+
+// function scrollEvent(){
+//     document.addEventListener("scroll", function(){
+//         if(document.documentElement.scrollTop > 0){
+//             hd.classList.add("nav-up");
+//         }else{
+//             hd.classList.remove("nav-up");
+//         }
+//     });
+// }
+
+// function init(){
+//     document.addEventListener("scroll", scrollEvent);
+// }
+
+// init();
+const headerMoving = function(nav){
+  if (nav === "up"){
+    hd.className = '';
+  } else if (nav === "down"){
+    hd.className = 'nav-down';
+  }
+};
+let prevScrollTop = 0;
+document.addEventListener("scroll", function(){
+  let nextScrollTop = window.scrollY || 0;
+   console.log( nextScrollTop)
+  if (nextScrollTop > prevScrollTop){
+    headerMoving("down");
+  } else if (nextScrollTop < prevScrollTop){
+    headerMoving("up");
+  }
+   prevScrollTop = nextScrollTop;
+});
 
 
 

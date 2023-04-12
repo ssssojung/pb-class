@@ -42,18 +42,21 @@ section{
     /* opacity: 0;
     transition: all 2s; */
 }
-header{
+#hd{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* padding: 32px auto; */
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 100;
     color: white;
     background-color: #030406;
-    padding: 32px 0;
+    height: 8rem;
+    transition: top 0.2s ease-in-out;
+}
+#hd.nav-down {
+    top: -8rem;
 }
 #gnb{
     padding: 0;
