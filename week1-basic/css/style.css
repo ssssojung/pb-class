@@ -11,10 +11,6 @@ body,html{
     font-family: 'Poppins';
     color: var(--text-color);
 }
-ul{
-    padding: 0;
-    display: flex;
-}
 li{
     list-style: none;
 }
@@ -39,9 +35,8 @@ section>div.title{
 }
 section{
     max-width: 1360px; 
-    margin: 0 auto;
-    padding-top: 120px;
-
+    margin: 120px auto;
+    padding-bottom: 120px;
 }
 #hd{
     display: flex;
@@ -54,20 +49,20 @@ section{
     color: white;
     background-color: #030406;
     height: 8rem;
-    transition: top 0.2s ease-in-out;
+    transition: height 0.2s ease-in-out;
 }
 #hd.nav-down {
-    top: -8rem;
+    height: 6rem;
 }
-/* #gnb li{
-    padding: 5px 24px;
-} */
 #gnb a.activeTab{
     padding: 5px 24px;
     background-color: var(--accent-color);
     border-radius: 4px;
     color: white;
     opacity: 1;
+}
+#gnb{
+    display: flex;
 }
 #gnb a{
     color: white;
@@ -236,10 +231,22 @@ section{
     cursor: pointer;
 }
 
-#popular .popular_content li{
+#popular .popular_content,
+#hotels .hotels_content,
+#travel .travel_content,
+#activities .activities_content{
+    display: flex;
+    gap: 32px;
+}
+#popular .popular_content>li{
     width:200px;
     height: 180px;
-    margin-right: 32px;
+}
+#hotels .hotels_content>li,
+#travel .travel_content>li,
+#activities .activities_content>li{
+    width:316px;
+    height: 380px;
 }
 #popular .popular_content p,
 #hotels .hotels_content p,
@@ -257,13 +264,6 @@ footer .ft_left span
     line-height: 20px;
     font-weight: 400;
     color: var(--sub-color);
-}
-#hotels>ul>li,
-#travel>ul>li,
-#activities>ul>li{
-    width:316px;
-    height: 380px;
-    margin-right: 32px;
 }
 #hotels .hotels_grade{
     margin-top: 12px;
@@ -412,6 +412,7 @@ footer .email{
 }
 .inputBox{
     display: flex;
+    align-items: center;
     background-color: white;
     border-radius: 12px;
     padding: 16px 0;
@@ -439,4 +440,14 @@ footer .inputBox+input[type=image]{
     color: white;
     padding: 28px;
     cursor: pointer;
+}
+section.page{
+    position: relative;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all ease-in-out .7s;
+}
+section.page.active{
+    opacity: 1;
+    transform: translateY(0);
 }

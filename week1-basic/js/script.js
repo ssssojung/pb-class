@@ -1,29 +1,65 @@
 //IntersecrionObserver 센션 이동
-const tabs = document.querySelectorAll(".tab")
-const pages = document.querySelectorAll(".page")
-const scrollToTop = document.querySelector(".scrollToTop")
+// const tabs = document.querySelectorAll(".tab")
+// const pages = document.querySelectorAll(".page")
+// const scrollToTop = document.querySelector(".scrollToTop")
 
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      console.log(entry.target);
-      const index = Array.from(pages).indexOf(entry.target)
-      tabs.forEach(tab => {
-        tab.classList.remove("activeTab")
-      })
-      tabs[index].classList.add("activeTab")
+// const observer1 = new IntersectionObserver((entries, observer) => {
+//   entries.forEach(entry => {
+//     if (entry.isIntersecting) {
+//       console.log(entry.target);
+//       const index = Array.from(pages).indexOf(entry.target)
+//       tabs.forEach(tab => {
+//         tab.classList.remove("activeTab")
+//       })
+//       tabs[index].classList.add("activeTab")
+//     }
+//   })
+// }, {
+//   threshold: 0.25,
+// })
+
+
+// pages.forEach(page => {
+//   observer1.observe(page)
+// })
+
+//네비 해당 섹션 이동
+const aTags = document.querySelectorAll('#gnb a');
+ aTags.forEach((e)=>{
+  e.addEventListener('click',()=>{
+    e.preventDefault();
+    let target = document.querySelector(this.getAttribute("href"));
+    window.scrollTo({
+        behavior: "smooth",
+        top: target.offsetTop
+      });
+  });
+ });
+
+//Intersection Observer 애니메이션
+
+const options = { //뷰포트가 무엇인지, 교차영역은 어떻게 할 것인지 정해줌
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.3
+};
+
+//new IntersectionObserver객체의 콜백함수를 인자로 줌.
+//이때 entries는 스크롤 이벤트를 적용할 모든 dom 객체임.
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach((entry)=>{
+    //해당 dom이 교차영역에 진입 시 적용하고 싶은 로직 작성
+    if(entry.isIntersecting){
+      entry.target.classList.add('active');
     }
-  })
-}, {
-  threshold: 0.25,
-})
+    // else{
+    //   entry.target.classList.remove('active');
+    // }
+  });
+},options);
 
-
-pages.forEach(page => {
-  observer.observe(page)
-})
-
-
+const List = document.querySelectorAll('.page');
+List.forEach((el)=>observer.observe(el));
 
 
 
