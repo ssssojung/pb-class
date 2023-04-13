@@ -1,20 +1,31 @@
-//IntersecrionObserver
-// let observer = new IntersectionObserver((e)=>{
-//     e.forEach((box)=>{
-//         if(box.isIntersecting){
-//             box.target.style.opacity = 1;
-//         }else{
-//             box.target.style.opacity = 0;
+//IntersecrionObserver 센션 이동
+const tabs = document.querySelectorAll(".tab")
+const pages = document.querySelectorAll(".page")
+const scrollToTop = document.querySelector(".scrollToTop")
 
-//         }
-//     });
-// });
-// const section = document.querySelectorAll('section');
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      console.log(entry.target);
+      const index = Array.from(pages).indexOf(entry.target)
+      tabs.forEach(tab => {
+        tab.classList.remove("activeTab")
+      })
+      tabs[index].classList.add("activeTab")
+    }
+  })
+}, {
+  threshold: 0.25,
+})
 
-// observer.observe(section[0]);
-// observer.observe(section[1]);
-// observer.observe(section[2]);
-// observer.observe(section[3]);
+
+pages.forEach(page => {
+  observer.observe(page)
+})
+
+
+
+
 
 //반응형 header
 const $toggleBtn = document.querySelector('.m__menuBtn');
