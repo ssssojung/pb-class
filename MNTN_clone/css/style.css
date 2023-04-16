@@ -6,6 +6,7 @@
     --bg-colors:  #0B1D26;
     --white: #fff;
     --white-5: rgba(225,225,225,.5);
+    --white-1: rgba(225,225,225,.1);
     --black: #000;
     --gold: #fbd784;
     --font1: 'DM Serif Display', serif;
@@ -13,7 +14,7 @@
 /* 배경 */
 body{
     background-color: var(--bg-colors);
-
+    overflow-x: hidden;
 }  
 .bg-sky{
     position: absolute;
@@ -46,14 +47,14 @@ body{
     position: absolute;
     left: 0;
     top: 464px;
-    width: 100%;
+    width: 2030px;
     z-index: -2;
 }                                     
 .bg-img3{
     position: absolute;
     left: 0;
     top: 768px;
-    width: 100%;
+    width: 2030px;
     z-index: -2;
 }  
 
@@ -159,7 +160,7 @@ header{
     top: 287px;
     transform: translateX( -50%);
 }
-.visual__copy .subtitle{
+.subtitle{
     display: flex;
     align-items: center;
     gap: 32px;
@@ -169,7 +170,7 @@ header{
     text-transform: uppercase;
     color: var(--gold);
 }
-.visual__copy .subtitle::before{
+.subtitle::before{
     content: "";
     width: 72px;
     height: 2px;
@@ -212,5 +213,70 @@ header{
     background: linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, #0B1D26 61.38%);
 }
 .index-contents{
-    margin-top: -460px;
+    display: grid;
+    gap: 200px;
+    margin: -460px auto 0;
+    width: 1462px;
+}
+/* 콘텐츠 */
+.block{
+    display: flex;
+    gap: 170px;
+    padding-left: 150px;
+}
+.block:nth-of-type(even){
+    flex-direction: row-reverse;
+}
+.block>div{
+    position: relative;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    gap: 27px;
+}
+.block .subtitle{
+    order: 1;
+}
+.block__title{
+    order: 2;
+    font-size: 64px;
+    line-height: 77px;
+    font-family: var(--font1);
+    color: var(--white);
+}
+.block__content{
+    order: 3;
+    font-size: 18px;
+    line-height: 32px;
+    color: var(--white);
+}
+.block__more{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    order: 4;
+    font-size: 18px;
+    line-height: 22px;
+    color: var(--gold);
+}
+.block__more::after{
+    content: "";
+    width: 24px;
+    height: 16px;
+    background: url(../img/ico_arrow_right.svg);
+}
+.block__count{
+    position: absolute;
+    font-size: 240px;
+    line-height: 1;
+    font-weight: 700;
+    font-family: var(--font1);
+    color: var(--white-1);
+    top: 0;
+    left: 0;
+    margin-left: -150px;
+}
+.block img{
+    width: 556px;
 }
