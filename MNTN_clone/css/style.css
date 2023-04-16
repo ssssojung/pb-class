@@ -1,10 +1,193 @@
-@import url('https://fonts.cdnfonts.com/css/gilroy-bold?styles=20876,20877,20878,20879,20880');
-/* font-family: 'Gilroy-Bold', sans-serif;
-font-family: 'Gilroy-Heavy', sans-serif;
-font-family: 'Gilroy-Light', sans-serif;
-font-family: 'Gilroy-Medium', sans-serif;
-font-family: 'Gilroy-Regular', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
 @import url('https://fonts.cdnfonts.com/css/chronicle-display?styles=67779,67780,67777');
 /* font-family: 'Chronicle Display', sans-serif; */
-                                                
-                
+/* font-family: 'DM Serif Display', serif; */
+:root{
+    --bg-colors:  #354147;
+    --white: #fff;
+    --white-5: rgba(225,225,225,.5);
+    --black: #000;
+    --gold: #fbd784;
+    --font1: 'DM Serif Display', serif;
+}
+/* 배경 */
+body{
+    background-color: var(--bg-colors);
+
+}   
+.bg-img1{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: -2;
+}                                     
+.bg-img2{
+    position: absolute;
+    left: 0;
+    top: 464px;
+    width: 100%;
+    z-index: -2;
+}                                     
+.bg-img3{
+    position: absolute;
+    left: 0;
+    top: 768px;
+    width: 100%;
+    z-index: -2;
+}  
+
+/* 헤더 */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 64px;
+    left: 80px;
+    right: 80px;
+    z-index: 100;
+}
+.logo{
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: 0.01em;
+    font-family: var(--font1);
+    color: var(--white);
+}                
+.gnb{
+    display: flex;
+    gap: 40px;
+}
+.gnb a{
+    font-weight: 700;
+    font-size: 18px;
+    color: white;
+    line-height: 22px;
+}
+.btn-accound{
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    line-height: 21px;
+    color: var(--white);
+}
+.btn-accound::before{
+    content: "";
+    background: url(../img/ico_member.svg) no-repeat;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    
+}
+/* visual */
+.visual{
+    /* height: 100vh; */
+    height: 1200px;
+}
+.sns{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: fixed;
+    left: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+.sns__title{
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 18px;
+    line-height: 22px;
+    color: var(--white);
+}
+.btn-insta{
+    width: 24px;
+    height: 24px;
+    background: url(../img/ico_insta.svg) no-repeat;
+}
+.btn-twitter{
+    width: 24px;
+    height: 24px;
+    background: url(../img/ico_twitter.svg) no-repeat;
+}
+.quick{
+    position: fixed;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.quick a{
+    display: block;
+    padding-right: 32px;
+    text-align: right;
+    font-size: 18px;
+    line-height: 60px;
+    color: var(--white);
+    border-right: 3px solid var(--white-5);
+
+}
+.quick a.active{
+    border-color: var(--white);
+}
+.visual__copy{
+    display: grid;
+    gap: 32px;
+    position: absolute;
+    left: 50%;
+    top: 287px;
+    transform: translateX( -50%);
+}
+.visual__copy .subtitle{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+.visual__copy .subtitle::before{
+    content: "";
+    width: 72px;
+    height: 2px;
+    background-color: var(--gold);
+
+}
+.visual__copy .maintitle{
+    font-size: 88px;
+    line-height: 100px;
+    font-weight: 600;
+    letter-spacing: 6px;
+    color: var(--white);
+    font-family: var(--font1);
+}
+.visual__copy .txt-guide{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 700;
+    color: var(--white);
+}
+.visual__copy .txt-guide::after{
+    content: "";
+    background: url(../img/ico_arrow_down.svg);
+    width: 16px;
+    height: 24px;
+    margin-left: 16px;
+}
+.dimmed{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(330.24deg, rgba(11, 29, 38, 0) 31.06%, #0B1D26 108.93%);
+}
+.gradient-content{
+    height: 700px;
+    background: linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, #0B1D26 61.38%);
+}

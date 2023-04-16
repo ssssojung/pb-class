@@ -20,6 +20,9 @@ header ul {
     padding-top: 80px;
     background-color: rgb(84, 128, 216);
 }
+section{
+    height: 750px;
+}
 .main > div {
     height: 100%;
     font-size: 4rem;
@@ -28,15 +31,16 @@ header ul {
     justify-content: center;
     align-items: center;
 }
-.content {
+.project {
     width: 1200px;
     margin: 100px auto;
 }
-.content ul {
+.project ul {
     display: flex;
+    flex-wrap: wrap;
     gap: 30px;
 }
-.content li {
+.project li {
     width: 380px;
     height: 500px;
     border-width: 1px;
@@ -44,12 +48,12 @@ header ul {
     border-color: rgb(84, 128, 216);
     border-image: initial;
 }
-.content li a {
+.project li a {
     display: flex;
     height: 100%;
     flex-direction: column;
 }
-.content .img_area {
+.project .img_area {
     height: 200px;
     background-color: rgb(195, 220, 241);
 }

@@ -28,7 +28,12 @@ body {
 }
 ol, ul {
 	list-style: none;
+	padding: 0;
 }
+li{
+	list-style: none;
+}
+a{text-decoration: none;}
 blockquote, q {
 	quotes: none;
 }

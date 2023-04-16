@@ -1,27 +1,29 @@
+
+
 //IntersecrionObserver 센션 이동
-// const tabs = document.querySelectorAll(".tab")
-// const pages = document.querySelectorAll(".page")
-// const scrollToTop = document.querySelector(".scrollToTop")
+const tabs = document.querySelectorAll(".tab")
+const pages = document.querySelectorAll(".page")
+const scrollToTop = document.querySelector(".scrollToTop")
 
-// const observer1 = new IntersectionObserver((entries, observer) => {
-//   entries.forEach(entry => {
-//     if (entry.isIntersecting) {
-//       console.log(entry.target);
-//       const index = Array.from(pages).indexOf(entry.target)
-//       tabs.forEach(tab => {
-//         tab.classList.remove("activeTab")
-//       })
-//       tabs[index].classList.add("activeTab")
-//     }
-//   })
-// }, {
-//   threshold: 0.25,
-// })
+const observer1 = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      console.log(entry.target);
+      const index = Array.from(pages).indexOf(entry.target)
+      tabs.forEach(tab => {
+        tab.classList.remove("activeTab")
+      })
+      tabs[index].classList.add("activeTab")
+    }
+  })
+}, {
+  threshold: 0.25,
+})
 
 
-// pages.forEach(page => {
-//   observer1.observe(page)
-// })
+pages.forEach(page => {
+  observer1.observe(page)
+})
 
 //네비 해당 섹션 이동
 const aTags = document.querySelectorAll('#gnb a');

@@ -6,46 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.cdnfonts.com/css/gilroy-bold?styles=20876,20877,20878,20879,20880" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/chronicle-display?styles=67779,67780,67777" rel="stylesheet">
-                
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>MNTN</title>
 </head>
 <body>
-    <header>
-        <h1><a href="">MNTN</a></h1>
+    <header id="hd"class="header">
+        <h1><a href="" class="logo">MNTN</a></h1>
         <nav>
-            <ul>
+            <ul class="gnb">
                 <li><a href="">Equipment</a></li>
                 <li><a href="">About us</a></li>
                 <li><a href="">Blog</a></li>
             </ul>
         </nav>
-        <a href="">Account</a>
+        <a href="" class="btn-accound">Account</a>
     </header>
+    <div class="dimmed"></div>
     <main>
         <div class="visual">
             <div class="sns">
-                Follow Us
-                <a href="" aria-label="인스타그램"></a>
-                <a href="" aria-label="트위터"></a>
+                <span class="sns__title">Follow Us</span> 
+                <a href="" class="btn-insta" aria-label="인스타그램"></a>
+                <a href="" class="btn-twitter" aria-label="트위터"></a>
             </div>
             <div class="visual__copy">
                 <div class="subtitle">A Hiking guide</div>
                 <div class="maintitle">Be prepared for the Mountains and beyond!</div>
                 <div class="txt-guide">scroll down</div>
             </div>
-            <nav class="quick">
-                <ul>
-                    <li><a href="#header">Start</a></li>
-                    <li><a href="#block1">01</a></li>
-                    <li><a href="#block2">02</a></li>
-                    <li><a href="#block3">03</a></li>
-                </ul>
-            </nav>
         </div>
-        <img src="img/bg_sky.png" alt="">
-        <img src="img/bg_mount.png" alt="">
-        <img src="img/bg_hill.png" alt="">
     </main>
+    <nav class="quick">
+        <ul>
+            <li><a href="#header" class="active">Start</a></li>
+            <li><a href="#block1">01</a></li>
+            <li><a href="#block2">02</a></li>
+            <li><a href="#block3">03</a></li>
+        </ul>
+    </nav>
+    <img src="img/bg_sky.png" alt="" class="bg-img1">
+    <img src="img/bg_mount.png" alt="" class="bg-img2">
+    <img src="img/bg_hill.png" alt="" class="bg-img3">
+    <div class="gradient-content"></div>
     <section class="index-contents">
         <div class="block" id="block1">
             <h2 class="block__title">What level of  hiker are you?</h2>
