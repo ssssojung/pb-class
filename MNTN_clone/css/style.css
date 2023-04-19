@@ -69,7 +69,7 @@ header{
     right: 80px;
     z-index: 100;
 }
-.logo{
+.h1{
     font-size: 32px;
     line-height: 38px;
     letter-spacing: 0.01em;
@@ -279,4 +279,48 @@ header{
 }
 .block img{
     width: 556px;
+}
+/* 푸터 */
+.footer{
+    margin: 200px auto 120px; 
+    width: 1462px;
+    display: flex;
+    justify-content: space-between;
+}
+.footer__left{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(24px, auto) 1fr gitminmax(32px, auto) ;
+
+}
+.footer__txt{
+    width: 303px;
+    font-size: 18px;
+    line-height: 32px;
+    color: var(--white);
+}
+.footer__copy{
+    font-size: 18px;
+    line-height: 32px;
+    color: var(--white-5);
+}
+.footer__right{
+    display: flex;
+    gap: 212px;
+}
+.footer__nav h2{
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--gold);
+    font-weight: 700;
+    padding: 0 0 8px;
+}
+.footer__nav li{
+    padding: 16px 0 0;
+}
+.footer__nav a{
+    font-size: 18px;
+    line-height: 32px;
+    color: var(--white);
+    font-weight: 500;
 }

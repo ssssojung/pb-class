@@ -9,9 +9,10 @@
     const resizeHandler = () => {
         maxScrollValue = introEle.offsetHeight-window.innerHeight
         if(window.innerWidth>window.innerHeight){
-            changeEle.style.display = 'none'
+            changeEle.style.display = 'none';
         }else{
-            changeEle.style.display = 'flex'
+            changeEle.style.display = 'flex';
+            body.style.overflowX = 'hidden';
 
         }
     };
