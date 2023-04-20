@@ -23,9 +23,9 @@
         houseEle.style.transform = `translateZ(${zMove}vw)`//스크롤바 트랙의 범위
         console.log(scrollY);
         if(scrollY > 1272){
-            worldEle.style.removeProperty = 'position';
+            worldEle.style.position = 'absolute';
         }else{
-            worldEle.style.addProperty = 'fixed';
+            worldEle.style.position = 'fixed';
         }
     }); 
     
