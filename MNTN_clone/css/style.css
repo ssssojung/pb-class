@@ -11,6 +11,9 @@
     --gold: #fbd784;
     --font1: 'DM Serif Display', serif;
 }
+html{
+    scroll-behavior: smooth;
+}
 /* 배경 */
 body{
     background-color: var(--bg-colors);
@@ -18,7 +21,8 @@ body{
 }  
 .bg-sky{
     position: absolute;
-    background-color: #839094;
+    background: linear-gradient(#839094, var(--bg-colors));
+    /* background-color: ; */
     top: 0;
     left: 0;
     width: 100%;
@@ -30,9 +34,11 @@ body{
     width: 100%;
     height: 800px;
     background: url(../img/bg_sky-moving.png) 1920px repeat-x;
+    background-size: contain;
     left: 0;
     top: -30px;
     z-index: -2;
+    animation: bg 3s .5s both ;
     animation: bg-moving 70s ease  infinite;
 }       
 @keyframes bg-moving{
@@ -49,6 +55,8 @@ body{
     top: 464px;
     width: 2030px;
     z-index: -2;
+    animation: bg 1s .5s both ;
+
 }                                     
 .bg-img3{
     position: absolute;
@@ -56,8 +64,22 @@ body{
     top: 768px;
     width: 2030px;
     z-index: -2;
-}  
+    animation: bg 1s .7s both ;
 
+}  
+@keyframes bg{
+    0%{
+        transform: translateY(150px);
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 /* 헤더 */
 header{
     display: flex;
@@ -177,6 +199,9 @@ header{
     background-color: var(--gold);
 
 }
+.visual__copy .subtitle{
+    animation: txt 1 .7s 1s both;
+}
 .visual__copy .maintitle{
     font-size: 88px;
     line-height: 100px;
@@ -184,6 +209,8 @@ header{
     letter-spacing: 6px;
     color: var(--white);
     font-family: var(--font1);
+    animation: txt 1 .7s 1.3s both;
+
 }
 .visual__copy .txt-guide{
     display: flex;
@@ -192,6 +219,7 @@ header{
     line-height: 20px;
     font-weight: 700;
     color: var(--white);
+    animation: txt 1 .7s 1.5s both;
 }
 .visual__copy .txt-guide::after{
     content: "";
@@ -199,6 +227,16 @@ header{
     width: 16px;
     height: 24px;
     margin-left: 16px;
+}
+@keyframes txt{
+    0%{
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 .dimmed{
     position: absolute;
