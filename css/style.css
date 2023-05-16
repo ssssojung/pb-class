@@ -228,11 +228,10 @@ button{
     display: flex;
     position: sticky;
     top: 60px;
-    margin-top: 60px;
+    margin-top: 100px;
     left: 0;
     align-items: center;
     color: var(--white);
-    transition: color .4s;
 }
 .process-item.type_none{
     margin-top: 0;
@@ -243,8 +242,8 @@ button{
 .process-item:nth-child(3) { top: calc( var(--center) - 8em  ); padding-bottom: calc( var(--center-p) + 8em ); }
 .process-item:nth-child(4) { top: calc( var(--center) - 4em  ); padding-bottom: calc( var(--center-p) + 4em ); }
 .process-item:nth-child(5) { top: calc( var(--center) - 0em  ); padding-bottom: calc( var(--center-p) + 0em ); }
-.process-item:nth-child(6) { top: calc( var(--center) + 4em  ); padding-bottom: calc( var(--center-p) - 4em ); }
-.process-item:nth-child(7) { top: calc( var(--center) + 8em  ); padding-bottom: calc( var(--center-p) - 8em ); }
+/* .process-item:nth-child(6) { top: calc( var(--center) + 4em  ); padding-bottom: calc( var(--center-p) - 4em ); }
+.process-item:nth-child(7) { top: calc( var(--center) + 8em  ); padding-bottom: calc( var(--center-p) - 8em ); } */
 .process-item h2{
     width: 20%;
     font-size: 2.8rem;
@@ -274,13 +273,21 @@ button{
 #scroll-section-3 .sticky-ele{
     display: none;
     position: fixed;
-    top: 50%;
+    top: 40%;
     left: 0;
     width: 50%;
     opacity: 0;
 }
 #show-section-3 #scroll-section-3 .sticky-ele{
     display: block;
+}
+.project__text{
+    width: 100%;
+}
+.project__text li{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 /* .project__text-contain{
     width: 50%;
@@ -297,8 +304,21 @@ button{
 .project__text p{
     padding: 10px 0;
 }
-
-.project__img-contain{
+.site_btn{
+    width: 100px;
+    padding: 10px;
+    line-height: 1rem;
+    border: 1px solid var(--white);
+    border-radius: 3px;
+    text-align: center;
+    color: var(--white);
+}
+/* .project__img-inner{
+    width: 500px;
+    height: 400px;
+    background-color: #555;
+} */
+/* .project__img-contain{
     display: flex;
     align-items: center;
     position: absolute;
@@ -306,8 +326,7 @@ button{
     height: 100%;
     left: 50%;
     background: #ffffff7e;
-
-}
+} */
 /* contact */
 .contact{
     display: flex;

@@ -54,6 +54,7 @@
             },
             values: {
                 // progress height animation값
+                progress_height : [100,0,{start:0, end: 0.5}]
             }
         },
         { //2
@@ -77,11 +78,17 @@
                 project_4: document.querySelector('#scroll-section-3 .project_4')
             },
             values: {
-                project_1_opacity : [0,1,{start:0.1, end: 0.2}],
-                project_1_opacity_out : [1,0,{start:0.25, end: 0.3}],
-                project_2_opacity_in : [0,1,{start:0.3, end: 0.4}],
-                // project_3_opacity_in : [0,1,{start:0.5, end: 0.6}],
-                // project_4_opacity_in : [0,1,{start:0.7, end: 0.8}]
+                project_1_opacity_in : [0,1,{start:0, end: 0.1}],
+                project_1_opacity_out : [1,0,{start: 0.1, end: 0.2}],
+
+                project_2_opacity_in : [0,1,{start:0.2, end: 0.3}],
+                project_2_opacity_out : [1,0,{start: 0.3, end: 0.4}],
+
+                project_3_opacity_in : [0,1,{start:0.4, end: 0.5}],
+                project_3_opacity_out : [1,0,{start: 0.5, end: 0.6}],
+
+                project_4_opacity_in : [0,1,{start:0.6, end: 0.7}],
+                project_4_opacity_out : [1,0,{start: 0.7, end: 0.8}]
             }
         },
         { //4
@@ -124,13 +131,12 @@
         //현재 섹션에서 스크롤된 범위 비율
         const scrollHeight = sceneInfo[currentScene].scrollHeight;
         const scrollRatio = currentYOffset / scrollHeight;
-        
+        console.log(scrollRatio);
         if(values.length === 3){ 
             //start ~ end 사이에 애니메이션 실행
             const partScrollStart = values[2].start * scrollHeight;
             const partScrollEnd = values[2].end * scrollHeight;
             const partScrollHeight = partScrollEnd - partScrollStart;
-            
             if(currentYOffset >= partScrollStart && currentYOffset <= partScrollEnd){
                 rv = (currentYOffset - partScrollStart) / partScrollHeight * (values[1]-values[0]) + values[0] ;
             }else if(currentYOffset < partScrollStart){
@@ -158,7 +164,9 @@
             break;
 
             case 1 : 
-            // console.log('1 play');
+            // const progress_height = calcValues(values.progress_height,currentYOffset);
+                objs.progress.style.height = `${calcValues(values.progress_height,currentYOffset)}%`;
+            // console.log(sceneInfo[currentScene].objs.progress.style.height);
             break;
 
             case 2 : 
@@ -167,18 +175,36 @@
 
             case 3 : 
             // console.log('3 play');
-            let project_1_opacity_in = calcValues(values.project_1_opacity,currentYOffset);
-            // let project_1_opacity_out = calcValues(values.project_1_opacity_out,currentYOffset);
+            // console.log(sceneInfo[currentScene].objs.project_1.style.opacity);
+            if(scrollRatio <= 0.22){ //1
+                //in
+                objs.project_1.style.opacity = calcValues(values.project_1_opacity_in,currentYOffset);
+            }else{
+                //out
+                objs.project_1.style.opacity = calcValues(values.project_1_opacity_out,currentYOffset);
+            }
+            if(scrollRatio <= 0.42){ //2
+                objs.project_2.style.opacity = calcValues(values.project_2_opacity_in,currentYOffset);
+                
+            }else{
+                objs.project_2.style.opacity = calcValues(values.project_2_opacity_out,currentYOffset);
 
-            // if(scrollRatio <= 0.22){
-            //     //in
-                objs.project_1.style.opacity = project_1_opacity_in;
-                console.log(project_1_opacity_in);
-            // }else{
-            //     //out
-            //     objs.project_1.style.opacity = project_1_opacity_out;
-            // }
-            // // let project_1_opacity_out = values.project_3_opacity[1];
+            }
+            if(scrollRatio <= 0.62){ //3
+                objs.project_3.style.opacity = calcValues(values.project_3_opacity_in,currentYOffset);
+                
+            }else{
+                objs.project_3.style.opacity = calcValues(values.project_3_opacity_out,currentYOffset);
+
+            }
+            if(scrollRatio <= 0.82){ //4
+                objs.project_4.style.opacity = calcValues(values.project_4_opacity_in,currentYOffset);
+                
+            }else{
+                objs.project_4.style.opacity = calcValues(values.project_4_opacity_out,currentYOffset);
+
+            }
+            
             break;
 
             case 4 : 
