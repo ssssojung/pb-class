@@ -1,14 +1,21 @@
 /* wff2 */
 /* @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css); */
+@font-face {
+    font-family: 'NEXON Lv2 Gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 :root{
     --lavender : #A7A0ED;
     --neon-yellow : #F8F366;
-    --ivory : #F7F6F4;
-    --soft-coral : #ECA39D;
+    --apricot : #fee19b;
+    --mint : #b1e0d8;
     --white : #fff;
 }
 body{
     background: var(--lavender);
+    /* font-family: 'NEXON Lv2 Gothic'; */
     font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
     overflow-x: hidden;
     font-size: 16px;
@@ -31,7 +38,6 @@ header ul {
 }
 section{
     width: 100vw;
-    border: 5px solid salmon;
 }
 button{
     color: var(--neon-yellow);
@@ -90,7 +96,7 @@ button{
     top: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(240, 248, 255, 0.8);
+    background-color: var(--white);
 }
 .wall-moving-y{
     animation: moving-text-y 30s linear infinite;
@@ -164,6 +170,8 @@ button{
 .about{
     display: flex;
     justify-content: space-between;
+    background: var(--mint);
+    position: relative;
 }
 .about__sidebar{
     flex-shrink: 0;
@@ -173,7 +181,7 @@ button{
 .about__letter{
     padding: 60px 0;
     font-weight: bold;
-    color: var(--neon-yellow);
+    color: #381553;
     font-size: 180px;
     position: sticky;
     left: 0;
@@ -187,6 +195,7 @@ button{
     justify-content: space-between;
     line-height: 1;
     visibility: visible;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
 }
 .about__letter::before{
     content: ' ';
@@ -206,7 +215,7 @@ button{
     bottom: 0;
     margin: 0 -10px;
     height: 100%;
-    background-color: var(--lavender);
+    background-color: var(--mint);
     opacity: 0.9;
     backdrop-filter: grayscale(100%);
 }
@@ -261,7 +270,23 @@ button{
     margin-right: 1em;
     background-color: rgba(255, 255, 255, 0.5);
 }
-
+.about__text-main{
+    font-size: 1.2rem;
+    color: var(--white);
+    line-height: 1.8em;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10em;
+    padding-left: 10px;
+}
+.about__text-main span{
+    color: #381553;
+}
+/* skill */
+.skill{
+    background: #cdf0ea;
+    color: #381553;
+}
 /* project */
 .project{
     position: relative;
@@ -269,34 +294,37 @@ button{
     justify-content: space-between;
     align-items: center;
     height: 100vh;
+    background: linear-gradient(180deg, #dbe9f6 15%, #fefcc9 44%, #f7d0d5 100%);
 }
 #scroll-section-3 .sticky-ele{
     display: none;
     position: fixed;
-    top: 40%;
+    top: 30%;
     left: 0;
-    width: 50%;
+    width: 100%;
     opacity: 0;
 }
 #show-section-3 #scroll-section-3 .sticky-ele{
     display: block;
 }
-.project__text{
-    width: 100%;
-}
-.project__text li{
-    width: 100%;
+.project__contain li>div{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20em ; 
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 12px;
+    backdrop-filter: blur(0px);
+    border: 1px solid white;
 }
-/* .project__text-contain{
-    width: 50%;
-    border: 3px solid var(--neon-yellow);
-} */
+.project__text{
+    margin: 0 auto;
+}
 .project__text span{
     font-size: 15.4px;
     margin-bottom: 8px;
-    color: white;
+    /* color: white; */
 }
 .project__text h4{
     font-size: 3rem;
@@ -313,20 +341,28 @@ button{
     text-align: center;
     color: var(--white);
 }
-/* .project__img-inner{
-    width: 500px;
-    height: 400px;
-    background-color: #555;
-} */
-/* .project__img-contain{
+.project__banner{
+    width: 50%;
+    height: 500px;
+    /* background-color: #555555a9; */
     display: flex;
+    justify-content: center;
     align-items: center;
-    position: absolute;
-    width: 45%;
-    height: 100%;
-    left: 50%;
-    background: #ffffff7e;
-} */
+}
+.banner-img{
+    
+    width: 500px;
+    height: 300px;
+    background: #555;
+}
+.banner-1{background-image: url();}
+.banner-2{background-image: url();}
+.banner-3{background-image: url();}
+.banner-4{background-image: url();}
+
+
+
+
 /* contact */
 .contact{
     display: flex;
@@ -378,7 +414,7 @@ button{
 }
 @keyframes marquee {
     from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    to { transform: translateX(50%); }
   }
 @keyframes marquee2 {
     from { transform: translateX(-150%); }
@@ -387,87 +423,9 @@ button{
   .contact__btn:hover + .contact__bg-marquee span{ 
     text-shadow: -1px 0px var(--neon-yellow), 0px 1px var(--neon-yellow), 1px 0px var(--neon-yellow), 0px -1px var(--neon-yellow);
   }
-
-/*
-  .project{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-}
-.project__text-contain{
-    display: flex;
-    justify-content: flex-start;
-    position: relative;
-    overflow: hidden;
-    width: 50%;
-    height: 100%;
-}
-.project__text{
+.copy{
     position: absolute;
+    bottom: 0;
+    font-size: 12px;
+    color: var(--white);
 }
-.project__text li{
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-    justify-content: center;
-    align-items: flex-start;
-    width: 50%;
-    margin-top: 13px;
-    margin-right: 25px;
-}
-.project__text span{
-    font-size: 15.4px;
-    margin-bottom: 8px;
-    color: white;
-}
-.project__text h4{
-    font-size: 3rem;
-}
-.project__text p{
-    padding: 10px 0;
-}
- .project__img-contain{
-    position: absolute;
-    box-sizing: border-box;
-    display: flex;
-    width: 45%;
-    left: 50%;
-    padding: 0;
-    align-items: center;
-    height: 100vh;
-    background-color: rgba(240, 255, 255, 0.585);
-    border: 5px solid #555;
-}
-.project__img{
-    width: 31vw;
-    height: 31vw;
-    display: flex;
-    position: relative;
-    overflow: hidden;
-    border-radius: 11%;
-    z-index: 100;
-}
-.project__img-inner{
-    background-image: url(../img/project__img0.png);
-    background-position: 0px 40%;
-    clip-path: inset(0px);
-    position: absolute;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    top: -1px;
-    left: -1px;
-    right: -1px;
-    bottom: -1px;
-    cursor: none;
-    background-position: 50%;
-    background-size: 464px 464px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-*/

@@ -46,7 +46,7 @@
         },
         { //1
             type : 'sticky',
-            heightNum : 3.5,
+            heightNum : 3,
             scrollHeight : 0,
             objs: {
                 container: document.querySelector('#scroll-section-1'),
@@ -79,16 +79,25 @@
             },
             values: {
                 project_1_opacity_in : [0,1,{start:0, end: 0.1}],
+                project_1_translateY_in: [20,0,{start:0, end: 0.1} ],
                 project_1_opacity_out : [1,0,{start: 0.1, end: 0.2}],
+                project_1_translateY_out: [0,-20,{start: 0.1, end: 0.2} ],
 
                 project_2_opacity_in : [0,1,{start:0.2, end: 0.3}],
+                project_2_translateY_in: [20,0,{start:0.2, end: 0.3} ],
                 project_2_opacity_out : [1,0,{start: 0.3, end: 0.4}],
+                project_2_translateY_out: [0,-20,{start: 0.3, end: 0.4} ],
 
                 project_3_opacity_in : [0,1,{start:0.4, end: 0.5}],
+                project_3_translateY_in: [20,0,{start:0.4, end: 0.5} ],
                 project_3_opacity_out : [1,0,{start: 0.5, end: 0.6}],
+                project_3_translateY_out: [0,-20,{start: 0.5, end: 0.6} ],
+
 
                 project_4_opacity_in : [0,1,{start:0.6, end: 0.7}],
-                project_4_opacity_out : [1,0,{start: 0.7, end: 0.8}]
+                project_4_translateY_in: [20,0,{start:0.6, end: 0.7} ],
+                project_4_opacity_out : [1,0,{start: 0.7, end: 0.8}],
+                project_4_translateY_out: [0,-20,{start: 0.7, end: 0.8} ]
             }
         },
         { //4
@@ -174,34 +183,45 @@
             break;
 
             case 3 : 
-            // console.log('3 play');
-            // console.log(sceneInfo[currentScene].objs.project_1.style.opacity);
+            const project_1_translateY_in = calcValues(values.project_1_translateY_in,currentYOffset);
+            const project_1_translateY_out = calcValues(values.project_1_translateY_out,currentYOffset);
             if(scrollRatio <= 0.22){ //1
                 //in
                 objs.project_1.style.opacity = calcValues(values.project_1_opacity_in,currentYOffset);
+                objs.project_1.style.zindex = 1;
+                objs.project_1.style.transform = `translateY(${project_1_translateY_in}%)`;
             }else{
                 //out
                 objs.project_1.style.opacity = calcValues(values.project_1_opacity_out,currentYOffset);
+                objs.project_1.style.transform = `translateY(${project_1_translateY_out}%)`;
             }
             if(scrollRatio <= 0.42){ //2
                 objs.project_2.style.opacity = calcValues(values.project_2_opacity_in,currentYOffset);
-                
+                objs.project_2.style.zindex = 1;
+                objs.project_2.style.transform = `translateY(${calcValues(values.project_2_translateY_in,currentYOffset)}%)`;
             }else{
                 objs.project_2.style.opacity = calcValues(values.project_2_opacity_out,currentYOffset);
-
+                objs.project_2.style.transform = `translateY(${calcValues(values.project_2_translateY_out,currentYOffset)}%)`;
             }
             if(scrollRatio <= 0.62){ //3
                 objs.project_3.style.opacity = calcValues(values.project_3_opacity_in,currentYOffset);
+                objs.project_3.style.zindex = 1;
+                objs.project_3.style.transform = `translateY(${calcValues(values.project_3_translateY_in,currentYOffset)}%)`;
+
                 
             }else{
                 objs.project_3.style.opacity = calcValues(values.project_3_opacity_out,currentYOffset);
+                objs.project_3.style.transform = `translateY(${calcValues(values.project_3_translateY_out,currentYOffset)}%)`;
 
             }
             if(scrollRatio <= 0.82){ //4
                 objs.project_4.style.opacity = calcValues(values.project_4_opacity_in,currentYOffset);
+                objs.project_.style.zindex = 1;
+                objs.project_4.style.transform = `translateY(${calcValues(values.project_4_translateY_in,currentYOffset)}%)`;
                 
             }else{
                 objs.project_4.style.opacity = calcValues(values.project_4_opacity_out,currentYOffset);
+                objs.project_4.style.transform = `translateY(${calcValues(values.project_4_translateY_out,currentYOffset)}%)`;
 
             }
             
