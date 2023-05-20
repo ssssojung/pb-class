@@ -100,14 +100,14 @@
                 project_4_translateY_out: [0,-20,{start: 0.7, end: 0.8} ]
             }
         },
-        { //4
-            type : 'normal',
-            heightNum : 1,
-            scrollHeight : 0,
-            objs: {
-                container: document.querySelector('#scroll-section-4')
-            }
-        },
+        // { //4
+        //     type : 'normal',
+        //     heightNum : 1,
+        //     scrollHeight : 0,
+        //     objs: {
+        //         container: document.querySelector('#scroll-section-4')
+        //     }
+        // },
         { //5
             type : 'normal',
             heightNum : 1,
@@ -120,14 +120,18 @@
 
     const setLayout = () =>{
         //각 스크롤 섹션의 높이 세팅
-        for(let i = 0; i < sceneInfo.length; i++){
-            if(sceneInfo[i].type === 'sticky'){
-                sceneInfo[i].scrollHeight =  sceneInfo[i].heightNum * window.innerHeight ;
-            }else if(sceneInfo[i].type === 'normal'){
-                sceneInfo[i].scrollHeight = sceneInfo[i].objs.container.offsetHeight;
-            }
-            sceneInfo[i].objs.container.style.height = `${sceneInfo[i].scrollHeight}px`;
+        // for(let i = 0; i < sceneInfo.length; i++){
+        //     if(sceneInfo[i].type === 'sticky'){
+        //         sceneInfo[i].scrollHeight =  sceneInfo[i].heightNum * window.innerHeight ;
+        //     }else if(sceneInfo[i].type === 'normal'){
+        //         sceneInfo[i].scrollHeight = sceneInfo[i].objs.container.scrollY;
+        //     }
+        //     sceneInfo[i].objs.container.style.height = `${sceneInfo[i].scrollHeight}px`;
 
+        // }
+        for(let i = 0; i < sceneInfo.length; i++){
+            sceneInfo[i].scrollHeight =  sceneInfo[i].heightNum * window.innerHeight ;
+            sceneInfo[i].objs.container.style.height = `${sceneInfo[i].scrollHeight}px`;
         }
         yOffset = window.scrollY;
         let totalScrollHeight = 0;
@@ -191,40 +195,37 @@
             if(scrollRatio <= 0.22){ //1
                 //in
                 objs.project_1.style.opacity = calcValues(values.project_1_opacity_in,currentYOffset);
-                // objs.project_1.style.zindex = 2;
-                objs.project_1.style.transform = `translateY(${calcValues(values.project_1_translateY_in,currentYOffset)}%)`;
+                // objs.project_1.style.transform = `translateY(${calcValues(values.project_1_translateY_in,currentYOffset)}%)`;
             }else{
                 //out
                 objs.project_1.style.opacity = calcValues(values.project_1_opacity_out,currentYOffset);
-                objs.project_1.style.transform = `translateY(${calcValues(values.project_1_translateY_out,currentYOffset)}%)`;
+                // objs.project_1.style.transform = `translateY(${calcValues(values.project_1_translateY_out,currentYOffset)}%)`;
             }
             if(scrollRatio <= 0.42){ //2
                 objs.project_2.style.opacity = calcValues(values.project_2_opacity_in,currentYOffset);
-                // objs.project_2.style.zindex = 2;
-                objs.project_2.style.transform = `translateY(${calcValues(values.project_2_translateY_in,currentYOffset)}%)`;
+                // objs.project_2.style.transform = `translateY(${calcValues(values.project_2_translateY_in,currentYOffset)}%)`;
+
             }else{
                 objs.project_2.style.opacity = calcValues(values.project_2_opacity_out,currentYOffset);
-                objs.project_2.style.transform = `translateY(${calcValues(values.project_2_translateY_out,currentYOffset)}%)`;
+                // objs.project_2.style.transform = `translateY(${calcValues(values.project_2_translateY_out,currentYOffset)}%)`;
             }
             if(scrollRatio <= 0.62){ //3
                 objs.project_3.style.opacity = calcValues(values.project_3_opacity_in,currentYOffset);
-                // objs.project_3.style.zindex = 2;
-                objs.project_3.style.transform = `translateY(${calcValues(values.project_3_translateY_in,currentYOffset)}%)`;
+                // objs.project_3.style.transform = `translateY(${calcValues(values.project_3_translateY_in,currentYOffset)}%)`;
 
                 
             }else{
                 objs.project_3.style.opacity = calcValues(values.project_3_opacity_out,currentYOffset);
-                objs.project_3.style.transform = `translateY(${calcValues(values.project_3_translateY_out,currentYOffset)}%)`;
+                // objs.project_3.style.transform = `translateY(${calcValues(values.project_3_translateY_out,currentYOffset)}%)`;
 
             }
             if(scrollRatio <= 0.82){ //4
                 objs.project_4.style.opacity = calcValues(values.project_4_opacity_in,currentYOffset);
-                // objs.project_4.style.zindex = 2;
-                objs.project_4.style.transform = `translateY(${calcValues(values.project_4_translateY_in,currentYOffset)}%)`;
+                // objs.project_4.style.transform = `translateY(${calcValues(values.project_4_translateY_in,currentYOffset)}%)`;
                 
             }else{
                 objs.project_4.style.opacity = calcValues(values.project_4_opacity_out,currentYOffset);
-                objs.project_4.style.transform = `translateY(${calcValues(values.project_4_translateY_out,currentYOffset)}%)`;
+                // objs.project_4.style.transform = `translateY(${calcValues(values.project_4_translateY_out,currentYOffset)}%)`;
 
             }
             
