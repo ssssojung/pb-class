@@ -313,8 +313,8 @@ header #menu_btn a {
     background: var(--neon-yellow);
     width: 450px;
     height: 450px;
-    /* border-radius: 50%; */
 }
+
 /* about */
 .about{
     background: var(--baseColor);
@@ -450,6 +450,15 @@ header #menu_btn a {
 }
 
 /* skill */
+/* #change{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 200%;
+    width: 0;
+    background: #5e62d1;
+    z-index: 70;
+} */
 .contents_tit h2{
     display: block;
     width: 50%;
@@ -495,6 +504,7 @@ header #menu_btn a {
     height: 100%;
     background: var(--pastelColor);
 }
+
 .tit_list{
     height: 100%;
 }
@@ -518,23 +528,35 @@ header #menu_btn a {
     line-height: 1.5;
 }
 
-/* project */
-.project{
+/* work */
+.work{
     position: relative;
     display: flex;
     justify-content: center;
     gap: 50px;
     width: 100vw;
     transition: 0.5s;
-    background: linear-gradient(180deg, #dbe9f6 15%, #fefcc9 44%, #f7d0d5 100%);
+    /* background: linear-gradient(180deg, #dbe9f6 15%, #fefcc9 44%, #f7d0d5 100%); */
+    background: linear-gradient(180deg, #dbe9f6 15%, #fefcc9 44%, #a6a8df 100%);
+    /* background: linear-gradient(180deg, var(--pastelColor) 15%, #dbe9f6 44%, #fefcc9 100%); */
 }
-.project__contain-text{
-    width: 50%;
+.work__list{
+    width: 80%;
+}
+.work__list li{
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    align-items: center;
+    height: 100vh;
+}
+.work__left{
+    width: 30%;
     display: flex;
     flex-direction: column;
     align-items: end;
-    margin-right: auto;
-    border: 3px solid #381553;
+    /* margin-right: auto; */
+    /* border: 3px solid #381553; */
 }
 .step_text{
     width: 40%;
@@ -548,32 +570,21 @@ header #menu_btn a {
     border: 5px dotted red;
 }
 
-.project__contain li>div{
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 20em ;  */
-    /* background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
-    border-radius: 16px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 12px;
-    backdrop-filter: blur(0px);
-    border: 1px solid white; */
-}
-/* .project__text{
-    margin: 0 auto;
-} */
-.project__text span{
+.work__left span{
     font-size: 15.4px;
     margin-bottom: 8px;
     /* color: white; */
 }
-.project__text h4{
+.work__left h4{
     font-size: 3rem;
 }
-.project__text p{
+.work__left p{
     display: flex;
     gap: 20px;
     margin-top: 25px;
+}
+.work__right{
+    width: 50%;
 }
 .site_btn{
     width: 100px;
@@ -587,15 +598,14 @@ header #menu_btn a {
 }
 
 .project__banner{
-    width: 75%;
+    width: 100%;
     height: 500px;
-    /* background-color: #555555a9; */
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
     border-radius: 16px;
-    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 12px; */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 12px;
     backdrop-filter: blur(0px);
     border: 1px solid white;
 }
@@ -609,13 +619,13 @@ header #menu_btn a {
     background-size: 100% auto;
     animation: bganibt 10s;
     animation-iteration-count: infinite;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 30px;
+    /* box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 30px; */
 }
     
 .banner-1{background-image: url(../img/clone_1.png); animation-delay: 1s;}
-.banner-2{background-image: url(../img/clone_2.png); animation-delay: 3s;}
-.banner-3{background-image: url(../img/clone_3.png); animation-delay: 5s;}
-.banner-4{background-image: url(../img/react_ui.png); animation-delay: 7s;}
+.banner-2{background-image: url(../img/clone_2.png); animation-delay: 5s;}
+.banner-3{background-image: url(../img/clone_3.png); animation-delay: 10s;}
+.banner-4{background-image: url(../img/react_ui.png); animation-delay: 15s;}
 @keyframes bganibt {
     0% {
         background-position: 0 top

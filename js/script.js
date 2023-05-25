@@ -77,6 +77,7 @@
                 txt_list_3: document.querySelector('#scroll-section-2 #txt_list_3'),
             },
             values: {
+
                 txt_list_1_opacity_in : [0,1,{start:0, end: 0.07}],
                 txt_list_1_opacity_out : [1,0,{start: 0.2, end: 0.3}],
 
@@ -90,7 +91,7 @@
         },
         { //3
             type : 'normal',
-            heightNum : 5,
+            heightNum : 4,
             scrollHeight : 0,
             objs: {
                 container: document.querySelector('#scroll-section-3')
@@ -215,11 +216,9 @@
             break;
 
             case 2 : 
-            console.log(scrollRatio);
+            // console.log(calcValues(values.rightBox_width,currentYOffset));
             if(scrollRatio <= 0.2){ //1
                 //in
-                // objs.txt_list_1.style.opacity = 1;
-                objs.main_txt_translateY = `translate3d(0, ${calcValues(values.messageA_translateY_in, currentYOffset)}%, 0)`;
                 objs.txt_list_1.style.opacity = calcValues(values.txt_list_1_opacity_in,currentYOffset);
             }else{
                 //out
