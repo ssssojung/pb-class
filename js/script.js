@@ -1,11 +1,13 @@
 (()=>{
     //menu
+    const hd = document.querySelector('#hd');
     const menuBtn = document.querySelector('#menu_btn');
     const menu_li = document.querySelector('#menu_btn a');
-    const menu_wrap = document.querySelector('#menu_wrap')
-    // const menuBtn_bar = document.querySelectorAll('#menu_btn span')
+    const menu_wrap = document.querySelector('#menu_wrap');
     menuBtn.addEventListener('click',()=>{
-        menuBtn.classList.toggle('selected');
+        hd.classList.toggle('selected');
+        menu_wrap.style.top = 0;
+        menu_li.style.opacity = 1;
     });
 
 
