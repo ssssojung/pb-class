@@ -10,47 +10,31 @@
 </head>
 <body>
     <header>
-        <ul>
-            <!-- <li>
-                <a href="#none">ABOUT</a>
-            </li>
-            <li>
-                <a href="#none">SKILL</a>
-            </li>
-            <li>
-                <a href="#none">PROJECT</a>
-            </li>
-            <li>
-                <a href="#none">@</a>
-            </li>
-            <li>
-                <a href="#none">CONTACT</a>
-            </li> -->
-            <button>MENU</button>
-            <!-- <div>
-                <button>DARK</button>
-                <button>LIGHT</button>
-            </div> -->
-        </ul>
-    </header>
-    <div class="change-notice">
-        <div class="change-noice__icon">
-            <svg class="mb-32 " width="374" height="383" viewBox="0 0 374 383" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M81.3306 191.082C81.3306 204.937 84.0597 218.657 89.3619 231.458C94.6641 244.258 102.436 255.889 112.233 265.687C122.03 275.484 133.661 283.255 146.462 288.558C159.263 293.86 172.982 296.589 186.838 296.589" stroke="#F8F366" stroke-width="30.9179"></path><path d="M292.345 191.081C292.345 177.226 289.616 163.506 284.314 150.706C279.012 137.905 271.24 126.274 261.443 116.477C251.646 106.679 240.014 98.9077 227.214 93.6055C214.413 88.3032 200.693 85.5742 186.838 85.5742" stroke="#F8F366" stroke-width="30.9179"></path><path d="M121.307 204.668L78.9383 172.439L46.7098 214.808" stroke="#F8F366" stroke-width="30.9179"></path><path d="M252.359 177.509L294.728 209.737L326.956 167.369" stroke="#F8F366" stroke-width="30.9179"></path><rect x="164.023" y="144.348" width="46.3768" height="92.7536" fill="#F8F366"></rect></svg>
-        </div>
-        <h2>
-            FOR A BETTER<br>
-            EXPERIENCE<br>
-            PLEASE ROTATE<br>
-            YOUR DEVICE
+        <h2 id="menu_btn">
+            <a href="#">
+                <span class="t_stick"></span>
+                <span class="b_stick"></span>
+            </a>
         </h2>
-    </div>
+        <div id="menu_wrap">
+            <nav id="main_menu">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">SKILLS</a></li>
+                    <li><a href="#">WORK</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </nav>
+            <div id="menu_bg1" class="menu_bg"></div>
+            <div id="menu_bg2" class="menu_bg"></div>
+        </div>
+    </header>
     <section class="intro"id="scroll-section-0">
         <div class="world">
             <div class="house">
                 <div class="wall wall-left wall-moving-x"></div>
                 <div class="wall wall-right wall-moving-x"></div>
-                <!-- <div class="wall wall-top wall-moving-y"></div>
-                <div class="wall wall-bottom wall-moving-y"></div> -->
                 <div class="wall wall-front">
                 </div>
             </div>
@@ -99,8 +83,205 @@
             </div>
         </div>
     </section>
-    <section class="skill" id="scroll-section-2">
-        <div>
+    <section id="scroll-section-2">
+        <div class="contents_tit">
+            <h2>SKILLS</h2>
+        </div>
+        <!-- <div id="change"></div>-->
+        <div class="skills">
+            <div class="left_box">
+                <ul class="txt_list">
+                    <li id="txt_list_1" class="sticky-ele">
+                        <p>시멘틱 마크업을 통한 의미있는 구조 설계</p>
+                        <p>반응형 & 적응형 웹사이트 구축</p>
+                        <p>SASS를 이용한 프리프로세싱</p>
+                    </li>
+                    <li id="txt_list_2" class="sticky-ele">
+                        <p>플러그인 활용 </p>
+                        <p>스크롤을 이용한 인터랙션</p>
+                    </li>
+                    <li id="txt_list_3" class="sticky-ele">
+                        <p>UI / UX에 대한 이해</p>
+                        <p>Figma를  활용한 웹 사이트 시안 제작</p>
+                        <p>Photoshop 전체적인 툴 사용 </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="right_box">
+                <ul class="tit_list">
+                    <li>
+                        <p class="subtit">HTML5<br>CSS3</p>
+                    </li>
+                    <li>
+                        <p class="subtit">JAVA<br>SCRIPT</p>
+                    </li>
+                    <li>
+                        <p class="subtit">OTHERS</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="project" id="scroll-section-3">
+        <ul class="project__contain-text">
+            <li class="step_text">
+                <div class="project__text">
+                    <span>CLONE CODING</span>
+                    <h4>2rism</h4>
+                    <p>
+                        <a class="site_btn" href="//ssssojung.github.io/pb-class/week1-basic/">
+                            VIEW
+                        </a>
+                    </p>
+                </div>
+            </li>
+            <li class="step_text">
+                <div class="project__text">
+                    <span>CLONE CODING</span>
+                    <h4>RUCO</h4>
+                    <p>
+                        <a class="site_btn" href="//ssssojung.github.io/pb-class/week2-basic/">
+                            VIEW
+                        </a>
+                    </p>
+                </div>
+            </li>
+            <li class="step_text">
+                <div class="project__text">
+                    <span>CLONE CODING</span>
+                    <h4>MNTN</h4>
+                    <p>
+                        <a class="site_btn" href="//ssssojung.github.io/pb-class/MNTN_clone/">
+                            VIEW
+                        </a>
+                    </p>
+                </div>
+            </li>
+            <li class="step_text">
+                <div class="project__text">
+                    <span>WEB REDESIGN</span>
+                    <h4>MODERN POINT</h4>
+                    <p>
+                        <a class="site_btn" href="//lsj-react-43b42.web.app/">
+                            VIEW
+                        </a>
+                        <a class="site_btn" href="">
+                            PROTOTYPE
+                        </a>
+                    </p>
+                </div>
+            </li>
+        </ul>
+        <ul  class="project__contain">
+            <li class="sticky-ele project_1 ">
+                <!-- <div>
+                    <div class="project__text">
+                        <span>CLONE CODING</span>
+                        <h4>2rism</h4>
+                        <p>
+                            <a class="site_btn" href="//ssssojung.github.io/pb-class/week1-basic/">
+                                VIEW
+                            </a>
+                        </p>
+                    </div> -->
+                    <div class="project__banner">
+                        <div class="banner-img banner-1"></div>
+                    </div>
+                <!-- </div> -->
+            </li>
+            <li class="sticky-ele project_2">
+                <!-- <div>
+                    <div class="project__text">
+                        <span>CLONE CODING</span>
+                        <h4>RUCO</h4>
+                        <p>
+                            <a class="site_btn" href="//ssssojung.github.io/pb-class/week2-basic/">
+                                VIEW
+                            </a>
+                        </p>
+                    </div> -->
+                    <div class="project__banner">
+                        <div class="banner-img banner-2"></div>
+                    </div>
+                <!-- </div> -->
+            </li>
+            <li class="sticky-ele project_3">
+                <!-- <div>
+                    <div class="project__text">
+                        <span>CLONE CODING</span>
+                        <h4>MNTN</h4>
+                        <p>
+                            <a class="site_btn" href="//ssssojung.github.io/pb-class/MNTN_clone/">
+                                VIEW
+                            </a>
+                        </p>
+                    </div> -->
+                    <div class="project__banner">
+                        <div class="banner-img banner-3"></div>
+                    </div>
+                <!-- </div> -->
+            </li>
+            <li class="sticky-ele project_4">
+                <!-- <div>
+                    <div class="project__text">
+                        <span>WEB REDESIGN</span>
+                        <h4>MODERN POINT</h4>
+                        <p>
+                            <a class="site_btn" href="//lsj-react-43b42.web.app/">
+                                VIEW
+                            </a>
+                            <a class="site_btn" href="">
+                                PROTOTYPE
+                            </a>
+                        </p>
+                    </div> -->
+                    <div class="project__banner">
+                        <div class="banner-img banner-4"></div>
+                    </div>
+                <!-- </div> -->
+            </li>    
+        </ul>   
+    </section>
+    
+    <!-- <section class="secton4" id="scroll-section-4">
+        @@@
+    </section> -->
+    <section class="contact" id="scroll-section-5">
+        <a href="https://open.kakao.com/o/s6z7COhf" class="contact__btn">
+            <div class="contact__btn-marquee">
+                <span>contact
+                    <svg width="42" height="41" viewBox="0 0 42 41" fill="none" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M28.2801 16.8505L16.8917 5.46209L21.8586 0.495279L41.7258 20.3625L21.8586 40.2298L16.8917 35.263L28.2801 23.8746L0.512697 23.8746L0.512695 16.8505L28.2801 16.8505Z" fill="#fff5ee"></path></svg>
+                </span>
+                <span>contact
+                    <svg width="42" height="41" viewBox="0 0 42 41" fill="none" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M28.2801 16.8505L16.8917 5.46209L21.8586 0.495279L41.7258 20.3625L21.8586 40.2298L16.8917 35.263L28.2801 23.8746L0.512697 23.8746L0.512695 16.8505L28.2801 16.8505Z" fill="#fff5ee"></path></svg>
+                </span>
+                <span>contact
+                    <svg width="42" height="41" viewBox="0 0 42 41" fill="none" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M28.2801 16.8505L16.8917 5.46209L21.8586 0.495279L41.7258 20.3625L21.8586 40.2298L16.8917 35.263L28.2801 23.8746L0.512697 23.8746L0.512695 16.8505L28.2801 16.8505Z" fill="#fff5ee"></path></svg>
+                </span>
+                <span>contact
+                    <svg width="42" height="41" viewBox="0 0 42 41" fill="none" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M28.2801 16.8505L16.8917 5.46209L21.8586 0.495279L41.7258 20.3625L21.8586 40.2298L16.8917 35.263L28.2801 23.8746L0.512697 23.8746L0.512695 16.8505L28.2801 16.8505Z" fill="#fff5ee"></path></svg>
+                </span>
+                <span>contact
+                    <svg width="42" height="41" viewBox="0 0 42 41" fill="none" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M28.2801 16.8505L16.8917 5.46209L21.8586 0.495279L41.7258 20.3625L21.8586 40.2298L16.8917 35.263L28.2801 23.8746L0.512697 23.8746L0.512695 16.8505L28.2801 16.8505Z" fill="#fff5ee"></path></svg>
+                </span>
+                <span>contact
+                    <svg width="42" height="41" viewBox="0 0 42 41" fill="none" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M28.2801 16.8505L16.8917 5.46209L21.8586 0.495279L41.7258 20.3625L21.8586 40.2298L16.8917 35.263L28.2801 23.8746L0.512697 23.8746L0.512695 16.8505L28.2801 16.8505Z" fill="#fff5ee"></path></svg>
+                </span>
+            </div>
+        </a>
+        <div class="contact__bg-marquee">
+            <span>WEB PUBLISHER</span>
+        </div>
+        <div class="copy">
+            본 페이지는 상업적 목적이 아닌 개인 포트폴리오용으로 제작되었습니다.
+            ⓒ2023 LEE SOJEONG. All Rights Reserved.
+        </div>
+    </section>
+    
+<script src="./js/script.js"></script>
+</body>
+</html>
+<!-- <div>
             profile <br>
             이소정 <br>
             01098461216 <br>
@@ -123,114 +304,4 @@
             figma 3
             html,css 4
             javascript 2
-        </div>
-    </section>
-    <section class="project" id="scroll-section-3">
-        <ul  class="project__contain">
-            <li class="sticky-ele project_1 ">
-                <div>
-                    <div class="project__text">
-                        <span>CLONE CODING</span>
-                        <h4>2rism</h4>
-                        <p>
-                            <a class="site_btn" href="//ssssojung.github.io/pb-class/week1-basic/">
-                                VIEW
-                            </a>
-                        </p>
-                    </div>
-                    <div class="project__banner">
-                        <div class="banner-img banner-1"></div>
-                    </div>
-                </div>
-            </li>
-            <li class="sticky-ele project_2">
-                <div>
-                    <div class="project__text">
-                        <span>CLONE CODING</span>
-                        <h4>RUCO</h4>
-                        <p>
-                            <a class="site_btn" href="//ssssojung.github.io/pb-class/week2-basic/">
-                                VIEW
-                            </a>
-                        </p>
-                    </div>
-                    <div class="project__banner">
-                        <div class="banner-img banner-2"></div>
-                    </div>
-                </div>
-            </li>
-            <li class="sticky-ele project_3">
-                <div>
-                    <div class="project__text">
-                        <span>CLONE CODING</span>
-                        <h4>MNTN</h4>
-                        <p>
-                            <a class="site_btn" href="//ssssojung.github.io/pb-class/MNTN_clone/">
-                                VIEW
-                            </a>
-                        </p>
-                    </div>
-                    <div class="project__banner">
-                        <div class="banner-img banner-3"></div>
-                    </div>
-                </div>
-            </li>
-            <li class="sticky-ele project_4">
-                <div>
-                    <div class="project__text">
-                        <span>WEB REDESIGN</span>
-                        <h4>MODERN POINT</h4>
-                        <p>
-                            <a class="site_btn" href="//lsj-react-43b42.web.app/">
-                                VIEW
-                            </a>
-                            <a class="site_btn" href="">
-                                PROTOTYPE
-                            </a>
-                        </p>
-                    </div>
-                    <div class="project__banner">
-                        <div class="banner-img banner-4"></div>
-                    </div>
-                </div>
-            </li>    
-        </ul>   
-    </section>
-    <!-- <section class="secton4" id="scroll-section-4">
-        @@@
-    </section> -->
-    <section class="contact" id="scroll-section-5">
-        <a href="https://open.kakao.com/o/s6z7COhf" class="contact__btn">
-            <div class="contact__btn-marquee">
-                <span>contact
-                    <svg width="42" height="41" viewBox="0 0 42 41" fill="none" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M28.2801 16.8505L16.8917 5.46209L21.8586 0.495279L41.7258 20.3625L21.8586 40.2298L16.8917 35.263L28.2801 23.8746L0.512697 23.8746L0.512695 16.8505L28.2801 16.8505Z" fill="#A7A0ED"></path></svg>
-                </span>
-                <span>contact
-                    <svg width="42" height="41" viewBox="0 0 42 41" fill="none" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M28.2801 16.8505L16.8917 5.46209L21.8586 0.495279L41.7258 20.3625L21.8586 40.2298L16.8917 35.263L28.2801 23.8746L0.512697 23.8746L0.512695 16.8505L28.2801 16.8505Z" fill="#A7A0ED"></path></svg>
-                </span>
-                <span>contact
-                    <svg width="42" height="41" viewBox="0 0 42 41" fill="none" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M28.2801 16.8505L16.8917 5.46209L21.8586 0.495279L41.7258 20.3625L21.8586 40.2298L16.8917 35.263L28.2801 23.8746L0.512697 23.8746L0.512695 16.8505L28.2801 16.8505Z" fill="#A7A0ED"></path></svg>
-                </span>
-                <span>contact
-                    <svg width="42" height="41" viewBox="0 0 42 41" fill="none" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M28.2801 16.8505L16.8917 5.46209L21.8586 0.495279L41.7258 20.3625L21.8586 40.2298L16.8917 35.263L28.2801 23.8746L0.512697 23.8746L0.512695 16.8505L28.2801 16.8505Z" fill="#A7A0ED"></path></svg>
-                </span>
-                <span>contact
-                    <svg width="42" height="41" viewBox="0 0 42 41" fill="none" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M28.2801 16.8505L16.8917 5.46209L21.8586 0.495279L41.7258 20.3625L21.8586 40.2298L16.8917 35.263L28.2801 23.8746L0.512697 23.8746L0.512695 16.8505L28.2801 16.8505Z" fill="#A7A0ED"></path></svg>
-                </span>
-                <span>contact
-                    <svg width="42" height="41" viewBox="0 0 42 41" fill="none" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M28.2801 16.8505L16.8917 5.46209L21.8586 0.495279L41.7258 20.3625L21.8586 40.2298L16.8917 35.263L28.2801 23.8746L0.512697 23.8746L0.512695 16.8505L28.2801 16.8505Z" fill="#A7A0ED"></path></svg>
-                </span>
-            </div>
-        </a>
-        <div class="contact__bg-marquee">
-            <span>WEB PUBLISHER</span>
-        </div>
-        <div class="copy">
-            본 페이지는 상업적 목적이 아닌 개인 포트폴리오용으로 제작되었습니다.
-            ⓒ2023 LEE SOJEONG. All Rights Reserved.
-        </div>
-    </section>
-    
-<script src="./js/script.js"></script>
-</body>
-</html>
+        </div> -->

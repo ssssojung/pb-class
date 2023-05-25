@@ -1,17 +1,24 @@
+(()=>{
+    //menu
+    const menuBtn = document.querySelector('#menu_btn');
+    const menu_li = document.querySelector('#menu_btn a');
+    const menu_wrap = document.querySelector('#menu_wrap')
+    // const menuBtn_bar = document.querySelectorAll('#menu_btn span')
+    menuBtn.addEventListener('click',()=>{
+        menuBtn.classList.toggle('selected');
+    });
+
+
+})();
+
 (() =>{
     //intro
     const houseEle = document.querySelector('.house');
     const introEle = document.querySelector('.intro');
     const worldEle = document.querySelector('.world');
-    const changeEle = document.querySelector('.change-notice');
     
     const resizeHandler = () => {
         maxScrollValue = introEle.offsetHeight-window.innerHeight
-        if(window.innerWidth>window.innerHeight){
-            changeEle.style.display = 'none';
-        }else{
-            changeEle.style.display = 'flex';
-        }
     };
 
     window.addEventListener('scroll', ()=>{
@@ -46,7 +53,7 @@
         },
         { //1
             type : 'normal',
-            heightNum : 3,
+            heightNum : 2.7,
             scrollHeight : 0,
             objs: {
                 container: document.querySelector('#scroll-section-1'),
@@ -57,48 +64,66 @@
                 progress_height : [100,0,{start:0, end: 0.5}]
             }
         },
-        { //2
-            type : 'normal',
-            heightNum : 1,
-            scrollHeight : 0,
-            objs: {
-                container: document.querySelector('#scroll-section-2')
-            }
-            
-        },
-        { //3
+        { //2 skill
             type : 'sticky',
-            heightNum : 7,
+            heightNum : 5,
             scrollHeight : 0,
             objs: {
-                container: document.querySelector('#scroll-section-3'),
-                project_1: document.querySelector('#scroll-section-3 .project_1'),
-                project_2: document.querySelector('#scroll-section-3 .project_2'),
-                project_3: document.querySelector('#scroll-section-3 .project_3'),
-                project_4: document.querySelector('#scroll-section-3 .project_4')
+                container: document.querySelector('#scroll-section-2'),
+                txt_list_1: document.querySelector('#scroll-section-2 #txt_list_1'),
+                txt_list_2: document.querySelector('#scroll-section-2 #txt_list_2'),
+                txt_list_3: document.querySelector('#scroll-section-2 #txt_list_3'),
             },
             values: {
-                project_1_opacity_in : [0,1,{start:0, end: 0.1}],
-                project_1_translateY_in: [20,0,{start:0, end: 0.1} ],
-                project_1_opacity_out : [1,0,{start: 0.1, end: 0.2}],
-                project_1_translateY_out: [0,-20,{start: 0.1, end: 0.2} ],
+                txt_list_1_opacity_in : [0,1,{start:0, end: 0.07}],
+                txt_list_1_opacity_out : [1,0,{start: 0.2, end: 0.3}],
 
-                project_2_opacity_in : [0,1,{start:0.2, end: 0.3}],
-                project_2_translateY_in: [20,0,{start:0.2, end: 0.3} ],
-                project_2_opacity_out : [1,0,{start: 0.3, end: 0.4}],
-                project_2_translateY_out: [0,-20,{start: 0.3, end: 0.4} ],
+                txt_list_2_opacity_in : [0,1,{start: 0.3, end: 0.4}],
+                txt_list_2_opacity_out : [1,0,{start: 0.5, end: 0.6}],
 
-                project_3_opacity_in : [0,1,{start:0.4, end: 0.5}],
-                project_3_translateY_in: [20,0,{start:0.4, end: 0.5} ],
-                project_3_opacity_out : [1,0,{start: 0.5, end: 0.6}],
-                project_3_translateY_out: [0,-20,{start: 0.5, end: 0.6} ],
+                txt_list_3_opacity_in : [0,1,{start: 0.6, end: 0.7}],
+                txt_list_3_opacity_out : [1,0,{start: 0.8, end: 0.9}],
 
-
-                project_4_opacity_in : [0,1,{start:0.6, end: 0.7}],
-                project_4_translateY_in: [20,0,{start:0.6, end: 0.7} ],
-                project_4_opacity_out : [1,0,{start: 0.7, end: 0.8}],
-                project_4_translateY_out: [0,-20,{start: 0.7, end: 0.8} ]
             }
+        },
+        { //3
+            type : 'normal',
+            heightNum : 5,
+            scrollHeight : 0,
+            objs: {
+                container: document.querySelector('#scroll-section-3')
+            }
+
+            // objs: {
+            //     container: document.querySelector('#scroll-section-2'),
+            //     project_1: document.querySelector('#scroll-section-2 .project_1'),
+            //     project_2: document.querySelector('#scroll-section-2 .project_2'),
+            //     project_3: document.querySelector('#scroll-section-2 .project_3'),
+            //     project_4: document.querySelector('#scroll-section-2 .project_4')
+            // },
+            // values: {
+            //     project_1_opacity_in : [0,1,{start:0, end: 0.1}],
+            //     project_1_translateY_in: [20,0,{start:0, end: 0.1} ],
+            //     project_1_opacity_out : [1,0,{start: 0.1, end: 0.2}],
+            //     project_1_translateY_out: [0,-20,{start: 0.1, end: 0.2} ],
+
+            //     project_2_opacity_in : [0,1,{start:0.2, end: 0.3}],
+            //     project_2_translateY_in: [20,0,{start:0.2, end: 0.3} ],
+            //     project_2_opacity_out : [1,0,{start: 0.3, end: 0.4}],
+            //     project_2_translateY_out: [0,-20,{start: 0.3, end: 0.4} ],
+
+            //     project_3_opacity_in : [0,1,{start:0.4, end: 0.5}],
+            //     project_3_translateY_in: [20,0,{start:0.4, end: 0.5} ],
+            //     project_3_opacity_out : [1,0,{start: 0.5, end: 0.6}],
+            //     project_3_translateY_out: [0,-20,{start: 0.5, end: 0.6} ],
+
+
+            //     project_4_opacity_in : [0,1,{start:0.6, end: 0.7}],
+            //     project_4_translateY_in: [20,0,{start:0.6, end: 0.7} ],
+            //     project_4_opacity_out : [1,0,{start: 0.7, end: 0.8}],
+            //     project_4_translateY_out: [0,-20,{start: 0.7, end: 0.8} ]
+            // }
+            
         },
         // { //4
         //     type : 'normal',
@@ -149,7 +174,7 @@
         //현재 섹션에서 스크롤된 범위 비율
         const scrollHeight = sceneInfo[currentScene].scrollHeight;
         const scrollRatio = currentYOffset / scrollHeight;
-        console.log(scrollRatio);
+        // console.log(scrollRatio);
         if(values.length === 3){ 
             //start ~ end 사이에 애니메이션 실행
             const partScrollStart = values[2].start * scrollHeight;
@@ -188,47 +213,34 @@
             break;
 
             case 2 : 
-            // console.log('2 play');
-            break;
-
-            case 3 : 
-            if(scrollRatio <= 0.22){ //1
+            console.log(scrollRatio);
+            if(scrollRatio <= 0.2){ //1
                 //in
-                objs.project_1.style.opacity = calcValues(values.project_1_opacity_in,currentYOffset);
-                // objs.project_1.style.transform = `translateY(${calcValues(values.project_1_translateY_in,currentYOffset)}%)`;
+                // objs.txt_list_1.style.opacity = 1;
+                objs.main_txt_translateY = `translate3d(0, ${calcValues(values.messageA_translateY_in, currentYOffset)}%, 0)`;
+                objs.txt_list_1.style.opacity = calcValues(values.txt_list_1_opacity_in,currentYOffset);
             }else{
                 //out
-                objs.project_1.style.opacity = calcValues(values.project_1_opacity_out,currentYOffset);
-                // objs.project_1.style.transform = `translateY(${calcValues(values.project_1_translateY_out,currentYOffset)}%)`;
+                objs.txt_list_1.style.opacity = calcValues(values.txt_list_1_opacity_out,currentYOffset);
             }
-            if(scrollRatio <= 0.42){ //2
-                objs.project_2.style.opacity = calcValues(values.project_2_opacity_in,currentYOffset);
-                // objs.project_2.style.transform = `translateY(${calcValues(values.project_2_translateY_in,currentYOffset)}%)`;
+            if(scrollRatio <= 0.55){ //2
+                objs.txt_list_2.style.opacity = calcValues(values.txt_list_2_opacity_in,currentYOffset);
 
             }else{
-                objs.project_2.style.opacity = calcValues(values.project_2_opacity_out,currentYOffset);
-                // objs.project_2.style.transform = `translateY(${calcValues(values.project_2_translateY_out,currentYOffset)}%)`;
+                objs.txt_list_2.style.opacity = calcValues(values.txt_list_2_opacity_out,currentYOffset);
             }
-            if(scrollRatio <= 0.62){ //3
-                objs.project_3.style.opacity = calcValues(values.project_3_opacity_in,currentYOffset);
-                // objs.project_3.style.transform = `translateY(${calcValues(values.project_3_translateY_in,currentYOffset)}%)`;
+            if(scrollRatio <= 0.7){ //3
+                objs.txt_list_3.style.opacity = calcValues(values.txt_list_3_opacity_in,currentYOffset);
 
                 
             }else{
-                objs.project_3.style.opacity = calcValues(values.project_3_opacity_out,currentYOffset);
-                // objs.project_3.style.transform = `translateY(${calcValues(values.project_3_translateY_out,currentYOffset)}%)`;
+                objs.txt_list_3.style.opacity = calcValues(values.txt_list_3_opacity_out,currentYOffset);
 
             }
-            if(scrollRatio <= 0.82){ //4
-                objs.project_4.style.opacity = calcValues(values.project_4_opacity_in,currentYOffset);
-                // objs.project_4.style.transform = `translateY(${calcValues(values.project_4_translateY_in,currentYOffset)}%)`;
-                
-            }else{
-                objs.project_4.style.opacity = calcValues(values.project_4_opacity_out,currentYOffset);
-                // objs.project_4.style.transform = `translateY(${calcValues(values.project_4_translateY_out,currentYOffset)}%)`;
-
-            }
+            break;
             
+            case 3 : 
+            // console.log('3 play');
             break;
 
             case 4 : 
