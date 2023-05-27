@@ -1,3 +1,64 @@
 /*pc버전 ~1920px ~1200px
 테블릿 ~1024px ~768px
 모바일 ~480px ~320px*/
+
+/* @media screen and (max-width:1024px){
+    body{
+        background-color: bisque;
+    } 
+}*/
+/* 테블릿 */
+@media screen and (max-width:980px){
+    body{
+        /* background-color: blueviolet; */
+    }
+}
+@media screen and (max-width:768px){ 
+    /* 모바일 */
+    body{
+        /* background-color: royalblue; */
+    }
+    .about__sidebar{
+        display: none;
+    }
+    .about__process,
+    .about__text-main{
+        padding: 0 60px;
+    }
+    /* skill */
+    .skills{
+        background-color: var(--pastelColor);
+    }
+    .contents_tit h2{
+        font-size: 6em;
+    }
+    #scroll-section-2 .sticky-ele{
+        top: 40%;
+    }
+    .tit_list li p{
+        opacity: 0.5;
+        font-size: 6.5em;
+        margin-right: 100%;
+    }
+    .txt_list li p{
+        font-size: 1.5em;
+        color: var(--white);
+    }
+    .work__list li{
+        flex-direction: column;
+    }
+    .work__left{
+        width: 100%;
+        align-items: center;
+    }
+    .work__right{
+        width: 100%;
+    }
+    .work__list li{
+        gap: 60px;
+    }
+    .contact__btn{
+        width: 50vw;
+        height: 50vw;
+    }
+}

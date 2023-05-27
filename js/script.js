@@ -4,11 +4,19 @@
     const menuBtn = document.querySelector('#menu_btn');
     const menu_li = document.querySelector('#menu_btn a');
     const menu_wrap = document.querySelector('#menu_wrap');
-    menuBtn.addEventListener('click',()=>{
-        hd.classList.toggle('selected');
-        menu_wrap.style.top = 0;
-        menu_li.style.opacity = 1;
-    });
+    const on_off = true;
+
+    if(on_off){
+        menuBtn.addEventListener('click',()=>{
+            hd.classList.toggle('selected');
+            menu_wrap.style.top = 0;
+            menu_li.style.opacity = 1;
+        });
+    }else{
+        menu_wrap.style.top = `${-100}%`;
+        menu_li.style.opacity = 0;
+    }
+    
 
 
 })();

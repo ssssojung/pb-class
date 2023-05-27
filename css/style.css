@@ -109,6 +109,10 @@ header #menu_btn a {
     height: 100%;
     top: -100%;
 }
+/* .selected #menu_wrap{
+    height: 100%;
+    top: 0%;
+} */
 
 .menu_bg{
     position: absolute;
@@ -150,6 +154,7 @@ header #menu_btn a {
     z-index: 150;
     
 }
+
 
 #main_menu ul {
     width: 100%;
@@ -484,7 +489,7 @@ header #menu_btn a {
     position: fixed;
     top: 37%;
     left: 10%;
-    width: 50%;
+    /* width: 50%; */
     opacity: 0;
 }
 #show-section-2 #scroll-section-2 .sticky-ele{
