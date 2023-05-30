@@ -1,3 +1,32 @@
+// (()=>{
+//     const hd = document.querySelector('#hd')
+//     const menuBtn = document.querySelector('#menu_btn');
+//     // const menu_li = document.querySelectorAll('#main_menu li');
+//     // const on_off = true;
+//     const menu_wrap = document.querySelector('#menu_wrap');
+//     // const menuBtn_span = document.querySelectorAll('#menu_btn span')
+//     // const menu_bg = document.querySelector('.menu_bg');
+
+//     menuBtn.addEventListener('click',(e)=>{
+//         e.preventDefault();
+//         if(on_off){
+//             menu_wrap.style.top = 0;
+//             hd.classList.add('selected');
+//             //열린 상태에서 메뉴리스트 클릭
+//             hd.classList.remove('selected');
+//             setTimeout(()=>{
+//                 menu_wrap.style.top = `-110%`;
+//             },500);
+//         }else{
+//             hd.classList.remove('selected');
+//             setTimeout(()=>{
+//                 menu_wrap.style.top = `-110%`;
+//             },500);
+//         }
+//     });
+
+// })();
+
 (()=>{
     //menu
     const hd = document.querySelector('#hd');
@@ -13,7 +42,7 @@
             menu_li.style.opacity = 1;
         });
     }else{
-        menu_wrap.style.top = `${-100}%`;
+        menu_wrap.style.top = `-100%`;
         menu_li.style.opacity = 0;
     }
     
@@ -54,15 +83,13 @@
 
     const sceneInfo = [
         { //0
-            type : 'sticky',
-            heightNum : 2, //브라우저 높이의 5배로 scrollHeight 세팅
+            heightNum : 1.9,
             scrollHeight : 0,
             objs: {
                 container: document.querySelector('#scroll-section-0')
             }
         },
         { //1
-            type : 'normal',
             heightNum : 2.7,
             scrollHeight : 0,
             objs: {
@@ -70,12 +97,10 @@
                 progress : document.querySelector('#scroll-section-1 .letter-progress')
             },
             values: {
-                // progress height animation값
                 progress_height : [100,0,{start:0, end: 0.5}]
             }
         },
         { //2 skill
-            type : 'sticky',
             heightNum : 5,
             scrollHeight : 0,
             objs: {
@@ -98,42 +123,11 @@
             }
         },
         { //3
-            type : 'normal',
             heightNum : 4,
             scrollHeight : 0,
             objs: {
-                container: document.querySelector('#scroll-section-3')
-            }
-
-            // objs: {
-            //     container: document.querySelector('#scroll-section-2'),
-            //     project_1: document.querySelector('#scroll-section-2 .project_1'),
-            //     project_2: document.querySelector('#scroll-section-2 .project_2'),
-            //     project_3: document.querySelector('#scroll-section-2 .project_3'),
-            //     project_4: document.querySelector('#scroll-section-2 .project_4')
-            // },
-            // values: {
-            //     project_1_opacity_in : [0,1,{start:0, end: 0.1}],
-            //     project_1_translateY_in: [20,0,{start:0, end: 0.1} ],
-            //     project_1_opacity_out : [1,0,{start: 0.1, end: 0.2}],
-            //     project_1_translateY_out: [0,-20,{start: 0.1, end: 0.2} ],
-
-            //     project_2_opacity_in : [0,1,{start:0.2, end: 0.3}],
-            //     project_2_translateY_in: [20,0,{start:0.2, end: 0.3} ],
-            //     project_2_opacity_out : [1,0,{start: 0.3, end: 0.4}],
-            //     project_2_translateY_out: [0,-20,{start: 0.3, end: 0.4} ],
-
-            //     project_3_opacity_in : [0,1,{start:0.4, end: 0.5}],
-            //     project_3_translateY_in: [20,0,{start:0.4, end: 0.5} ],
-            //     project_3_opacity_out : [1,0,{start: 0.5, end: 0.6}],
-            //     project_3_translateY_out: [0,-20,{start: 0.5, end: 0.6} ],
-
-
-            //     project_4_opacity_in : [0,1,{start:0.6, end: 0.7}],
-            //     project_4_translateY_in: [20,0,{start:0.6, end: 0.7} ],
-            //     project_4_opacity_out : [1,0,{start: 0.7, end: 0.8}],
-            //     project_4_translateY_out: [0,-20,{start: 0.7, end: 0.8} ]
-            // }
+                container: document.querySelector('#scroll-section-3'),
+            },
             
         },
         // { //4
@@ -145,7 +139,6 @@
         //     }
         // },
         { //5
-            type : 'normal',
             heightNum : 1,
             scrollHeight : 0,
             objs: {
@@ -156,15 +149,6 @@
 
     const setLayout = () =>{
         //각 스크롤 섹션의 높이 세팅
-        // for(let i = 0; i < sceneInfo.length; i++){
-        //     if(sceneInfo[i].type === 'sticky'){
-        //         sceneInfo[i].scrollHeight =  sceneInfo[i].heightNum * window.innerHeight ;
-        //     }else if(sceneInfo[i].type === 'normal'){
-        //         sceneInfo[i].scrollHeight = sceneInfo[i].objs.container.scrollY;
-        //     }
-        //     sceneInfo[i].objs.container.style.height = `${sceneInfo[i].scrollHeight}px`;
-
-        // }
         for(let i = 0; i < sceneInfo.length; i++){
             sceneInfo[i].scrollHeight =  sceneInfo[i].heightNum * window.innerHeight ;
             sceneInfo[i].objs.container.style.height = `${sceneInfo[i].scrollHeight}px`;
