@@ -90,14 +90,14 @@
             }
         },
         { //1
-            heightNum : 2.7,
+            heightNum : 3.4,
             scrollHeight : 0,
             objs: {
                 container: document.querySelector('#scroll-section-1'),
                 progress : document.querySelector('#scroll-section-1 .letter-progress')
             },
             values: {
-                progress_height : [100,0,{start:0, end: 0.5}]
+                progress_height : [100,0,{start:0, end: 0.8}]
             }
         },
         { //2 skill
