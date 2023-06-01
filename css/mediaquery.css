@@ -21,10 +21,12 @@
     .process-item:nth-child(3) { top: calc( var(--center) - 13em  ); padding-bottom: calc( var(--center-p) + 13em ); }
     .process-item:nth-child(4) { top: calc( var(--center) - 8em  ); padding-bottom: calc( var(--center-p) + 8em ); }
     .process-item:nth-child(5) { top: calc( var(--center) - 3em  ); padding-bottom: calc( var(--center-p) + 3em ); }
-    .process-item:nth-child(6) { top: calc( var(--center) + 20em  ); padding-bottom: calc( var(--center-p) - 20gem ); }
-
+    .process-item:nth-child(6) { top: calc( var(--center) + 19em  ); padding-bottom: calc( var(--center-p) - 19em ); }
     .process-item p::before{
         display: none;
+    }
+    .about__text {
+        font-size: 1.1rem;
     }
     .contents_tit h2{
         font-size: 5.5em;
@@ -58,10 +60,12 @@
     .process-item{
         justify-content: space-between;
     }
+    .about__process{
+        padding: 0 24px;
+    }
     .about__process,
-    .about__text-main{
-        /* padding: 0 60px; */
-        font-size: 13px;
+    .about__text{
+        font-size: 15px;
     }
     .process-item p{
         width: 60%;
@@ -82,7 +86,21 @@
 
     /* skill */
     .skills{
-        background-color: var(--pastelColor);
+        display: block;
+    }
+    .only_m{
+        display: block;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--pastelColor);
+    }
+    .left_box {
+        width: 100%;
+        z-index: 1;
+    }
+    .right_box{
+        display: none;
     }
     .contents_tit h2{
         font-size: 6em;
@@ -91,9 +109,9 @@
         top: 40%;
     }
     .tit_list li p{
-        opacity: 0.5;
+        opacity: 0.2;
         font-size: 6.5em;
-        margin-right: 100%;
+        /* margin-right: 100%; */
     }
     .txt_list li p{
         color: var(--white);

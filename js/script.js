@@ -90,7 +90,7 @@
             }
         },
         { //1
-            heightNum : 3.4,
+            heightNum : 3.9,
             scrollHeight : 0,
             objs: {
                 container: document.querySelector('#scroll-section-1'),
