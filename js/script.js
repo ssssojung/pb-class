@@ -1,29 +1,31 @@
-// (()=>{
-//     const hd = document.querySelector('#hd')
-//     const menuBtn = document.querySelector('#menu_btn');
-//     // const menu_li = document.querySelectorAll('#main_menu li');
-//     // const on_off = true;
-//     const menu_wrap = document.querySelector('#menu_wrap');
-//     // const menuBtn_span = document.querySelectorAll('#menu_btn span')
-//     // const menu_bg = document.querySelector('.menu_bg');
 
-//     menuBtn.addEventListener('click',(e)=>{
-//         e.preventDefault();
-//         if(on_off){
-//             menu_wrap.style.top = 0;
-//             hd.classList.add('selected');
-//             //열린 상태에서 메뉴리스트 클릭
-//             hd.classList.remove('selected');
-//             setTimeout(()=>{
-//                 menu_wrap.style.top = `-110%`;
-//             },500);
-//         }else{
-//             hd.classList.remove('selected');
-//             setTimeout(()=>{
-//                 menu_wrap.style.top = `-110%`;
-//             },500);
-//         }
+
+// (()=>{
+//     const hd = documnet.querySelector('#hd');
+//     const menuBtn = document.querySelector('#menu_btn');
+//     const section = document.querySelectorAll('section');
+//     const navLinks = document.querySelectorAll('#main_menu a');
+
+//     menuBtn.addEventListener('click',()=>{
+//         hd.classList.toggle('selected');
 //     });
+
+
+//     window.onscroll = () =>{
+//         section.forEach( sec => {
+//             let top = scrollY;
+//             let offset = sec.offsetTop -67;
+//             let height = sec.offsetHeight;
+//             let id = sec.getAttribute('id');
+
+//             if(top >= offset && top > offset + height){
+//                 navLinks.forEach(links => {
+//                     links.classList.remove('active');
+//                     document.querySelector(`header nav a[href=${id}]`).classList.add
+//                 })
+//             }
+//         })
+//     }
 
 // })();
 
