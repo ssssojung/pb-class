@@ -1,5 +1,6 @@
 /* wff2 */
 /* @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css); */
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
 @font-face {
     font-family: 'NEXON Lv2 Gothic';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
@@ -14,6 +15,7 @@
     --pastelColor: #8EA7E9;
     --mint : #00d6c0;
     --white : #fff;
+    --black : #111;
 }
 html{
     overflow-x: hidden;
@@ -21,7 +23,8 @@ html{
 body{
     background: var(--baseColor);
     /* font-family: 'NEXON Lv2 Gothic'; */
-    font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
+    /* font-family: 'Spoqa Han Sans Neo', 'sans-serif';  */
+    font-family: 'NanumSquare', 'sans-serif'; 
     /* overflow-x: hidden; */
     font-size: 16px;
     width: 100%;
@@ -282,6 +285,7 @@ header #menu_btn a {
     display: flex;
     justify-content: space-between;
     position: relative;
+    top: 10%;
 } 
 .about__sidebar{
     flex-shrink: 0;
@@ -289,7 +293,7 @@ header #menu_btn a {
     padding-left: 60px;
 }
 .about__letter{
-    padding: 60px 0;
+    padding: 100px 0;
     font-weight: bold;
     color: var(--mint);
     font-size: 180px;
@@ -333,9 +337,6 @@ header #menu_btn a {
     flex-grow: 1;
     max-width: 1400px;
 }
-.about__text-main{
-    max-width: 1200px;
-}
 .about__process{
     padding: 0 60px 0 10px;
     max-width: 1200px;
@@ -349,7 +350,7 @@ header #menu_btn a {
     margin-top: 100px;
     left: 0;
     align-items: center;
-    color: #111;
+    color: var(--black);
 }
 .process-item.type_none{
     margin-top: 0;
@@ -365,7 +366,7 @@ header #menu_btn a {
 .process-item:nth-child(3) { top: calc( var(--center) - 12em  ); padding-bottom: calc( var(--center-p) + 12em ); }
 .process-item:nth-child(4) { top: calc( var(--center) - 8em  ); padding-bottom: calc( var(--center-p) + 8em ); }
 .process-item:nth-child(5) { top: calc( var(--center) - 4em  ); padding-bottom: calc( var(--center-p) + 4em ); }
-.process-item:nth-child(6) { top: calc( var(--center) + 15em  ); padding-bottom: calc( var(--center-p) - 15em ); }
+.process-item:nth-child(6) { top: calc( var(--center) + 25em  ); padding-bottom: calc( var(--center-p) - 25em ); }
 .process-item h2{
     width: 20%;
     font-size: 2.8rem;
@@ -384,24 +385,18 @@ header #menu_btn a {
     content: '';
     height: 2px;
     margin-right: 1em;
-    background-color: #11111177;
+    background-color: #555;
+    opacity: 0.5;
 }
-.about__text-main{
-    font-size: 1.2rem;
-    color: #111;
+
+.about__text{
+    font-size: 1.5rem;
+    color: var(--black);
     line-height: 1.8em;
-    /* display: flex; */
-    /* position: absolute; */
-    /* bottom: 0; */
-    /* margin-bottom: 5em; */
-    /* padding-left: 10px; */
 }
 .process-item.about__text-main{
     display: block;
 }
-/* .is_last{
-    margin-top: 100px;
-} */
 .marker_blur{
     display: inline; 
     position: relative;
@@ -433,6 +428,9 @@ header #menu_btn a {
     background: #5e62d1;
     z-index: 70;
 } */
+.only_m{
+    display: none;
+}
 .contents_tit h2{
     display: block;
     width: 50%;
@@ -440,6 +438,7 @@ header #menu_btn a {
     font-size: 9em;
     font-weight: 700;
     text-align: center;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
 .skills{
     position: relative;
@@ -450,7 +449,6 @@ header #menu_btn a {
 }
 .left_box {
     width: 50%;
-    background: #e0e2ee;
 }
 
 #scroll-section-2 .sticky-ele{
@@ -465,7 +463,7 @@ header #menu_btn a {
     display: block;
 }
 .txt_list li p {
-    color: #555;
+    color: var(--black);
     font-size: 1.6em;
     font-weight: 500;
     text-align: left;
@@ -478,7 +476,6 @@ header #menu_btn a {
     height: 100%;
     background: var(--pastelColor);
 }
-
 .tit_list{
     height: 100%;
 }
@@ -507,6 +504,7 @@ header #menu_btn a {
     position: relative;
     display: flex;
     justify-content: center;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
     gap: 50px;
     width: 100vw;
     transition: 0.5s;
@@ -532,18 +530,6 @@ header #menu_btn a {
     /* margin-right: auto; */
     /* border: 3px solid #381553; */
 }
-.step_text{
-    width: 40%;
-    padding: 0.5rem 1rem;
-    background-color: #11111117;
-    height: 200vh;
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    justify-content: center;
-    border: 5px dotted red;
-}
-
 .work__left span{
     font-size: 15.4px;
     margin-bottom: 8px;
@@ -564,11 +550,11 @@ header #menu_btn a {
     width: 100px;
     padding: 5px 5px;
     line-height: 1.2rem;
-    border: 1px solid #555;
+    border: 1px solid var(--black);
     border-radius: 3px;
     text-align: center;
     font-size: 15px;
-    color: #555;
+    color: var(--black);
 }
 
 .project__banner{
@@ -603,6 +589,7 @@ header #menu_btn a {
 @keyframes bganibt {
     0% {
         background-position: 0 top
+        
     }
 
     40% {
@@ -632,6 +619,7 @@ header #menu_btn a {
     position: relative;
     width: 100vw;
     height: 100vh;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
 .contact__btn{
     z-index: 1;
@@ -672,14 +660,15 @@ header #menu_btn a {
     font-weight: bold;
     color: var(--baseColor);
     white-space: nowrap;
+    margin-left: 50px;
 }
 @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(50%); }
   }
 @keyframes marquee2 {
-    from { transform: translateX(-150%); }
-    to { transform: translateX(0%); }
+    from { transform: translateX(0%); }
+    to { transform: translateX(-150%); }
   }
   .contact__btn:hover + .contact__bg-marquee span{ 
     text-shadow: -1px 0px var(--mint), 0px 1px var(--mint), 1px 0px var(--mint), 0px -1px var(--mint);
