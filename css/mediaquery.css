@@ -54,6 +54,9 @@
     /* #scrol-section-0{
         height: 1000px !important;
     } */
+    .about__contain{
+        top: 0;
+    }
     .about__sidebar{
         display: none;
     }
@@ -85,6 +88,7 @@
     .process-item:nth-child(6) { top: calc( var(--center) + 30em  ); padding-bottom: calc( var(--center-p) - 30em ); }
 
     /* skill */
+    
     .skills{
         display: block;
     }

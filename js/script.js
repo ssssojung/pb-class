@@ -1,4 +1,5 @@
 
+
 (()=>{
     //menu
     const hd = document.querySelector('#hd');
@@ -13,6 +14,23 @@
                 }
         });
 
+    const quickMenu = document.querySelector('#quickmenu');
+    window.addEventListener("wheel", (e) => {
+        //퀵메뉴
+        let currentTop = window.scrollY;
+        const windowHeight = document.body.clientHeight;
+    
+        e.deltaY > 0 && windowHeight * 0.2 <= currentTop
+            ? (quickMenu.style.opacity = "1")
+            : (quickMenu.style.opacity = "0");
+        });
+    
+        //퀵메뉴
+        quickMenu.addEventListener("click", () => {
+        setTimeout(() => {
+            window.scrollTo(0, 0);
+        }, 200);
+        });
 
 })();
 
@@ -49,6 +67,7 @@
 
     const sceneInfo = [
         { //0
+            type : 'normal',
             heightNum : 1.9,
             scrollHeight : 0,
             objs: {
@@ -56,6 +75,7 @@
             }
         },
         { //1
+            type: 'sticky',
             heightNum : 3.9,
             scrollHeight : 0,
             objs: {
@@ -67,6 +87,7 @@
             }
         },
         { //2 skill
+            type: 'sticky',
             heightNum : 5,
             scrollHeight : 0,
             objs: {
@@ -89,6 +110,7 @@
             }
         },
         { //3
+            type : 'normal',
             heightNum : 4,
             scrollHeight : 0,
             objs: {
@@ -105,6 +127,7 @@
         //     }
         // },
         { //5
+            type : 'normal',
             heightNum : 1,
             scrollHeight : 0,
             objs: {
@@ -128,6 +151,25 @@
                 break;
             }
         }
+        // for (let i = 0; i < sceneInfo.length; i++) {
+		// 	if (sceneInfo[i].type === 'sticky') {
+		// 		sceneInfo[i].scrollHeight = sceneInfo[i].heightNum * window.innerHeight;
+		// 	} else if (sceneInfo[i].type === 'normal')  {
+		// 		sceneInfo[i].scrollHeight = sceneInfo[i].objs.content.offsetHeight + window.innerHeight * 0.5;
+		// 	}
+        //     sceneInfo[i].objs.container.style.height = `${sceneInfo[i].scrollHeight}px`;
+		// }
+
+		// yOffset = window.pageYOffset;
+
+		// let totalScrollHeight = 0;
+		// for (let i = 0; i < sceneInfo.length; i++) {
+		// 	totalScrollHeight += sceneInfo[i].scrollHeight;
+		// 	if (totalScrollHeight >= yOffset) {
+		// 		currentScene = i;
+		// 		break;
+		// 	}
+		// }
     }
 
     const calcValues = (values, currentYOffset) =>{ 
