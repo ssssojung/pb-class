@@ -207,9 +207,9 @@ header #menu_btn a {
 /* intro */
 .intro {
     width: 100%;
+    height: 300vw;
 }
 .world{
-    /* overflow-x: hidden; */
     position: fixed;
     left: 0;
     top: 0;
@@ -251,7 +251,6 @@ header #menu_btn a {
     width: 500vw;
     transform: rotateY(90deg) translateZ(-250vw);
     background: var(--baseColor);
-    /* background-color: #8EA7E9; */
     background-image: url(../img/bg__intro-left.svg) ;
     background-position: 50% 0;
     background-repeat: repeat-x;
@@ -261,7 +260,6 @@ header #menu_btn a {
 .wall-right{
     width: 500vw;
     transform: rotateY(90deg) translateZ(-150vw);
-    /* background-color: #8EA7E9; */
     background: var(--baseColor);
     background-image: url(../img/bg__intro-right.svg);
     background-repeat: repeat-x;
@@ -275,6 +273,11 @@ header #menu_btn a {
      align-items: center;
      /* perspective: 200px; */
      /* z-index: 2; */
+}
+.wall-front-con{
+    background: var(--neon-yellow);
+    width: 450px;
+    height: 450px;
 }
 
 /* about */

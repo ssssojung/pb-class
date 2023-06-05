@@ -1,53 +1,17 @@
 
-
-// (()=>{
-//     const hd = documnet.querySelector('#hd');
-//     const menuBtn = document.querySelector('#menu_btn');
-//     const section = document.querySelectorAll('section');
-//     const navLinks = document.querySelectorAll('#main_menu a');
-
-//     menuBtn.addEventListener('click',()=>{
-//         hd.classList.toggle('selected');
-//     });
-
-
-//     window.onscroll = () =>{
-//         section.forEach( sec => {
-//             let top = scrollY;
-//             let offset = sec.offsetTop -67;
-//             let height = sec.offsetHeight;
-//             let id = sec.getAttribute('id');
-
-//             if(top >= offset && top > offset + height){
-//                 navLinks.forEach(links => {
-//                     links.classList.remove('active');
-//                     document.querySelector(`header nav a[href=${id}]`).classList.add
-//                 })
-//             }
-//         })
-//     }
-
-// })();
-
 (()=>{
     //menu
     const hd = document.querySelector('#hd');
     const menuBtn = document.querySelector('#menu_btn');
-    const menu_li = document.querySelector('#menu_btn a');
-    const menu_wrap = document.querySelector('#menu_wrap');
-    const on_off = true;
-
-    if(on_off){
-        menuBtn.addEventListener('click',()=>{
-            hd.classList.toggle('selected');
-            menu_wrap.style.top = 0;
-            menu_li.style.opacity = 1;
+    const menu_li = document.querySelector('.nav_link');
+        window.addEventListener('click',(e)=>{
+            console.log(e.target)
+            if(e.target === menuBtn){
+                hd.classList.add('selected');
+            }else if(e.target === menuBtn || e.target === menu_li){
+                hd.classList.remove('selected');
+                }
         });
-    }else{
-        menu_wrap.style.top = `-100%`;
-        menu_li.style.opacity = 0;
-    }
-    
 
 
 })();
