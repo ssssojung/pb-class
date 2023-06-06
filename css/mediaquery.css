@@ -54,6 +54,9 @@
     /* #scrol-section-0{
         height: 1000px !important;
     } */
+    .selected #main_menu ul{
+        padding-top: 110px;
+    }
     .about__contain{
         top: 0;
     }

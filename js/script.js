@@ -44,7 +44,7 @@
 })();
 
 (() =>{
-    //intro
+    //intro;
     const houseEle = document.querySelector('.house');
     const introEle = document.querySelector('.intro');
     const worldEle = document.querySelector('.world');
@@ -73,6 +73,7 @@
     let yOffset = 0; 
     let prevScrollHeight = 0; // 현재 스크롤 위치보다 이전에 위치한 스크롤 높이값의 합
     let currentScene = 0; // 현재 활성화된 섹션
+    let delayedYOffset = 0;
 
     const sceneInfo = [
         { //0
@@ -85,7 +86,7 @@
         },
         { //1
             type: 'sticky',
-            heightNum : 3.9,
+            heightNum : 4,
             scrollHeight : 0,
             objs: {
                 container: document.querySelector('#scroll-section-1'),
@@ -164,12 +165,12 @@
 		// 	if (sceneInfo[i].type === 'sticky') {
 		// 		sceneInfo[i].scrollHeight = sceneInfo[i].heightNum * window.innerHeight;
 		// 	} else if (sceneInfo[i].type === 'normal')  {
-		// 		sceneInfo[i].scrollHeight = sceneInfo[i].objs.content.offsetHeight + window.innerHeight * 0.5;
+		// 		sceneInfo[i].scrollHeight = sceneInfo[i].objs.container.scrollY + window.innerHeight * 0.5;
 		// 	}
         //     sceneInfo[i].objs.container.style.height = `${sceneInfo[i].scrollHeight}px`;
 		// }
 
-		// yOffset = window.pageYOffset;
+		// yOffset = window.scrollY;
 
 		// let totalScrollHeight = 0;
 		// for (let i = 0; i < sceneInfo.length; i++) {
@@ -288,6 +289,41 @@
 
         playAnimation();
     }
+    // function scrollLoop() {
+	// 	enterNewScene = false;
+	// 	prevScrollHeight = 0;
+
+	// 	for (let i = 0; i < currentScene; i++) {
+	// 		prevScrollHeight += sceneInfo[i].scrollHeight;
+	// 	}
+
+	// 	if (delayedYOffset < prevScrollHeight + sceneInfo[currentScene].scrollHeight) {
+	// 		document.body.classList.remove('scroll-effect-end');
+	// 	}
+
+	// 	if (delayedYOffset > prevScrollHeight + sceneInfo[currentScene].scrollHeight) {
+	// 		enterNewScene = true;
+	// 		if (currentScene === sceneInfo.length - 1) {
+	// 			document.body.classList.add('scroll-effect-end');
+	// 		}
+	// 		if (currentScene < sceneInfo.length - 1) {
+	// 			currentScene++;
+	// 		}
+	// 		document.body.setAttribute('id', `show-section-${currentScene}`);
+	// 	}
+
+	// 	if (delayedYOffset < prevScrollHeight) {
+	// 		enterNewScene = true;
+	// 		// 브라우저 바운스 효과로 인해 마이너스가 되는 것을 방지(모바일)
+	// 		if (currentScene === 0) return;
+	// 		currentScene--;
+	// 		document.body.setAttribute('id', `show-section-${currentScene}`);
+	// 	}
+
+	// 	if (enterNewScene) return;
+
+	// 	playAnimation();
+	// }
 
     window.addEventListener('scroll',()=>{
         yOffset = window.scrollY;
