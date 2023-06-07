@@ -74,6 +74,7 @@
         font-size: 15px;
     }
     .process-item p{
+        /* font-size: ; */
         width: 60%;
     }
     .process-item p::before{
@@ -123,6 +124,15 @@
     .txt_list li p{
         color: var(--white);
     }
+    .work__list{
+        padding: 20px 0;
+    }
+    .project__banner{
+        height: 350px;
+    }
+    .banner-img{
+        height: 180px;
+    }
     .work__list li{
         flex-direction: column;
     }
@@ -134,7 +144,13 @@
         width: 100%;
     }
     .work__list li{
-        gap: 60px;
+        gap: 30px;
+    }
+    .work__left h4 {
+        text-align: center;
+    }
+    .site_btn{
+        padding: 14px 30px;
     }
     .contact__btn{
         width: 50vw;
