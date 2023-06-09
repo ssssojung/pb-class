@@ -40,8 +40,8 @@ header {
 
 header #menu_btn {
     position: fixed;
-    left: 0;
-    right: 0;
+    /* left: 0; */
+    right: 50px;
     top: 18px;
     margin: auto;
     width: 67px;
@@ -109,16 +109,15 @@ header #menu_btn a {
     display: none;
 }
 .selected #main_menu {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     z-index: 150;
     width: 100vw;
     height: 100vh;
     background-color: #55555579;
     
-}
-.selected #main_menu ul {
-    padding-top: 200px;
 }
 .selected #main_menu ul li {
     padding: 20px 0;
@@ -142,6 +141,7 @@ header #menu_btn a {
 }
 #main_menu ul li a:hover{
     color: #7075d8;
+    cursor: pointer;
 }
 
 /* intro */

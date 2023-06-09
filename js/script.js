@@ -5,14 +5,12 @@
 
     const hd = document.querySelector('#hd');
     const menuIcon = document.querySelector("#menu_btn");
-    // const navBar = document.querySelector("#main_menu");
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".nav_link");
     const quickMenu = document.querySelector("#quickmenu");
 
     menuIcon.addEventListener("click", (e) => {
         hd.classList.toggle("selected");
-        // navBar.classList.toggle("active");
     });
 
     window.addEventListener("wheel", (e) => {
