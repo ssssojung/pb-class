@@ -1,12 +1,12 @@
 /* wff2 */
 /* @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css); */
-@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+/* @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
 @font-face {
     font-family: 'NEXON Lv2 Gothic';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}
+} */
 :root{
     --baseColor : #fff5ee;
     --pastelColor: #8EA7E9;
@@ -148,6 +148,7 @@ header #menu_btn a {
 .intro {
     width: 100%;
     height: 300vw;
+
 }
 .world{
     position: fixed;
@@ -169,7 +170,7 @@ header #menu_btn a {
     top: 0;
     width: 100vw;
     height: 100vh;
-    background-color: var(--white);
+    background-color: var(--baseColor);
 }
 .wall-moving-y{
     animation: moving-text-y 30s linear infinite;

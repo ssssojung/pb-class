@@ -54,6 +54,10 @@
     /* #scrol-section-0{
         height: 1000px !important;
     } */
+    header #menu_btn{
+        left: 0;
+        right: 0;
+    }
     .selected #main_menu ul{
         padding-top: 110px;
     }
