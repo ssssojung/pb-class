@@ -12,29 +12,41 @@ body {
   align-items: center;
 }
 
-swiper-container {
+header {
+  width: 100%;
+}
+header nav {
+  width: 100%;
+}
+main {
+  padding-bottom: 30px;
+}
+main .mainbanner {
+  width: 100%;
+  height: 600px;
+}
+main .mainbanner swiper-container {
   width: 100%;
   height: 100%;
 }
-
-swiper-slide {
+main .mainbanner swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
-
-swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+main .mainbanner .bannerimg1 {
+  background-image: url(../img/main_banner.png);
 }
-
-main {
-  padding-bottom: 30px;
+main .mainbanner .bannerimg2 {
+  background-image: url(../img/main_banner_graduation.png);
+}
+main .mainbanner .bannerimg3 {
+  background-image: url(../img/main_banner_christmas.png);
 }
 main .benffits {
   gap: 20px;
@@ -105,9 +117,13 @@ section .guide_con {
   height: 400px;
   padding: 0 70px;
 }
+#flower .guide_con .sub_title {
+  margin-bottom: 10px;
+}
 #flower .guide_con p {
   font-size: 18px;
   line-height: 25px;
+  margin-bottom: 20px;
 }
 
 #cafe .cafe_con {
@@ -192,12 +208,34 @@ section .guide_con {
   background-image: url(../img/cafe_Simg6.png);
 }
 
-#class .accordion-button {
+#class .noti_swiper {
+  height: 60px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+#class .noti_swiper swiper-slide {
+  background-color: #F1E9F0;
+}
+#class .noti_swiper .swiper-button-next, #class .noti_swiper .swiper-button-prev {
+  position: absolute;
+  top: var(--swiper-navigation-top-offset, 50%);
+  width: calc(var(--swiper-navigation-size) / 44 * 27);
+  height: var(--swiper-navigation-size);
+  margin-top: calc(0px - var(--swiper-navigation-size) / 2);
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--swiper-navigation-color, var(--swiper-theme-color));
+  background-image: url(../img/accordion_topIcon.svg);
+}
+#class .class_accordion .accordion-button {
   padding: 33px 124px;
   background-color: #FAF5FF;
   margin-bottom: 10px;
 }
-#class .accordion-body {
+#class .class_accordion .accordion-body {
   margin-bottom: 10px;
   display: flex;
   justify-content: center;
@@ -205,8 +243,11 @@ section .guide_con {
   gap: 64px;
   background-color: #FAF5FF;
 }
-#class .accordion-button:not(.collapsed) {
+#class .class_accordion .accordion-button:not(.collapsed) {
   border: none;
+}
+#class .class_accordion .accordion-button::after {
+  background-image: url(../img/accordion_topIcon.svg);
 }
 #class .class_img {
   width: 460px;
@@ -236,7 +277,8 @@ section .guide_con {
 
 #night .night_con {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 144px;
 }
 #night .night_con a {
@@ -261,6 +303,50 @@ section .guide_con {
 #night .night_con a p {
   font-size: 24px;
   line-height: 33px;
+}
+
+#story {
+  padding-bottom: 350px;
+}
+#story .story_con {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#story .story_con .storyimg {
+  width: 287px;
+  height: 287px;
+}
+#story .story_con .storyimg:nth-child(1) {
+  background-image: url(../img/story_img1.png);
+}
+#story .story_con .storyimg:nth-child(2) {
+  background-image: url(../img/story_img2.png);
+}
+#story .story_con .storyimg:nth-child(3) {
+  background-image: url(../img/story_img3.png);
+}
+#story .story_con .storyimg:nth-child(4) {
+  background-image: url(../img/story_img4.png);
+}
+#story .story_con .storyimg:nth-child(5) {
+  background-image: url(../img/story_img5.png);
+}
+#story .story_con .storyimg:nth-child(6) {
+  background-image: url(../img/story_img6.png);
+}
+#story .story_con .storyimg:nth-child(7) {
+  background-image: url(../img/story_img7.png);
+}
+#story .story_con .storyimg:nth-child(8) {
+  background-image: url(../img/story_img8.png);
+}
+#story .story_con .storyimg:nth-child(9) {
+  background-image: url(../img/story_img9.png);
+}
+#story .story_con .storyimg:nth-child(10) {
+  background-image: url(../img/story_img10.png);
 }
 
 footer {

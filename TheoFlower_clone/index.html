@@ -13,15 +13,15 @@
 <body>
     <header>
         <div>공지사항</div>
-        <div>
+        <!-- <div>
             <div>로고</div>
             <div>
                 <div>카카오톡 블로그 인스타</div>
                 <div>아이콘</div>
             </div>
-        </div>
-        <nav>
-            <ul>
+        </div> -->
+        <nav id="navi">
+            <ul class="dja">
                 <li><a href="#">Flower class</a></li>
                 <li><a href="#">Theo flower</a></li>
                 <li><a href="#">조화</a></li>
@@ -35,11 +35,15 @@
         <div class="q_down"></div>
     </aside>
     <main>
-        <div>
-            banner
+        <div class="mainbanner">
+            <swiper-container class="mySwiper" pagination="true">
+                <swiper-slide class="bannerimg1"></swiper-slide>
+                <swiper-slide class="bannerimg2"></swiper-slide>
+                <swiper-slide class="bannerimg3"></swiper-slide>
+            </swiper-container>
         </div>
         <div class="dja flex-column">
-            <p class="dja">WELCOME BENEFITS</p>
+            <p class="dja mb-5">WELCOME BENEFITS</p>
             <div class="benffits dja">
                 <a href="#none">
                     <div class="benffits_img1"></div>
@@ -65,12 +69,12 @@
             <span>소중한 사람을 위해, 테오플라워가 제안하는 특별한 선물</span>
         </div>
         <!-- <div class=""> -->
-            <swiper-container class="mySwiper" navigation="true" pagination="true" keyboard="true" mousewheel="true" css-mode="true">
+            <!-- <swiper-container class="mySwiper" navigation="true" pagination="true" keyboard="true" mousewheel="true" css-mode="true">
                 <swiper-slide>Slide 1</swiper-slide>
                 <swiper-slide>Slide 2</swiper-slide>
                 <swiper-slide>Slide 3</swiper-slide>
                 <swiper-slide>Slide 4</swiper-slide>
-            </swiper-container>
+            </swiper-container> -->
         <!-- </div> -->
         <div class="guide_con">
             <p class="sub_title">[꽃주문 안내]</p>
@@ -135,161 +139,168 @@
             <span>원데이ㆍ취미ㆍ기초ㆍ고급ㆍ창업반ㆍ키즈 </span>
         </div>
         <!-- <div> -->
-            <div class="dja">공지사항 스와이퍼 영역</div>
-            
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse1" aria-expanded="false" aria-controls="flush-collapse1">
-                        one day class
-                    </button>
-                  </h2>
-                  <div id="flush-collapse1" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        <div class="class_img"></div>
-                        <div>
-                            <p class="sub_title">시즌 계절 꽃들로 3시간 안에 완성하는 원데이클래스</p>
-                            <p class="mb-5">
-                                좋은 퀄리티의 다양한 종류의 시즌 꽃을 접하실 수 있는 좋은 기회이며,
-                                꽃을 처음 접해보시는 분들도 쉽게 따라오실 수 있는 커리큘럼의 수업입니다.
-                                꽃의 상태에 따라 랜덤으로 진행되며 모든 재료와 도구는 준비되어 있으므로
-                                편안한 마음으로 오셔서 힐링하고 가세요.
-                            </p>
-                            <a href="#none">블로그 가기</a>
+            <div class="noti_swiper">
+                <swiper-container class="mySwiper" navigation="true" loop="true">
+                    <swiper-slide>시빨간 열매들이 주렁주렁 - 드라이플라워리스 원데이 수시 모집</swiper-slide>
+                    <swiper-slide>시빨간 열매들이 주렁주렁 - 드라이플라워리스 원데이 수시 모집</swiper-slide>
+                    <swiper-slide>시빨간 열매들이 주렁주렁 - 드라이플라워리스 원데이 수시 모집</swiper-slide>
+                </swiper-container>
+            </div>
+            <div class="class_accordion">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse1" aria-expanded="false" aria-controls="flush-collapse1">
+                            one day class
+                        </button>
+                      </h2>
+                      <div id="flush-collapse1" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <div class="class_img"></div>
+                            <div>
+                                <p class="sub_title">시즌 계절 꽃들로 3시간 안에 완성하는 원데이클래스</p>
+                                <p class="mb-5">
+                                    좋은 퀄리티의 다양한 종류의 시즌 꽃을 접하실 수 있는 좋은 기회이며,
+                                    꽃을 처음 접해보시는 분들도 쉽게 따라오실 수 있는 커리큘럼의 수업입니다.
+                                    꽃의 상태에 따라 랜덤으로 진행되며 모든 재료와 도구는 준비되어 있으므로
+                                    편안한 마음으로 오셔서 힐링하고 가세요.
+                                </p>
+                                <a href="#none">블로그 가기</a>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse2" aria-expanded="false" aria-controls="flush-collapse2">
+                              hobby class
+                          </button>
+                        </h2>
+                        <div id="flush-collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">
+                              <div class="class_img"></div>
+                              <div>
+                                  <p class="sub_title">시즌 계절 꽃들로 3시간 안에 완성하는 원데이클래스</p>
+                                  <p class="mb-5">
+                                      좋은 퀄리티의 다양한 종류의 시즌 꽃을 접하실 수 있는 좋은 기회이며,
+                                      꽃을 처음 접해보시는 분들도 쉽게 따라오실 수 있는 커리큘럼의 수업입니다.
+                                      꽃의 상태에 따라 랜덤으로 진행되며 모든 재료와 도구는 준비되어 있으므로
+                                      편안한 마음으로 오셔서 힐링하고 가세요.
+                                  </p>
+                                  <a href="#none">블로그 가기</a>
+                              </div>
+                          </div>
                         </div>
                     </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse2" aria-expanded="false" aria-controls="flush-collapse2">
-                          one day class
-                      </button>
-                    </h2>
-                    <div id="flush-collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body">
-                          <div class="class_img"></div>
-                          <div>
-                              <p class="sub_title">시즌 계절 꽃들로 3시간 안에 완성하는 원데이클래스</p>
-                              <p class="mb-5">
-                                  좋은 퀄리티의 다양한 종류의 시즌 꽃을 접하실 수 있는 좋은 기회이며,
-                                  꽃을 처음 접해보시는 분들도 쉽게 따라오실 수 있는 커리큘럼의 수업입니다.
-                                  꽃의 상태에 따라 랜덤으로 진행되며 모든 재료와 도구는 준비되어 있으므로
-                                  편안한 마음으로 오셔서 힐링하고 가세요.
-                              </p>
-                              <a href="#none">블로그 가기</a>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse3" aria-expanded="false" aria-controls="flush-collapse3">
+                            basic class
+                          </button>
+                        </h2>
+                        <div id="flush-collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">
+                              <div class="class_img"></div>
+                              <div>
+                                  <p class="sub_title">시즌 계절 꽃들로 3시간 안에 완성하는 원데이클래스</p>
+                                  <p class="mb-5">
+                                      좋은 퀄리티의 다양한 종류의 시즌 꽃을 접하실 수 있는 좋은 기회이며,
+                                      꽃을 처음 접해보시는 분들도 쉽게 따라오실 수 있는 커리큘럼의 수업입니다.
+                                      꽃의 상태에 따라 랜덤으로 진행되며 모든 재료와 도구는 준비되어 있으므로
+                                      편안한 마음으로 오셔서 힐링하고 가세요.
+                                  </p>
+                                  <a href="#none">블로그 가기</a>
+                              </div>
                           </div>
-                      </div>
+                        </div>
                     </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse3" aria-expanded="false" aria-controls="flush-collapse3">
-                          one day class
-                      </button>
-                    </h2>
-                    <div id="flush-collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body">
-                          <div class="class_img"></div>
-                          <div>
-                              <p class="sub_title">시즌 계절 꽃들로 3시간 안에 완성하는 원데이클래스</p>
-                              <p class="mb-5">
-                                  좋은 퀄리티의 다양한 종류의 시즌 꽃을 접하실 수 있는 좋은 기회이며,
-                                  꽃을 처음 접해보시는 분들도 쉽게 따라오실 수 있는 커리큘럼의 수업입니다.
-                                  꽃의 상태에 따라 랜덤으로 진행되며 모든 재료와 도구는 준비되어 있으므로
-                                  편안한 마음으로 오셔서 힐링하고 가세요.
-                              </p>
-                              <a href="#none">블로그 가기</a>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapse4">
+                            florist class
+                          </button>
+                        </h2>
+                        <div id="flush-collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">
+                              <div class="class_img"></div>
+                              <div>
+                                  <p class="sub_title">시즌 계절 꽃들로 3시간 안에 완성하는 원데이클래스</p>
+                                  <p class="mb-5">
+                                      좋은 퀄리티의 다양한 종류의 시즌 꽃을 접하실 수 있는 좋은 기회이며,
+                                      꽃을 처음 접해보시는 분들도 쉽게 따라오실 수 있는 커리큘럼의 수업입니다.
+                                      꽃의 상태에 따라 랜덤으로 진행되며 모든 재료와 도구는 준비되어 있으므로
+                                      편안한 마음으로 오셔서 힐링하고 가세요.
+                                  </p>
+                                  <a href="#none">블로그 가기</a>
+                              </div>
                           </div>
-                      </div>
+                        </div>
                     </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapse4">
-                          one day class
-                      </button>
-                    </h2>
-                    <div id="flush-collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body">
-                          <div class="class_img"></div>
-                          <div>
-                              <p class="sub_title">시즌 계절 꽃들로 3시간 안에 완성하는 원데이클래스</p>
-                              <p class="mb-5">
-                                  좋은 퀄리티의 다양한 종류의 시즌 꽃을 접하실 수 있는 좋은 기회이며,
-                                  꽃을 처음 접해보시는 분들도 쉽게 따라오실 수 있는 커리큘럼의 수업입니다.
-                                  꽃의 상태에 따라 랜덤으로 진행되며 모든 재료와 도구는 준비되어 있으므로
-                                  편안한 마음으로 오셔서 힐링하고 가세요.
-                              </p>
-                              <a href="#none">블로그 가기</a>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse5" aria-expanded="false" aria-controls="flush-collapse5">
+                            kids class
+                          </button>
+                        </h2>
+                        <div id="flush-collapse5" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">
+                              <div class="class_img"></div>
+                              <div>
+                                  <p class="sub_title">시즌 계절 꽃들로 3시간 안에 완성하는 원데이클래스</p>
+                                  <p class="mb-5">
+                                      좋은 퀄리티의 다양한 종류의 시즌 꽃을 접하실 수 있는 좋은 기회이며,
+                                      꽃을 처음 접해보시는 분들도 쉽게 따라오실 수 있는 커리큘럼의 수업입니다.
+                                      꽃의 상태에 따라 랜덤으로 진행되며 모든 재료와 도구는 준비되어 있으므로
+                                      편안한 마음으로 오셔서 힐링하고 가세요.
+                                  </p>
+                                  <a href="#none">블로그 가기</a>
+                              </div>
                           </div>
-                      </div>
+                        </div>
                     </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse5" aria-expanded="false" aria-controls="flush-collapse5">
-                          one day class
-                      </button>
-                    </h2>
-                    <div id="flush-collapse5" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body">
-                          <div class="class_img"></div>
-                          <div>
-                              <p class="sub_title">시즌 계절 꽃들로 3시간 안에 완성하는 원데이클래스</p>
-                              <p class="mb-5">
-                                  좋은 퀄리티의 다양한 종류의 시즌 꽃을 접하실 수 있는 좋은 기회이며,
-                                  꽃을 처음 접해보시는 분들도 쉽게 따라오실 수 있는 커리큘럼의 수업입니다.
-                                  꽃의 상태에 따라 랜덤으로 진행되며 모든 재료와 도구는 준비되어 있으므로
-                                  편안한 마음으로 오셔서 힐링하고 가세요.
-                              </p>
-                              <a href="#none">블로그 가기</a>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse6" aria-expanded="false" aria-controls="flush-collapse6">
+                            technic class
+                          </button>
+                        </h2>
+                        <div id="flush-collapse6" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">
+                              <div class="class_img"></div>
+                              <div>
+                                  <p class="sub_title">시즌 계절 꽃들로 3시간 안에 완성하는 원데이클래스</p>
+                                  <p class="mb-5">
+                                      좋은 퀄리티의 다양한 종류의 시즌 꽃을 접하실 수 있는 좋은 기회이며,
+                                      꽃을 처음 접해보시는 분들도 쉽게 따라오실 수 있는 커리큘럼의 수업입니다.
+                                      꽃의 상태에 따라 랜덤으로 진행되며 모든 재료와 도구는 준비되어 있으므로
+                                      편안한 마음으로 오셔서 힐링하고 가세요.
+                                  </p>
+                                  <a href="#none">블로그 가기</a>
+                              </div>
                           </div>
-                      </div>
+                        </div>
                     </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse6" aria-expanded="false" aria-controls="flush-collapse6">
-                          one day class
-                      </button>
-                    </h2>
-                    <div id="flush-collapse6" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body">
-                          <div class="class_img"></div>
-                          <div>
-                              <p class="sub_title">시즌 계절 꽃들로 3시간 안에 완성하는 원데이클래스</p>
-                              <p class="mb-5">
-                                  좋은 퀄리티의 다양한 종류의 시즌 꽃을 접하실 수 있는 좋은 기회이며,
-                                  꽃을 처음 접해보시는 분들도 쉽게 따라오실 수 있는 커리큘럼의 수업입니다.
-                                  꽃의 상태에 따라 랜덤으로 진행되며 모든 재료와 도구는 준비되어 있으므로
-                                  편안한 마음으로 오셔서 힐링하고 가세요.
-                              </p>
-                              <a href="#none">블로그 가기</a>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse7" aria-expanded="false" aria-controls="flush-collapse7">
+                            화훼장식기능사
+                          </button>
+                        </h2>
+                        <div id="flush-collapse7" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">
+                              <div class="class_img"></div>
+                              <div>
+                                  <p class="sub_title">시즌 계절 꽃들로 3시간 안에 완성하는 원데이클래스</p>
+                                  <p class="mb-5">
+                                      좋은 퀄리티의 다양한 종류의 시즌 꽃을 접하실 수 있는 좋은 기회이며,
+                                      꽃을 처음 접해보시는 분들도 쉽게 따라오실 수 있는 커리큘럼의 수업입니다.
+                                      꽃의 상태에 따라 랜덤으로 진행되며 모든 재료와 도구는 준비되어 있으므로
+                                      편안한 마음으로 오셔서 힐링하고 가세요.
+                                  </p>
+                                  <a href="#none">블로그 가기</a>
+                              </div>
                           </div>
-                      </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse7" aria-expanded="false" aria-controls="flush-collapse7">
-                          one day class
-                      </button>
-                    </h2>
-                    <div id="flush-collapse7" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body">
-                          <div class="class_img"></div>
-                          <div>
-                              <p class="sub_title">시즌 계절 꽃들로 3시간 안에 완성하는 원데이클래스</p>
-                              <p class="mb-5">
-                                  좋은 퀄리티의 다양한 종류의 시즌 꽃을 접하실 수 있는 좋은 기회이며,
-                                  꽃을 처음 접해보시는 분들도 쉽게 따라오실 수 있는 커리큘럼의 수업입니다.
-                                  꽃의 상태에 따라 랜덤으로 진행되며 모든 재료와 도구는 준비되어 있으므로
-                                  편안한 마음으로 오셔서 힐링하고 가세요.
-                              </p>
-                              <a href="#none">블로그 가기</a>
-                          </div>
-                      </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -336,17 +347,17 @@
             <h2>Theo story</h2>
             <span>테오플라워 instagram</span>
         </div>
-        <div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+        <div class="story_con">
+            <div class="storyimg"></div>
+            <div class="storyimg"></div>
+            <div class="storyimg"></div>
+            <div class="storyimg"></div>
+            <div class="storyimg"></div>
+            <div class="storyimg"></div>
+            <div class="storyimg"></div>
+            <div class="storyimg"></div>
+            <div class="storyimg"></div>
+            <div class="storyimg"></div>
         </div>
     </section>
     <footer>

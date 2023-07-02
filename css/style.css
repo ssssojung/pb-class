@@ -7,13 +7,19 @@
     font-weight: normal;
     font-style: normal;
 } */
+@font-face {
+    font-family: 'Cafe24 Ohsquare Air';
+    src: url(../font/Cafe24OhsquareAir-v2.0.woff) format('woff'),
+         url(../font/Cafe24OhsquareAir-v2.0.woff2) format('woff2');
+    font-weight: 400;
+}
 :root{
     --baseColor : #fff5ee;
     --pastelColor: #8EA7E9;
     --mint : #00d6c0;
     --white : #fff;
     --black : #111;
-    --font-ko: 'NanumSquare', sans-serif;
+    --font-ko: 'Cafe24 Ohsquare Air', sans-serif;
 }
 body{
     background: var(--baseColor);
