@@ -676,13 +676,13 @@ header #menu_btn a {
 } */
 #quickmenu {
     position: fixed;
-    
     bottom: 40px;
     right: 2%;
     /* width: 50px; */
     display: block;
     text-align: center;
     z-index: 10000;
+    cursor: pointer;
     
 }
 #quickmenu a{
