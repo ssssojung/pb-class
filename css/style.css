@@ -498,6 +498,9 @@ header #menu_btn a {
 
 .site_btn{
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 14px 50px;
     border-radius: 4px;
     border: none;
@@ -559,7 +562,6 @@ header #menu_btn a {
     background-size: 100% auto;
     animation: bganibt 10s;
     animation-iteration-count: infinite;
-    /* box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 30px; */
 }
     
 .banner-1{background-image: url(../img/clone_1.png); animation-delay: 1s;}
