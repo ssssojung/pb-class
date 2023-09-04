@@ -31,16 +31,21 @@ body{
     background: #f2f2f2;
     font-size: 18px;
     font-family: 'oswald';
-    width: 1440px;
-    margin: 0 auto;
 }
 header{
+    width: 100%;
+    min-width: 1440px;
+    border-bottom: 1px solid #EBEBEB;
+    background-color: #fff;
+}
+.navi_con{
     padding: 0 40px;
+    height: 90px;
+    width: 1440px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between; 
     align-items: center;
-    height: 90px;
-    border-bottom: 1px solid #EBEBEB;
 }
 .navi-left{
     display: flex;
@@ -88,7 +93,8 @@ header ul{
     font-family: var(--oswald);
     font-size: 14px;
 }
-.T_only{
+.T_only,
+.M_only{
     display: none;
 }
 .category{
@@ -141,10 +147,13 @@ header ul{
 
 /* main */
 main{
+    width: 1440px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-bottom: 120px;
+    padding-bottom: 120px;
+    padding-top: 40px;
 }
 section{
     width: 1012px;
@@ -317,13 +326,14 @@ aside{
 /* footer */
 footer{
     width: 100%;
-    height: 160px;
+    min-width: 1440px;
     background-color: #1D1F24;
-    padding: 40px;
 }
 .footer_con{
     max-width: 1440px;
+    height: 160px;
     margin: 0 auto;
+    padding: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -337,7 +347,7 @@ footer{
 }
 .footer_nav{
     width: 657px;
-    height: 100%;
+    height: 54px;
 }
 .footer_nav>ul{
     display: flex;
@@ -346,7 +356,7 @@ footer{
     letter-spacing: 1.75px;
 }
 .footer_nav li{
-    width: 150px;
+    width: 25%;
 }
 .footer_right{
     width: 300px;
@@ -405,18 +415,10 @@ input{
 
 /* 반응형 */
 
-/* 테블릿 가로 (해상도 768px ~ 1023px) 
-@media all and (min-width:768px) and (max-width:1023px) { 
-
-  }  */
-  
   /* 모바일 가로 & 테블릿 세로 (해상도 480px ~ 767px)*/ 
   @media all and (min-width:480px) and (max-width:768px) {
-    body{
-        max-width: 768px;
-        margin: 0 auto; 
-    }
     header{
+        min-width: 768px;
         display: flex;
         justify-content: space-between;
     }
@@ -425,12 +427,13 @@ input{
     }
     main{
         flex-direction: column;
-        max-width: 768px;
+        align-items: center;
+        max-width: 728px;
+        margin: 0 auto;
         gap: 17px;
     }
     section{
         width: 728px;
-        margin: 0 auto;
         gap: 17px;
     }
     .featured{
@@ -457,11 +460,8 @@ input{
     .card{
         height: 336px;
     }
-    .D_only{
-        display: none;
-    }
     .T_only{
-        display: block;
+        display: none;
     }
     .gaming .T_only{
         width: 363px;
@@ -490,6 +490,9 @@ input{
         order: 2;
     }
     footer{
+        min-width: 768px;
+    }
+    .footer_con{
         height: 267px;
         padding: 40px 20px;
     }
@@ -505,9 +508,12 @@ input{
         width: 75%;
         height: 87px;
     }
-    /* .footer_nav ul{
+    .footer_nav ul{
         justify-content: space-between;
-    } */
+    }
+    .footer_nav li {
+        width: 30%;
+    }
     .footer_right{
         width: 728px;
         display: flex;
@@ -524,7 +530,68 @@ input{
   
   /* 모바일 세로 (해상도 ~ 479px)*/ 
   @media all and (max-width:479px) {
+    .M_only{
+        display: flex;
+    }
+    aside .M_only{
+        height: 274px;
+        background-image: url(../img/bg_finance2.png);
+    }
+    header{
+        min-width: 375px;
+        display: flex;
+        justify-content: space-between;
+    }
+    header .navi_con{
+        padding: 0 20px;
+        height: 70px;
+        width: 375px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
+    }
+    .card_con{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .featured,
+    .card_con .finance{
+        width: 335px;
+    }
+    header nav,
+    .technology,
+    .finance2,
+    .news .T_only,
+    div.card_con{
+        display: none;
+    }
+    .news{
+        gap: 30px;
+    }
+    main{
+        flex-direction: column;
+        align-items: center;
+        max-width: 335px;
+        margin: 0 auto;
+        gap: 20px;
+    }
+    aside{
+        width: 335px;
+    }
+    section{
+        width: 335px;
+        gap: 20px;
+    }
+
+    footer{
+        min-width: 375px;
+    }
+    .footer_con{
+        height: 267px;
+        padding: 40px 20px;
+    }
   }
 
 
