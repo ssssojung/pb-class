@@ -31,10 +31,10 @@ body{
     background: #f2f2f2;
     font-size: 18px;
     font-family: 'oswald';
-}
-header{
     width: 1440px;
     margin: 0 auto;
+}
+header{
     padding: 0 40px;
     display: flex;
     justify-content: space-between; 
@@ -88,6 +88,9 @@ header ul{
     font-family: var(--oswald);
     font-size: 14px;
 }
+.T_only{
+    display: none;
+}
 .category{
     display: inline-block;
     text-align: center;
@@ -96,6 +99,7 @@ header ul{
     height: 40px;
     line-height: 40px;
     padding: 0 25px;
+    letter-spacing: 1.75px;
 }
 .card{
     position: relative;
@@ -148,11 +152,35 @@ section{
     flex-wrap: wrap;
     gap: 32px;
 }
+.slide_wrap{
+    width: 100%;
+    position: relative;
+}
+.slide_prev,
+.slide_next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) ;
+    width: 50px;
+    height: 50px;
+    background-color: #1D1F24;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.slide_prev:hover,
+.slide_next:hover{
+    cursor: pointer;
+}
+.slide_prev{
+    left: 0;
+    background-image: url(../img/icon/icon_arrowL.svg);
+
+}
+.slide_next{
+    right: 0;
+    background-image: url(../img/icon/icon_arrowR.svg);
+}
 .visual{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     height: 580px;
     background-image: url(../img/bg_main.png);
@@ -163,7 +191,25 @@ section{
     left: 50%;
     transform: translate(-50%, 0);
 }
-
+.txtBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.txtBox a{
+    margin-bottom: 40px;
+}
+.txtBox p{
+    width: 593px;
+    text-transform: uppercase;
+    letter-spacing: -0.47px;
+}
+.txtBox span{
+    width: 483px;
+    opacity: .7;
+}
 /* sub */
 .card_con{
     display: flex;
@@ -193,8 +239,8 @@ div.card_con{
     align-items: center;
     gap: 20px;
     border-bottom: 1px solid #f2f3f6;
-    width: 266px;
-    /* height: 74px;/ */
+    /* width: 266px; */
+    padding-top: 15px;
 }
 .featured li>p:nth-child(1){
     font-family: var(--oswald);
@@ -254,6 +300,7 @@ aside{
 .news a{
     width: 210px;
     height: 60px;
+    letter-spacing: 0.8px;
     border: 1px solid #fff;
     border-bottom: 3px solid #fff;
     display: flex;
@@ -269,7 +316,6 @@ aside{
 
 /* footer */
 footer{
-    /* margin: 40px auto 40px; */
     width: 100%;
     height: 160px;
     background-color: #1D1F24;
@@ -297,6 +343,7 @@ footer{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    letter-spacing: 1.75px;
 }
 .footer_nav li{
     width: 150px;
@@ -313,20 +360,172 @@ footer{
 .social a{
     margin-right: 5px;
 }
+form{
+    display: flex;
+    flex-wrap: nowrap;
+}
 input{
     border: none;
 }
 #input_E{
     width: 180px;
     height: 35px;
+    font-family: var(--lato_r);
+    font-size: 14px;
+    color: #1D1F24;
+    padding-left: 15px;
+
+}
+#input_E:focus{
+    outline: none;
+}
+#input_E:focus::placeholder{
+    opacity: 0;
 }
 #input_S{
     width: 120px;
     height: 35px;
     margin-left: -5px;
     background-color: var(--point_C);
+    font-family: var(--oswald);
+    font-size: 12px;
+    letter-spacing: 1.5px;
 }
+#input_S:hover{
+    cursor: pointer;
+}
+#input_E::-webkit-input-placeholder {
+    color: #1D1F24;
+    opacity: .4;
+  }
+  #input_E:-ms-input-placeholder {
+    color: #1D1F24;
+    opacity: .4;
+  }
 
+/* 반응형 */
+
+/* 테블릿 가로 (해상도 768px ~ 1023px) 
+@media all and (min-width:768px) and (max-width:1023px) { 
+
+  }  */
+  
+  /* 모바일 가로 & 테블릿 세로 (해상도 480px ~ 767px)*/ 
+  @media all and (min-width:480px) and (max-width:768px) {
+    body{
+        max-width: 768px;
+        margin: 0 auto; 
+    }
+    header{
+        display: flex;
+        justify-content: space-between;
+    }
+    header nav{
+        display: none;
+    }
+    main{
+        flex-direction: column;
+        max-width: 768px;
+        gap: 17px;
+    }
+    section{
+        width: 728px;
+        margin: 0 auto;
+        gap: 17px;
+    }
+    .featured{
+        width: 294px;
+        height: 626px;
+    }
+    .card_con{
+        gap: 17px;
+    }
+    div.card_con{
+        flex-direction: row;
+    }
+    .card_con .finance,
+    .card_con .gaming{
+        width: 418px;
+    }
+    .entertainment{
+        display: none;
+    }
+    .card_cate{
+        flex-direction: column;
+        gap: 17px;
+    }
+    .card{
+        height: 336px;
+    }
+    .D_only{
+        display: none;
+    }
+    .T_only{
+        display: block;
+    }
+    .gaming .T_only{
+        width: 363px;
+    }
+    aside{
+        width: 729px;
+        margin: 0 auto;
+        gap: 17px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    aside .card{
+        width: 356px;
+    }
+    aside .T_only{
+        width: 650px;
+    }
+    aside>div:nth-child(1){
+        order: 3;
+    }
+    aside>div:nth-child(2){
+        order: 1;
+        height: 328px;
+    }
+    aside>div:nth-child(3){
+        order: 2;
+    }
+    footer{
+        height: 267px;
+        padding: 40px 20px;
+    }
+    .footer_con{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .footer_left{
+        width: 25%;
+    }
+    .footer_nav{
+        padding-left: 80px;
+        width: 75%;
+        height: 87px;
+    }
+    /* .footer_nav ul{
+        justify-content: space-between;
+    } */
+    .footer_right{
+        width: 728px;
+        display: flex;
+        gap: 30px;
+        margin-top: 45px;
+    }
+    .social{
+        order: 2;
+    }
+    form{
+        order: 1;
+    }
+  } 
+  
+  /* 모바일 세로 (해상도 ~ 479px)*/ 
+  @media all and (max-width:479px) {
+
+  }
 
 
   
