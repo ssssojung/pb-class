@@ -4,6 +4,7 @@ body {
   font-family: "PyeongChang";
   color: #191616;
   font-weight: 400;
+  font-size: 16px;
 }
 
 .dja {
@@ -14,12 +15,71 @@ body {
 
 header {
   width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 100;
+  background-color: #fff;
 }
-header nav {
+header .txt_banner {
+  background-color: #718775;
+  color: #fff;
+}
+header .nav-center {
+  height: 230px;
+}
+header .nav-center img {
+  width: 250px;
+}
+header .nav-right {
+  display: flex;
+}
+header #gnb {
+  padding-bottom: 100px;
+  width: 950px;
+  margin: 0 auto;
+}
+header #gnb li {
+  padding: 0 30px;
+}
+header #gnb li a {
+  font-size: 24px;
+  position: relative;
+}
+header #gnb li a::after {
+  display: none;
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -5px;
+  height: 4px;
   width: 100%;
+  background: rgb(113, 135, 117);
 }
+header #snb {
+  background-color: #718775;
+  display: none;
+  height: 400px;
+  opacity: 0;
+  width: 950px;
+  margin: 0 auto;
+  z-index: 100;
+}
+header #snb ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 0 30px;
+}
+header #snb ul li a {
+  font-size: 20px;
+}
+
 main {
-  padding-bottom: 30px;
+  margin-top: 390px;
 }
 main .mainbanner {
   width: 100%;
