@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function(){
         $prevBtn.addEventListener("click",()=>{
             prevMove();
         });
+
         window.addEventListener("resize",()=>{
             slide_width = slide.clientWidth;
         });
@@ -87,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 nextMove();
             }
         });
-        
+        console.log(currSlide);
 
         
 

@@ -100,11 +100,10 @@ header ul{
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 400px;
     padding: 50px 0;
 }
 #menu_wrap li{
-    padding: 30px 50px;
+    padding: 30px 25px;
     font-size: 32px;
 }
 #menu_wrap a{
@@ -222,10 +221,12 @@ section{
     background-color: #1D1F24;
     background-repeat: no-repeat;
     background-position: center;
+    transition: all .7s;
 }
 .slide_prev:hover,
 .slide_next:hover{
     cursor: pointer;
+    background-color: var(--point_C);
 }
 .slide_prev{
     left: 0;
@@ -430,6 +431,7 @@ form{
 }
 input{
     border: none;
+    border-radius: 0;
 }
 #input_E{
     -webkit-appearance: none;
