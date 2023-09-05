@@ -11,26 +11,65 @@ document.addEventListener('DOMContentLoaded', function(){
         const max_slide = slide_items.length;
         let currSlide = 1;
 
+        // 무한루프
+        const start_slide = slide_items[0];
+        const end_slide = slide_items[slide_items.length - 1];
+        const startEle = document.createElement(start_slide.tagName);
+        const endEle = document .createElement(end_slide.tagName);
+
+        //element생성 및 각 위치에 추가
+        end_slide.classList.forEach((c)=>endEle.classList.add(c));
+        endEle.innerHTML = end_slide.innerHTML;
+        start_slide.classList.forEach((c)=>startEle.classList.add(c));
+        startEle.innerHTML = start_slide.innerHTML;
+        slide_items[0].before(endEle);
+        slide_items[slide_items.length - 1].after(startEle);
+
         const nextMove = () => {
             currSlide++;
             if(currSlide <= max_slide){
-                const offset = slide_width * (currSlide -1);
+                // const offset = slide_width * (currSlide -1);
+                const offset = slide_width * currSlide;
                 slide_items.forEach((i)=>{
                     i.setAttribute("style",`left: ${-offset}px`);
                 });
             }else{
-                currSlide--;
+                currSlide = 0;
+                let offset = slide_width * currSlide;
+                slide_items.forEach((i)=>{
+                    i.setAttribute("style",`transition: ${0}s; left: ${-offset}px`);
+                });
+                currSlide++;
+                offset = slide_width * currSlide;
+                //비동기 처리를 이용해 transition 제대로 적용되게 하기 위함
+                setTimeout(()=>{
+                    slide_items.forEach((i)=>{
+                        i.setAttribute("style",`transition: ${0.15}s; left: ${-offset}px`);
+                    });
+                },0)
             }
         }
         const prevMove = () => {
             currSlide--;
             if(currSlide > 0){
-                const offset = slide_width * (currSlide -1);
+                //const offset = slide_width * (currSlide -1);
+                const offset = slide_width * currSlide;
                 slide_items.forEach ((i)=>{
                     i.setAttribute("style",`left: ${-offset}px`);
                 });
             }else{
-                currSlide++;
+                currSlide = max_slide + 1;
+                let offset = slide_width * currSlide;
+                slide_items.forEach((i)=>{
+                    i.setAttribute("style",`transition: ${0}s; left: ${-offset}px`);
+                });
+                currSlide--;
+                offset = slide_width * currSlide;
+                setTimeout(()=>{
+                    slide_items.forEach((i)=>{
+                    i.setAttribute("style",`transition: ${0.15}s; left: ${-offset}px`);
+                    });
+                },0);
             }
         }
         $nextBtn.addEventListener("click",()=>{
@@ -39,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function(){
         $prevBtn.addEventListener("click",()=>{
             prevMove();
         });
+
         window.addEventListener("resize",()=>{
             slide_width = slide.clientWidth;
         });
@@ -87,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 nextMove();
             }
         });
-        
+        console.log(currSlide);
 
         
 
