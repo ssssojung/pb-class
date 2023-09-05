@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
     font-family: 'oswald';
     src: url('../font/Oswald-Medium.ttf') format('truetype');
 }
@@ -9,7 +9,7 @@
 @font-face {
     font-family: 'lato-b';
     src: url('../font/Lato-Bold.ttf') format('truetype');
-}
+} */
 :root{
     --oswald:  'oswald';
     --lato_r:  'lato-r';
@@ -33,10 +33,12 @@ body{
     font-family: 'oswald';
 }
 header{
+    position: fixed;
     width: 100%;
     min-width: 1440px;
     border-bottom: 1px solid #EBEBEB;
     background-color: #fff;
+    z-index: 100;
 }
 .navi_con{
     padding: 0 40px;
@@ -68,8 +70,48 @@ header ul{
 .navi-left nav a:hover{
     opacity: 1;
 }
-.navi-right a{
+#menu_btn{
     content: url(../img/icon/icon_menu.svg);
+    padding: 10px;
+    cursor: pointer;
+}
+#menu_btn.on{
+    content: url(../img/icon/icon_close.svg);
+}
+
+#menu_wrap{
+    position: fixed;
+    top: 0;
+    margin-top: 90px;
+    right: -300px; 
+    z-index: 99;
+    overflow: auto;
+    width: 300px; 
+    height: 100%;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    transition: right .3s ease-in-out; 
+    background-color: var(--point_C);
+}
+#menu_wrap.on{
+    right: 0;
+}
+#menu_wrap ul{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 400px;
+    padding: 50px 0;
+}
+#menu_wrap li{
+    padding: 30px 50px;
+    font-size: 32px;
+}
+#menu_wrap a{
+ transition: all .7s ease;
+}
+#menu_wrap a:hover{
+    color: #1D1F24;
 }
 
 /* 공통 */
@@ -102,6 +144,8 @@ header ul{
     text-align: center;
     background-color: var(--point_C);
     color: #fff;
+    font-family: var(--oswald);
+    text-transform: uppercase;
     height: 40px;
     line-height: 40px;
     padding: 0 25px;
@@ -112,6 +156,9 @@ header ul{
     padding-top: 94px;
     padding-left: 24px;
     word-break: keep-all;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 .card>p{
     width: 245px;
@@ -193,6 +240,8 @@ section{
     width: 100%;
     height: 580px;
     background-image: url(../img/bg_main.png);
+    background-repeat: no-repeat;
+    background-position: center;
     text-align: center;
     position: relative;
 }
@@ -238,20 +287,26 @@ div.card_con{
     border: 1px solid #f2f3f6;
     padding: 33px 27px;
 }
-.featured p{
+.featured>p{
+    color: #1D1F24;
+}
+.featured a p{
     color: #1D1F24;
     margin-bottom: 30px;
+}
+.featured a {
+    display: flex;
+    gap: 20px;
 }
 .featured li{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    
     border-bottom: 1px solid #f2f3f6;
-    /* width: 266px; */
     padding-top: 15px;
 }
-.featured li>p:nth-child(1){
+.featured li p:nth-child(1){
     font-family: var(--oswald);
     font-size: 18px;
     color: #DADADB;
@@ -315,7 +370,6 @@ aside{
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 .technology{
     background-image: url(../img/bg_technology.png);
@@ -378,6 +432,9 @@ input{
     border: none;
 }
 #input_E{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     width: 180px;
     height: 35px;
     font-family: var(--lato_r);
@@ -393,6 +450,9 @@ input{
     opacity: 0;
 }
 #input_S{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     width: 120px;
     height: 35px;
     margin-left: -5px;
@@ -564,7 +624,10 @@ input{
     .technology,
     .finance2,
     .news .T_only,
-    div.card_con{
+    div.card_con,
+    .txtBox>span,
+    .slide_prev,
+    .slide_next{
         display: none;
     }
     .news{
@@ -576,6 +639,13 @@ input{
         max-width: 335px;
         margin: 0 auto;
         gap: 20px;
+    }
+    .txtBox>p{
+        width: 275px;
+        font-family: var(--oswald);
+        font-size: 26px;
+        letter-spacing: -0.38px;
+        line-height: 39px;
     }
     aside{
         width: 335px;
@@ -589,9 +659,37 @@ input{
         min-width: 375px;
     }
     .footer_con{
-        height: 267px;
+        height: 441px;
         padding: 40px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        justify-content: flex-start;
     }
+    .footer_left{
+        order: 1;
+    }
+    .footer_nav{
+        order: 3;
+        width: 100%;
+    }
+    .footer_nav li {
+        width: 50%;
+    }
+    .footer_right{
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+    }
+    .social{
+        order: 2;
+        /* margin-bottom: 0; */
+    }
+    form{
+        order: 1;
+    }
+
   }
 
 
