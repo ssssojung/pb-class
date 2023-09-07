@@ -4,10 +4,7 @@
     --sub-color: #979797;
 }
 body,html{
-    min-width: 1440px; 
-    margin: 0 auto;
-    margin: 0;
-    padding: 0;
+    width: 100%;
     font-family: 'Poppins';
     color: var(--text-color);
 }
@@ -31,7 +28,6 @@ section>div.title{
 }
 
 .m0{
-    margin: 0 !important;
 }
 section{
     max-width: 1360px; 
@@ -40,16 +36,15 @@ section{
 }
 #hd{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 300px;
     align-items: center;
     position: fixed;
-    top: 0;
     width: 100%;
     z-index: 100;
     color: white;
     background-color: #030406;
     height: 8rem;
-    transition: height 0.2s ease-in-out;
 }
 #hd.nav-down {
     height: 6rem;
@@ -66,7 +61,6 @@ section{
 }
 #gnb a{
     color: white;
-    opacity: 0.7;
     padding: 5px 24px;
 }
 .user{
@@ -84,10 +78,6 @@ section{
     content: "";
     position: absolute;
     display: block;
-    top: 0;
-    /* bottom: 0; */
-    right: 0;
-    /* left: 0; */
     background-color: #FF0000;
     border: 1px solid #161414;
     width: 12px; 
@@ -95,72 +85,9 @@ section{
     border-radius: 50%;
 }
 .user>span{
-    opacity: 0.5;
 }
-
-.m__menuBtn{
-    width: 40px;
-    padding: 20px 5px;
+#gnb_m{
     display: none;
-    right: 60px;
-    top: 4px;
-    position: absolute;
-}
-.m__menuBtn:hover{
-    cursor: pointer;
-}
-.m__menuBtn span{
-    width: 100%;
-    height: 1px;
-    background-color: white;
-    display: block;
-    position: relative;
-}
-.m__menuBtn span::before,
-.m__menuBtn span::after{
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-}
-.m__menuBtn span::before{
-    top: 10px;
-}
-.m__menuBtn span::after{
-    top: -10px;
-}
-@media screen and (max-width:768px){
-    header{
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0 20px;
-    }
-    #gnb{
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        display: none;
-    }
-    #gnb li{
-        width: 100%;
-        text-align: center;
-    }
-    .user{
-        justify-content: center;
-        width: 100%;
-        display: none;
-
-    }
-    .m__menuBtn{
-        display: flex;
-    }
-    #gnb.active,
-    .user.active{
-        display: flex;
-    }
-
 }
 .btn_more {
     background-color:#F6F4FF;
@@ -174,7 +101,6 @@ section{
 }
 .btn_more>span::after{
     content: url(../img/icon/btn_more_icon.svg);
-    padding: 0 10px;
     display: inline;
 }
 #main{
@@ -182,21 +108,16 @@ section{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    max-width: 100%;
-    height: 70vh;
+    height: 780px;
     color: white;
-    border-radius: 0 0 35px 35px;
 }
 #main .main_content{
     padding-top: 184px;
     display: flex;
     flex-direction: column;
-    max-width: 100%;
     align-items: center;
     justify-content: center;
-}
-#main .main_content h1{
-    padding-bottom: 32px;
+    gap: 30px;
 }
 #main .main_content button{
     background-color: var(--accent-color);
@@ -207,12 +128,13 @@ section{
     font-size: 18px;
     line-height: 18px;
     padding: 27px 40px;
-    margin-bottom: 184px;
+    margin-bottom: 150px;
     cursor: pointer;
 }
 #main .searchBox{
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     background-color: white;
     border-radius: 12px;
@@ -273,7 +195,6 @@ footer .ft_left span
 }
 #hotels li span::before{
     content:url(../img/icon/mapicon.svg);
-    padding: 0 6px;
 }
 #hotels a> div{
     gap: 4px;
@@ -345,7 +266,6 @@ footer .ft_left span
     border-radius: 12px;
 }
 footer{
-    padding: 120px 0; 
     background-color: #F9F9F9;
     display: flex;
     justify-content: center;
@@ -415,7 +335,6 @@ footer .email{
     align-items: center;
     background-color: white;
     border-radius: 12px;
-    padding: 16px 0;
     width: 300px;
 }
 
@@ -443,11 +362,53 @@ footer .inputBox+input[type=image]{
 }
 section.page{
     position: relative;
-    opacity: 0;
     transform: translateY(100px);
     transition: all ease-in-out .7s;
 }
 section.page.active{
     opacity: 1;
-    transform: translateY(0);
 }
+  /* 모바일 세로 (해상도 ~ 479px)*/ 
+  @media all and (max-width:479px) {
+    #gnb,
+    header .user{
+        display: none;
+    }
+    /* #gnb_m{
+        display: block;
+        position: fixed;
+        bottom: 0;
+        height: 50%;
+        width: 100%;
+        background-color: #030406;
+        z-index: 100;
+    }
+    #gnb_m nav a{
+        color: #fff;
+        font-size: 2rem;
+    }
+    .menu_m{
+        display: block;
+        content: url(../img/icon/icon_menubar.png);
+        width: 50px;
+        height: 30px;
+        transform: translateX(50%);
+        padding-bottom: 30px;
+        padding-top: 30px;
+    }
+    #gnb_m nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: 100%;
+    }
+    #gnb_m ul{
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 100px;
+
+
+    } */
+  }
