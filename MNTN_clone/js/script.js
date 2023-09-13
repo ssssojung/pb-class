@@ -1,15 +1,22 @@
-// function updateIndicator(entries, observer) {
-//     const indicator = document.querySelector('#quick');
-  
-//     entries.forEach(entry => {
-//       const index = entry.target.textContent.replace('#', '');
-//       const el = indicator.querySelector(`[data-index="${index}"]`);    
-//       el.classList.toggle('active', entry.isIntersecting);
-//     });
-//   }
-  
-//   const io = new IntersectionObserver(updateIndicator);
-  
-//   Array.from(document.querySelectorAll('.block')).forEach(block => {
-//     io.observe(block);
-//   });
+document.addEventListener('DOMContentLoaded',(()=>{
+    const $QuickBtn = document.querySelectorAll('#quick_active a');
+    $QuickBtn.forEach((e)=>{
+        e.addEventListener('click',()=>{
+            for(let i=0; i<$QuickBtn.length; i++){
+                $QuickBtn[i].classList.remove('active');
+            }
+                e.classList.add('active');
+        console.log(parseInt(window.scrollY));
+
+        });
+    });
+
+    window.addEventListener('wheel',()=>{
+        let offset = window.scrollY;
+        console.log(parseInt(offset));
+        
+       
+    })
+
+
+}));
