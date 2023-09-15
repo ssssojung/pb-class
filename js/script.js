@@ -66,6 +66,156 @@
     
 })();
 
+(()=>{
+    // 버튼스와이퍼_work
+    const work = document.querySelector('.work .swiper_wrap');
+    let work_width = work.clientWidth;
+    
+    const prevBtn = document.querySelector('.work .work_prev_btn');
+    const nextBtn = document.querySelector('.work .work_next_btn');
+
+    const work_items = document.querySelectorAll('.work li');
+    const maxSwiper = work_items.length;
+
+    let currSwiper = 1; 
+
+    
+
+    const pagination = document.querySelector('.pagination');
+    for(let i=0; i< maxSwiper; i++){
+        if(i===0){
+            pagination.innerHTML += `<li class="active">●</li>`;
+        }else{
+            pagination.innerHTML += `<li>●</li>`;
+        }
+    }
+    const paginationItems = document.querySelectorAll('.pagination>li');
+    const paginationActive = document.querySelectorAll('.pagination>li.active');
+
+    const colorChange = () =>{
+        switch(currSwiper){
+            case 1:
+                console.log('파랑');
+                prevBtn.setAttribute("style","background-color:#5e62d1");
+                nextBtn.setAttribute("style","background-color:#5e62d1");
+                // paginationActive.setAttribute("style","color:#5e62d1");
+                
+                break
+            case 2:
+                console.log('노랑');
+                prevBtn.setAttribute("style","background-color:#4a6746");
+                nextBtn.setAttribute("style","background-color:#4a6746");
+                // paginationActive.setAttribute("style","color:#4a6746");
+                break
+            case 3:
+                console.log('주황');
+                prevBtn.setAttribute("style","background-color:#ec977c");
+                nextBtn.setAttribute("style","background-color:#ec977c");
+                // paginationActive.setAttribute("style","color:#5e62d1");
+                break
+            case 4:
+                console.log('핑크');
+                prevBtn.setAttribute("style","background-color:#e26a83");
+                nextBtn.setAttribute("style","background-color:#e26a83");
+                // paginationActive.setAttribute("style","color:#5e62d1");
+                break
+            // case 5:
+            //     console.log('핑크');
+            //     prevBtn.setAttribute("style","background-color:#e26a83");
+            //     nextBtn.setAttribute("style","background-color:#e26a83");
+            //     // paginationActive.setAttribute("style","color:#5e62d1");
+            //     break
+            
+    
+        }
+    }
+
+    const nextMove = () =>{
+        currSwiper++;
+        if(currSwiper <= maxSwiper){
+            const offset = work_width * (currSwiper -1);
+            work_items.forEach((i)=>{
+                i.setAttribute("style", `left: ${-offset}px`);
+            });
+            paginationItems.forEach((i)=>i.classList.remove("active"));
+            paginationItems[currSwiper-1].classList.add("active");
+        }else{
+            currSwiper--;
+        }
+    }
+
+    const prevMove = () =>{
+        currSwiper--;
+        if(currSwiper > 0){
+            const offset = work_width * (currSwiper -1);
+            work_items.forEach((i)=>{
+                i.setAttribute("style", `left: ${-offset}px`);
+            });
+            paginationItems.forEach((i)=>i.classList.remove("active"));
+            paginationItems[currSwiper-1].classList.add("active");
+        }else{
+            currSwiper++;
+        }
+    }
+
+    nextBtn.addEventListener("click",()=>{
+        nextMove();
+        colorChange();
+    });
+    prevBtn.addEventListener("click",()=>{
+        prevMove();
+        colorChange();
+    });
+    
+    window.addEventListener("resize",()=>{
+        work_width = work.clientWidth;
+    });
+
+    for(let i=0; i< maxSwiper; i++){
+        paginationItems[i].addEventListener("click",()=>{
+            currSwiper = i+1;
+            const offset = work_width * (currSwiper-1);
+            work_items.forEach((i)=>{
+                i.setAttribute("style",`left:${-offset}px`)
+            });
+            paginationItems.forEach((i)=>i.classList.remove("active"));
+            paginationItems[currSwiper-1].classList.add("active");
+            colorChange();
+        });
+    }
+    
+    let startPoint = 0;
+    let endPoint = 0;
+    
+    work.addEventListener("mousedown",(e)=>{
+        startPoint = e.pageX;
+    });
+    work.addEventListener("mouseup",(e)=>{
+        endPoint = e.pageX;
+        if(startPoint < endPoint){
+            prevMove();
+            colorChange();
+        } else if(startPoint > endPoint){
+            nextMove();
+            colorChange();
+        }
+    });
+
+    work.addEventListener("touchstart",(e)=>{
+        startPoint = e.touches[0].pageX;
+    });
+    work.addEventListener("touchend",(e)=>{
+        endPoint = e.chagedTouches[0].pageX;
+        if(startPoint < endPoint){
+            prevMove();
+            colorChange();
+        } else if(startPoint > endPoint){
+            nextMove();
+            colorChange();
+        }
+    });
+
+})();
 
 (()=>{
     let yOffset = 0; 
@@ -119,21 +269,21 @@
         },
         { //3
             type : 'normal',
-            heightNum : 4,
+            heightNum : 1,
             scrollHeight : 0,
             objs: {
                 container: document.querySelector('#scroll-section-3'),
             },
             
         },
-        // { //4
-        //     type : 'normal',
-        //     heightNum : 1,
-        //     scrollHeight : 0,
-        //     objs: {
-        //         container: document.querySelector('#scroll-section-4')
-        //     }
-        // },
+        { //4
+            type : 'normal',
+            heightNum : 1,
+            scrollHeight : 0,
+            objs: {
+                container: document.querySelector('#scroll-section-4')
+            }
+        },
         { //5
             type : 'normal',
             heightNum : 1,
@@ -143,6 +293,7 @@
             }
         }
     ];
+
 
     const setLayout = () =>{
         //각 스크롤 섹션의 높이 세팅
