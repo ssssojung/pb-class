@@ -1,0 +1,139 @@
+/* @font-face {
+    font-family: 'cartoon_B';
+    src: url('../font/cartoon_B.ttf') format('truetype');
+} */
+@font-face {
+    font-family: 'cartoon_R';
+    src: url('../font/cartoon_R.ttf') format('truetype');
+}
+input{ 
+    -webkit-appearance : none;
+    -moz-appearance:none;
+    appearance:none;
+    font-family: 'cartoon_R';
+    outline: none;
+    border: none;
+    padding: 5px;
+    font-size: 1.2rem;
+    border: 2px solid white;
+    background-color: rgba(255, 255, 255, 0.384);
+    padding: 15px 5px;
+    width: 150px;
+}
+input:focus{
+    -webkit-appearance : none;
+    -moz-appearance:none;
+    appearance:none;
+    outline: none;
+    /* border: none; */
+    border: 2px solid white;
+    background-color: rgba(255, 255, 255, 0.384);
+    padding: 15px 5px;
+    width: 150px;
+}
+button{
+    font-family: 'cartoon_R';
+    background: inherit ; 
+    border:none; 
+    box-shadow:none; 
+    border-radius:0; 
+    padding:0; 
+    overflow:visible; 
+    cursor:pointer;
+    padding: 16px 20px;
+    background-color: white;
+    color: #FFD585;
+    font-size: 1.2rem;
+    margin-left: 8px;
+}
+body{
+    background-color: #FFF7D4;
+    font-family: 'cartoon_R';
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+section{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Box{
+    margin: auto auto;
+    position: relative;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 400px;
+    border: 10px solid white;
+    background-color: #FFD585;
+    border-radius: 10px;
+    font-family: 'cartoon_R';
+}
+p{
+    font-size: 1.5rem;
+}
+h1{
+    color: white;
+    font-size: 5rem;
+    margin: 0;
+}
+.star{
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
+    width: 150px;
+    animation: star  infinite 1s ;
+
+}
+
+@keyframes star {
+    from{
+        rotate: 0deg;
+    }
+    25%{
+        rotate: 12deg;
+    }
+    50%{
+        rotate: 0deg;
+    }
+    75%{
+        rotate: -12deg;
+    }
+    to{
+        rotate: 0deg;
+    }
+    
+}
+  /* 모바일 가로 & 테블릿 세로 (해상도 480px ~ 767px)*/ 
+  @media all and (max-width:767px) {
+    .Box{
+        width: 400px;
+        height: 600px;
+    }
+    h1{
+        font-size: 4rem;
+    }
+  } 
+  
+  /* 모바일 세로 (해상도 ~ 479px)  */
+  @media all and (max-width:479px) {
+    .Box{
+        width: 300px;
+        height: 500px;
+        gap: 10px;
+    }
+    h1{
+        font-size: 3rem;
+    }
+    .star{
+        bottom: 13px;
+    }
+  }
