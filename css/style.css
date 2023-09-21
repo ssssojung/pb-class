@@ -794,6 +794,13 @@ header #menu_btn a {
     background-image: url(../javascript/img/star_BIZ.png);
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 60%;
+}
+.js_item:nth-child(2) .js_content{
+    background-color: #C3EDC0;
+    background-image: url(../javascript/img/green_BIZ.png);
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: 40%;
 }
 

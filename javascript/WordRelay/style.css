@@ -33,7 +33,6 @@ input:focus{
 }
 button{
     font-family: 'cartoon_R';
-    background: inherit ; 
     border:none; 
     box-shadow:none; 
     border-radius:0; 
