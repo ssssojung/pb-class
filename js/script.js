@@ -90,7 +90,7 @@
         }
     }
     const paginationItems = document.querySelectorAll('.pagination>li');
-    const paginationActive = document.querySelectorAll('.pagination>li.active');
+    // const paginationActive = document.querySelectorAll('.pagination>li.active');
 
     const colorChange = () =>{
         switch(currSwiper){
@@ -167,9 +167,6 @@
         colorChange();
     });
     
-    window.addEventListener("resize",()=>{
-        work_width = work.clientWidth;
-    });
 
     for(let i=0; i< maxSwiper; i++){
         paginationItems[i].addEventListener("click",()=>{
@@ -213,6 +210,9 @@
             nextMove();
             colorChange();
         }
+    });
+    window.addEventListener("resize",()=>{
+        work_width = work.clientWidth;
     });
 
 })();
@@ -278,11 +278,12 @@
         },
         { //4
             type : 'normal',
-            heightNum : 1,
+            heightNum : 1.4,
             scrollHeight : 0,
             objs: {
                 container: document.querySelector('#scroll-section-4')
             }
+            //높이세팅 조건문 추가해야함(sticky & normal)
         },
         { //5
             type : 'normal',
