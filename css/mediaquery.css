@@ -1,4 +1,34 @@
-@media all and (min-width:768px) and (max-width:1023px){
+    @media all and (min-width:1024px) and (max-width:1279px) { 
+    .about__contain{
+        gap: 80px;
+    }
+    .process-item:nth-child(2) { top: calc( var(--center) - 18em ); padding-bottom: calc( var(--center-p) + 18em ); }
+    .process-item:nth-child(3) { top: calc( var(--center) - 13em  ); padding-bottom: calc( var(--center-p) + 13em ); }
+    .process-item:nth-child(4) { top: calc( var(--center) - 8em  ); padding-bottom: calc( var(--center-p) + 8em ); }
+    .process-item:nth-child(5) { top: calc( var(--center) - 3em  ); padding-bottom: calc( var(--center-p) + 3em ); }
+    .process-item:nth-child(6) { top: calc( var(--center) + 19em  ); padding-bottom: calc( var(--center-p) - 15em ); }
+    .process-item p::before {
+        display: none;
+    }
+    .about__text{
+        font-size: 1.2rem;
+    }
+
+    } 
+  @media all and (min-width:768px) and (max-width:1023px){
+    .about__contain{
+        gap: 0;
+    }
+    .about__sidebar{
+        padding-left: 26px;
+        width: 210px;
+    }
+    /* .process-item{
+
+    } */
+    .about__process{
+        padding: 0 30px 0 0;
+    }
     .process-item.type_none{
         margin-top: 0;
         top: calc( var(--center) - 16em ); 
@@ -20,6 +50,7 @@
     }
     #scroll-section-2 .sticky-ele{
         left: 40px;
+        left: 20%;
     }
     .txt_list li p{
         font-size: 1.2em;
@@ -52,6 +83,7 @@
     }
     .about__contain{
         top: 0;
+
     }
     .about__sidebar{
         display: none;
@@ -65,9 +97,15 @@
     .about__process{
         padding: 0 24px;
     }
-    .about__process,
-    .about__text{
+    .about__process{
         font-size: 15px;
+    }
+    .about__text {
+        font-size: 17px;
+        line-height: 1.8em;
+        padding: 0 50px;
+        letter-spacing: -0.4px;
+        word-break: break-word;
     }
     .process-item p{
         width: 60%;
@@ -159,6 +197,9 @@
     .js_content::before{
         display: none;
     }
+    .js_list{
+        align-items: center;
+    } 
 }
 @media all and (max-width:479px) {
     body{
@@ -179,6 +220,12 @@
     }
     .process-item{
         justify-content: space-around;
+    }
+    .process-item p {
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: -0.73px;
+        line-height: 2rem;
     }
     .process-item p::before{
         display: none;
@@ -270,5 +317,8 @@
     .js_content::before{
         display: none;
     }
+    .js_list{
+        align-items: center;
+    } 
   }
 
