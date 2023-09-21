@@ -170,3 +170,81 @@ button{
     background: url(../img/hole_front.png) center center no-repeat;
     background-size: 200px 51px;
 }
+/* 모바일 가로 & 테블릿 세로 (해상도 480px ~ 767px)*/ 
+@media all and (min-width:480px) and (max-width:767px) {
+    .cell{
+        width: 150px;
+        height: 150px;
+    }
+    .hole{
+        width: 150px;
+        height: 66px;
+        background-size: 150px 66px;
+    }
+    .hole_front{
+        width: 150px;
+        height: 40px;
+        background-size: 150px 40px;
+    }
+    .Biz,
+    .dead,
+    .bomb{
+        width: 150px;
+        height: 150px;
+        background-size: 99px 150px;
+    }
+    .boom{
+        width: 150px;
+        height: 150px;  
+        background-size: 150px;
+
+    }
+    .hidden {
+        bottom: -150px;
+    }
+    .top_con{
+        justify-content: space-around;
+    }
+  } 
+  
+  /* 모바일 세로 (해상도 ~ 479px)*/ 
+  @media all and (max-width:479px) {
+    h1, 
+    .over_con p, 
+    #FinalScore{
+        font-size: 3rem;
+    }
+    .cell{
+        width: 100px;
+        height: 100px;
+    }
+    .hole{
+        width: 100px;
+        height: 44px;
+        background-size: 100px 44px;
+    }
+    .hole_front{
+        width: 100px;
+        height: 27px;
+        background-size: 100px 27px;
+    }
+    .Biz,
+    .dead,
+    .bomb{
+        width: 100px;
+        height: 100px;
+        background-size: 66px 100px;
+    }
+    .boom{
+        width: 100px;
+        height: 100px;  
+        background-size: 100px;
+
+    }
+    .hidden {
+        bottom: -100px;
+    }
+    .top_con{
+        justify-content: space-around;
+    }
+  }

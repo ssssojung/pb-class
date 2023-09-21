@@ -292,7 +292,7 @@ header #menu_btn a {
     /* max-width: 1400px; */
 }
 .about__process{
-    padding: 0 60px 0 10px;
+    padding: 0 26px 0 10px;
     max-width: 1200px;
     --center: calc( 100vh * 0.48 );
     --center-p: calc( var(--center) - 4em );
@@ -330,11 +330,12 @@ header #menu_btn a {
     font-size: 19px;
     display: flex;
     align-items: center;
+    font-weight: 600;
 }
 .process-item p::before{
     flex-grow: 1;
     content: '';
-    height: 2px;
+    height: 1px;
     margin-right: 1em;
     background-color: #555;
     opacity: 0.5;
@@ -344,6 +345,7 @@ header #menu_btn a {
     font-size: 1.5rem;
     color: var(--black);
     line-height: 1.8em;
+    font-weight: 800;
 }
 .process-item.about__text-main{
     display: block;
@@ -353,6 +355,8 @@ header #menu_btn a {
     position: relative;
     z-index: 1;
     font-weight: bold;
+    font-size: 1.7rem;
+    padding: 10px;
 }
 .marker_blur::after{
     position: absolute;
@@ -410,7 +414,7 @@ header #menu_btn a {
 .txt_list li p {
     color: var(--black);
     font-size: 1.6em;
-    font-weight: 500;
+    font-weight: 600;
     text-align: left;
     line-height: 3;
 }
@@ -786,17 +790,15 @@ header #menu_btn a {
     align-items: center;
     position: relative;
     height: 260px;
-    
-    /* border: 5px solid #445C3C; */
 }
-.js_item:nth-child(1) .js_content{
+.js_1{
     background-color: #FFF7D4;
     background-image: url(../javascript/img/star_BIZ.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60%;
 }
-.js_item:nth-child(2) .js_content{
+.js_2{
     background-color: #C3EDC0;
     background-image: url(../javascript/img/green_BIZ.png);
     background-repeat: no-repeat;
