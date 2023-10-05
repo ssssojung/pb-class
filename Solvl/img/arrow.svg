@@ -1,0 +1,28 @@
+<svg width="32" height="6" viewBox="0 0 32 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="32" height="6" fill="#F5F5F5"/>
+<g id="Frontpage" clip-path="url(#clip0_0_1)">
+<rect width="1920" height="7383" transform="translate(-666 -6569)" fill="#EDEDED"/>
+<g id="stores">
+<rect width="1920" height="743" transform="translate(-666 -535)" fill="#EDEDED"/>
+<g id="grid">
+<g id="grid_2">
+<g id="store">
+<g id="grid_3">
+<g id="button-text">
+<g id="arrow">
+<rect id="line" y="2.5" width="30" height="1" fill="#343339"/>
+<path id="arrow_2" d="M28 0.5L30.5 3L28 5.5" stroke="#343339"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_1">
+<rect width="1920" height="7383" fill="white" transform="translate(-666 -6569)"/>
+</clipPath>
+</defs>
+</svg>
