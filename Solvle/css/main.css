@@ -1,4 +1,6 @@
+@import url(../../css/reset.css);
 @import url(../css/font.css);
+@import url(../css/common.css);
 html{
     font-size: 62.5%;
 }
@@ -17,7 +19,9 @@ body{
 /* 공통 스타일 */
 section{
     padding: 128px 0;
-    border-bottom: 1px solid #cec;
+}
+.bottom-line{
+    border-bottom: 1px solid #CECECE;
 }
 .img-oval{
  width: 484px;
@@ -74,18 +78,6 @@ section{
     width: 320px;
     height: 320px;
     border-radius: 50%;
-}
-header{
-    position: fixed;
-    top: 64;
-    z-index: 100;
-}
-header nav{
-    width: 1800px;
-    height: 35px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 main{
     height: 1330px;
@@ -262,7 +254,7 @@ main .btn-oval{
 }
 .rooms .btn-all::after{
     content: '';
-    width: 30px;
+    width: 30.5px;
     height: 5px;
     background: url(../img/arrow.svg);
 }
@@ -368,51 +360,4 @@ main .btn-oval{
     content: url(../img/arrow.svg);
     
 }
-/* footer{
-    
 
-} */
-footer .footer-nav{
-    padding: 128px 0;   
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.footer-nav > ul{
-    display: flex;
-    gap: 48px;
-}
-footer .nav-list{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 48px;
-    width: 314px;
-}
-footer .nav-list > ul{
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    text-align: center;
-
-}
-footer .nav-title{
-    font-family: var(--newyork_R);
-    font-size: 3.2rem;
-    text-transform: uppercase;
-}
-footer .nav-item a{
-    font-family: var(--cabinet_R);
-    font-size: 1.6rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-.footer-copy{
-    padding-bottom: 80px;
-    text-align: center;
-    font-family: var(--cabinet_R);
-    font-size: 1.8rem;
-    line-height: 2.9rem;
-
-}

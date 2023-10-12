@@ -1,0 +1,214 @@
+header{
+    position: fixed;
+    top: 64px;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+#nav-bar{
+    z-index: 100;
+}
+#menu-overlay{
+    display: none;
+    transition: all 0.7s;
+    opacity: 0;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(52, 51, 57, 0.8);
+    /* transition: all 0.3s ease, max-height 0s 0.6s ease; */
+}
+#menu-overlay.show{
+    display: block;
+    opacity: 1;
+}
+#menu-overlay .menu-wrap{
+    margin-top: 159px;
+    width: 100%;
+    height: 390px;
+    background-color: #EDEDED;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    padding: 48px;
+    gap: 121px;
+}
+#menu-overlay .menu-sub{
+    display: flex;
+    flex-direction: column;
+}
+#menu-overlay .menu-sub>p{
+    margin-bottom: 48px;
+    /* text-transform: uppercase; */
+    font-family: var(--newyork_R);
+    line-height: 3.5rem;
+    font-size: 3.2rem;
+}
+#menu-overlay .menu-sub ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+}
+#menu-overlay .menu-sub a{
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    /* text-transform: uppercase; */
+}
+#menu-overlay .menu-product{
+    display: flex;
+    gap: 64px;
+}
+#menu-overlay .menu-item{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+#menu-overlay .menu-item:nth-child(1) > .menu-img{background-image: url(../img/SHOP-ModernChair.jpg);}
+#menu-overlay .menu-item:nth-child(2) > .menu-img{background-image: url(../img/SHOP-ElegantLamp.jpg);}
+#menu-overlay .menu-item:nth-child(3) > .menu-img{background-image: url(../img/SHOP-BlackChair.jpg);}
+#menu-overlay .menu-item .menu-img{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-size: 160px 160px;
+}
+#menu-overlay .menu-item .menu-text .product:nth-child(1){
+    margin-bottom: 8px;
+}
+header nav{
+    width: 1800px;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+}
+header nav .nav-left a{
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    color: white;
+}
+header nav .nav-center a{
+    font-family: var(--newyork_R);
+    font-size: 3.2rem;
+    line-height: 35rem;
+    color: white;
+}
+header nav .nav-right ul{
+    display: flex;
+    gap: 48px;
+}
+header nav .nav-right a{
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    color: white;
+    display: flex;
+}
+header nav #btn-menu{
+    width: 55px;
+    height: 14px;
+    background-size: 55px 14px;
+    background-image: url(../img/menu-toggle.png);    
+}
+header nav .cart-num::after{
+    content: '0';
+    /* content: attr(data-cart-num); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    margin-left: 8px;
+    background-color: white;
+    color: #343339;
+}
+footer .footer-nav{
+    padding: 128px 0;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.footer-nav > ul{
+    display: flex;
+    gap: 48px;
+}
+footer .nav-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    width: 314px;
+}
+footer .nav-list > ul{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+
+}
+footer .nav-title{
+    font-family: var(--newyork_R);
+    font-size: 3.2rem;
+    text-transform: uppercase;
+}
+footer .nav-item a{
+    font-family: var(--cabinet_R);
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.footer-copy{
+    padding-bottom: 80px;
+    text-align: center;
+    font-family: var(--cabinet_R);
+    font-size: 1.8rem;
+    line-height: 2.9rem;
+}
+
+.help{
+    width: 1600px;
+    margin: 0 auto;
+    padding: 128px 0;
+    display: flex;
+    gap: 80px;
+}
+.help-left{
+    width: 514px;
+    font-family: var(--newyork_R);
+    font-size: 9.6rem;
+    line-height: 10.5rem;
+}
+.help-right{
+    display: flex;
+    gap: 96px;
+
+}
+.help-content{
+    display: flex;
+    flex-direction: column;
+    width: 455px;
+    gap: 48px;
+}
+.help-content > p{
+    font-family: var(--newyork_R);
+    font-size: 3.6rem;
+    line-height: 3.96rem;
+}
+.help-content > div{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.help-content > div span{
+    font-family: var(--cabinet_R);
+    font-size: 1.8rem;
+    line-height: 3.24rem;
+}

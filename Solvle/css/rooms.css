@@ -1,0 +1,174 @@
+@import url(../../css/reset.css);
+@import url(../css/font.css);
+@import url(../css/common.css);
+
+html{
+    font-size: 62.5%;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /* 16px => 1.6rem으로 변환시킴 */
+    background-color: #EDEDED;
+    color: #343339;
+    min-height: 100vh;
+    width: 100%;
+}
+section{
+    margin: 0 auto;
+    width: 1920px;
+}
+header nav .nav-center a,
+header nav .nav-left a,
+header nav .nav-right a{
+    color: #343339;
+}
+header nav #btn-menu{
+    background-image: url(../img/menu-toggleB.png);
+}
+header nav .cart-num::after{
+    background-color:#343339;
+    color: white;
+}
+.btn-oval{
+    font-size: 1.6rem;
+    padding: 24px 40px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    border-radius: 500px;
+    /* transition: all 0.7s; */
+}
+.bottom-line{
+    border-bottom: 1px solid #CECECE;
+}
+.btn-all{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 1.6rem;
+    font-family: var(--cabinet_M);
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+}
+.btn-all::after{
+    content: '';
+    width: 30.5px;
+    height: 5px;
+    background: url(../img/arrow.svg);
+}
+.room-content{
+    padding-top: 195px;
+}
+.title-area{
+    display: flex;
+    width: 1600px;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 128px;
+}
+.title-left{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 660px;
+}
+.room-title{
+    font-family: var(--newyork_R);
+    font-size: 22rem;
+}
+.room-sub{
+    font-family: var(--cabinet_R);
+    font-size: 2.4rem;
+    line-height: 4rem;
+}
+.title-img{
+    position: relative;
+    width: 100%;
+    height: 2000px;
+    background-position: center;
+    background-size: cover;
+}
+.product-pop{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 330px;
+    height: 112px;
+    background-color: white;
+    padding: 16px;
+    border-radius: 200px;
+    display: flex;
+    gap: 16px;
+    transform: translate(-100px, 162px);
+}
+.pop-left{
+    width: 80px;
+    border-radius: 50%;
+    background-color: #343339;
+    background-size: 293px;
+    background-position: 50% 62%;
+}
+.product-name{
+    font-family: var(--cabinet_M);
+    font-size: 2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.product-price{
+    font-family: var(--cabinet_M);
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    
+}
+.pop-right{
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+.design{
+    width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    gap: 80px;
+    margin-top: 155px;
+}
+.design > div{
+    font-family: var(--newyork_R);
+    font-size: 12.8rem;
+    line-height: 14.1rem;
+}
+.design > p{
+    font-family: var(--cabinet_R);
+    font-size: 2.4rem;
+    line-height: 4.32rem;
+}
+.next{
+    margin-top: 377px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 128px;
+}
+.next-img{
+    display: flex;
+    justify-content: center;
+    width: 750px;
+    height: 750px;
+    border-radius: 50%;
+    background-size: 858px;
+}
+.next-img::after{
+    content: 'next';
+    display: block;
+    font-family: var(--newyork_R);
+    font-size: 26rem;
+    line-height: 23.4rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: -161px;
+}
