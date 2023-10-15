@@ -97,15 +97,9 @@
     .about__process{
         padding: 0 24px;
     }
-    .about__process{
+    .about__process,
+    .about__text{
         font-size: 15px;
-    }
-    .about__text {
-        font-size: 17px;
-        line-height: 1.8em;
-        padding: 0 50px;
-        letter-spacing: -0.4px;
-        word-break: break-word;
     }
     .process-item p{
         width: 60%;

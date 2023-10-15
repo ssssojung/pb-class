@@ -449,77 +449,32 @@ header #menu_btn a {
 }
 
 /* work */
+/* work */
 .work{
     position: relative;
     display: flex;
     justify-content: center;
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    gap: 50px;
     width: 100vw;
-    /* background: linear-gradient(180deg, #dbe9f6 15%, #fefcc9 35%,#FFD9C0 75%, #F4BFBF 100%); */
+    transition: 0.5s;
+    background: linear-gradient(180deg, #dbe9f6 15%, #fefcc9 35%,#FFD9C0 75%, #F4BFBF 100%);
 }
-.swiper_wrap{
-    display: flex;
-    flex-wrap: nowrap;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    user-select: none;
+.work__list{
+    width: 80%;
 }
 .work__list li{
     display: flex;
-    flex-direction: row-reverse;
     justify-content: center;
-    /* gap: 200px; */
-    width: 100%;
+    gap: 200px;
     align-items: center;
-    position: relative;
-    left: 0;
-    flex-shrink: 0;
-    transition: left 0.15s;
-}
-.work_prev_btn,
-.work_next_btn{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    background-color:#5e62d1;
-    cursor: pointer;
-
-}
-.work_prev_btn{
-    left: 100px;
-    content: url(../img/icon_prev.svg);
-    
-}
-.work_next_btn{
-    right: 100px;
-    content: url(../img/icon_next.svg);
-}
-.pagination{
-    position: absolute;
-    bottom: 100px;
-    display: flex;
-    gap: 5px;
-}
-.pagination >li{
-    cursor: pointer;
-    color: white;
-    
-}
-.pagination>li.active{
-    color: #5e62d1;
+    height: 100vh;
 }
 .work__left{
     width: 30%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: end;
     /* margin-right: auto; */
     /* border: 3px solid #381553; */
 }
@@ -528,17 +483,10 @@ header #menu_btn a {
     margin-bottom: 8px;
     /* color: white; */
 }
-.work1{background-color: #dbe9f6;}
-.work2{background-color: #fefcc9;}
-.work3{background-color: #FFD9C0;}
-.work4{background-color: #F4BFBF;}
-.work5{background-color: #8EA7E9;}
-
 .work1 .color{color: #667eea;}
 .work2 .color{color: #70AF85;}
 .work3 .color{color: #EA907A;}
 .work4 .color{color: #DE5B7B;}
-.work5 .color{color: #DE5B7B;}
 .work__left h4{
     font-size: 3rem;
     text-align: right;
@@ -596,7 +544,7 @@ header #menu_btn a {
 
 
 .work__right{
-    width: 40%;
+    width: 50%;
 }
 
 .project__banner{
@@ -623,7 +571,7 @@ header #menu_btn a {
     animation-iteration-count: infinite;
 }
     
-.banner-1{background-image: url(../img/clone_1.png); animation-delay: 1s;}
+.banner-1{background-image: url(../img/work_1.png); animation-delay: 1s;}
 .banner-2{background-image: url(../img/clone_2.png); animation-delay: 5s;}
 .banner-3{background-image: url(../img/clone_3.png); animation-delay: 10s;}
 .banner-4{background-image: url(../img/react_ui.png); animation-delay: 15s;}

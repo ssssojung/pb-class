@@ -1,13 +1,10 @@
+
 $(document).ready(function(){
-    $(function(){
+    
+
+	$(function(){
 		includeLayout();
 	});
-    $('#btn-menu').click(()=>{
-        console.log('눌림')
-        $('#menu-overlay').toggleClass('show');
-        //레이아웃밖 클릭시 닫기 추가
-    })
-
 	const includeLayout = ()=> {
 		var includeArea = $('[data-include]');
 		var self, url;
@@ -19,6 +16,12 @@ $(document).ready(function(){
 			});
 		});
 	}
-    // console.log("ready!");
-
+		$(window).click((e)=>{
+			console.log(e.target);
+		})
+	// console.log("ready!");
+		$('#btn-menu').click(()=>{
+			$('#menu-overlay').toggleClass('show');
+		})
 });
+
