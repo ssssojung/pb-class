@@ -16,7 +16,7 @@
                 <a href="#none" class="cart-num">CART</a>
             </li>
             <li id="btn-menu">
-                <a href="#none"  ></a>
+                <a></a>
             </li>
         </ul>
     </div>

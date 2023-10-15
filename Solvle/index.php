@@ -9,7 +9,10 @@
     <title>S&Oslash;LVLE</title>
 </head>
 <body>
-    <header role="header" data-include="include/header.html"></header>
+    <!-- <header role="header" data-include="include/header.html"></header> -->
+    <?php
+    require_once $_SERVER["DOCUMENT_ROOT"]."/include/header.php"
+    ?>
     <main>
         <div class="main-text">
             <h2>Design<br>Furniture</h2>
