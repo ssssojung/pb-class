@@ -67,6 +67,8 @@ section{
     background-color: #343339;
     color: white;
     border-radius: 50%;
+    font-size: 1.6rem;
+    font-family: var(--cabinet_B);
     
 }
 .circle-S{

@@ -96,7 +96,7 @@ header nav .nav-left a{
 header nav .nav-center a{
     font-family: var(--newyork_R);
     font-size: 3.2rem;
-    line-height: 35rem;
+    line-height: 3.5rem;
     color: white;
 }
 header nav .nav-right ul{
@@ -110,6 +110,7 @@ header nav .nav-right a{
     display: flex;
 }
 header nav #btn-menu{
+    cursor: pointer;
     width: 55px;
     height: 14px;
     background-size: 55px 14px;

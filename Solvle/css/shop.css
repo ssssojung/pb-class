@@ -1,0 +1,138 @@
+@import url(../../css/reset.css);
+@import url(../css/font.css);
+@import url(../css/common.css);
+
+html{
+    font-size: 62.5%;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /* 16px => 1.6rem으로 변환시킴 */
+    background-color: #EDEDED;
+    color: #343339;
+    min-height: 100vh;
+    width: 100%;
+}
+section{
+    margin: 0 auto;
+    width: 1920px;
+}
+header nav .nav-center a,
+header nav .nav-left a,
+header nav .nav-right a{
+    color: #343339;
+}
+header nav #btn-menu{
+    background-image: url(../img/menu-toggleB.png);
+}
+header nav .cart-num::after{
+    background-color:#343339;
+    color: white;
+}
+.shop-content{
+    padding-top: 195px;
+}
+.shop-title{
+    font-family: var(--newyork_R);
+    text-align: center;
+    font-size: 22rem;
+    margin-bottom: 128px;
+}
+.controls{
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    padding: 32px 0;
+    border-top: 1px solid #cecece;
+    border-bottom: 1px solid #cecece;
+}
+.cate-item{
+    font-family: var(--cabinet_M);
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    /* display: inline-block; */
+    position: relative;
+    padding: 5px;
+}
+.cate-item::after{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 0%;
+    height: 1px;
+    background-color: #343339;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.5s;
+}
+.controls li.active::after,
+.controls li:hover::after{
+    width: 100%;
+}
+.product-area{
+    padding: 128px 0;
+    width: 1600px;
+    margin: 0 auto;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 96px 0;
+}
+.product-area > a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;   
+}
+.product-area .product-img{
+    background-repeat: no-repeat;
+    background-size: 484px 726px;
+    width: 484px;
+    height: 726px;
+    border-radius: 500px;
+}
+.product-area a:nth-child(1) .product-img{background-image: url(../img/SHOP-ModernChair.jpg);}
+.product-area a:nth-child(2) .product-img{background-image: url(../img/SHOP-ElegantLamp.jpg);}
+.product-area a:nth-child(3) .product-img{background-image: url(../img/SHOP-BlackChair.jpg);}
+.product-area a:nth-child(4) .product-img{background-image: url(../img/SHOP-LisbonSofa.jpg);}
+.product-area a:nth-child(5) .product-img{background-image: url(../img/SHOP-RetroChair.jpg);}
+.product-area a:nth-child(6) .product-img{background-image: url(../img/SHOP-BlackChair2.jpg);}
+.badge_new{
+    position: relative;
+}
+.badge_new::after{
+    content: 'new';
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+    right: 32px;
+    width: 80px;
+    height: 80px;
+    background-color: #343339;
+    color: white;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    font-family: var(--cabinet_B);
+}
+.product-text{
+    font-family: var(--cabinet_R);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.product-name{
+    font-size: 2.8rem;
+    margin-bottom: 8px;
+}
+.product-price{
+    font-size: 1.6rem;
+}

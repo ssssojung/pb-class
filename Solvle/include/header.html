@@ -15,8 +15,8 @@
             <li>
                 <a href="#none" class="cart-num">CART</a>
             </li>
-            <li id="btn-menu">
-                <a href="#none"  ></a>
+            <li>
+                <a id="btn-menu"></a>
             </li>
         </ul>
     </div>
@@ -85,3 +85,8 @@
         </li>
     </ul>
 </nav>
+<script>
+    $('#btn-menu').click(()=>{
+		$('#menu-overlay').toggleClass('show');
+	})
+</script>
