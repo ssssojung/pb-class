@@ -10,10 +10,10 @@
     <div class="nav-right">
         <ul>
             <li>
-                <a href="#none">SHOP</a>
+                <a href="/Solvle/layout/shop.html">SHOP</a>
             </li>
             <li>
-                <a href="#none" class="cart-num">CART</a>
+                <a id="btn-cart">CART <span class="cart-num">0</span></a>
             </li>
             <li>
                 <a id="btn-menu"></a>
@@ -60,7 +60,7 @@
         <li class="menu-sub">
             <p>Featured</p>
             <div class="menu-product">
-                <a href="#none" class="menu-item">
+                <a href="/Solvle/layout/shop_single1.html" class="menu-item">
                     <div class="menu-img"></div>
                     <div class="menu-text">
                         <p>Modern Chair</p>
@@ -85,8 +85,35 @@
         </li>
     </ul>
 </nav>
+<section id="cart-layout">
+    <div class="cart-wrap">
+        <div class="cart-content">
+            <div class="cart-top">
+                <p class="cart-title">Cart</p>
+                <p class="btn-close">Close</p>
+            </div>
+            <div class="cart-center">
+    
+            </div>
+        </div>
+        <div class="cart-bottom">
+            <div class="cart-subtotal">
+                <p>Subtotal</p>
+                <p>$<span class="cart-total"> 0 </span>USD</p>
+            </div>
+            <div class="btn-checkout">continue to checkout</div>
+        </div>
+    </div>
+</section>
 <script>
     $('#btn-menu').click(()=>{
 		$('#menu-overlay').toggleClass('show');
-	})
+	});
+    $('#btn-cart').click(()=>{
+        $('#cart-layout').addClass('show');
+    });
+    $('.btn-close').click(()=>{
+        $('#cart-layout').removeClass('show');
+    });
+    
 </script>

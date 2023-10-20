@@ -8,6 +8,7 @@ html{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    user-select: none;
 }
 body{
     /* 16px => 1.6rem으로 변환시킴 */
@@ -358,8 +359,5 @@ main .btn-oval{
     letter-spacing: 1.6px;
     text-transform: uppercase;
 }
-.store .btn-all::after{
-    content: url(../img/arrow.svg);
-    
-}
+
 
