@@ -37,7 +37,7 @@ $(document).ready(function(){
 		
 	});
 	
-	$(function(){
+	// $(function(){
 		const $plus = $('.quantity-plus');
 		const $minus = $('.quantity-minus');
 
@@ -64,9 +64,34 @@ $(document).ready(function(){
 		});
 
 		const productadd = () =>{
-			var productInfo = '상품추가 할라고 함';
+			var items = $('.add-item');
+			let title = $('.text-area .title').text();
+			let totalNum = cartNum;
+			var productInfo = 
+			`                
+				<div class="add-item border-top">  
+					<div class="item-content">
+						<div class="item-img" style="background-image: url(../img/SHOP-ElegantLamp.jpg);"></div>
+						<div class="item-center">
+							<div>
+								<p class="item-name">${title}</p>
+								<p class="item-price">$<span> 249.00 </span>USD</p>
+							</div>
+							<span class="btn-remove">Remove</span>
+						</div>
+					</div>
+					<div class="item-right">
+						<p class="item-quantity">${totalNum}</p>
+					</div>
+				</div>
+			`;
 			$('.cart-center').append(productInfo);
-			console.log(productInfo);
+		}
+
+		const productremove = () =>{
+			$('.btn-remove').click(function(){
+				$(this).closest('.add-item').remove();
+			});
 		}
 
 		const CartHandler = () =>{ //카트추가
@@ -78,14 +103,13 @@ $(document).ready(function(){
 				i = 1;
 				quantity.text(totalCount);
 				productadd();
-				
+				productremove();
 			});
 		};
 		CartHandler();
-		
-		
 
-	});
+
+	// });
 	
 
 
