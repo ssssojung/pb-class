@@ -122,6 +122,16 @@
 <script>
     $('#btn-menu').click(()=>{
 		$('#menu-overlay').toggleClass('show');
+        if($('#menu-overlay').hasClass('show')){
+            $('#menu-overlay').on('scroll touchmove mousewheel', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            });
+            // console.log('준비')
+        }else{
+            $('#menu-overlay').off('scroll touchmove mousewheel');
+        }
 	});
     $('#btn-cart').click(()=>{
         $('#cart-layout').addClass('show');
