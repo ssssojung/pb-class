@@ -4,12 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SØLVE</title>
+    <link rel="stylesheet" href="../css/rooms.css">
 </head>
 <body>
-    <section class="rooms-slide">
-        <div class="">
-
+    <header role="header" data-include="../include/header.html"></header>
+    <section class="rooms">
+        <div  class="rooms_slide">
+            <ul class="slide_list">
+                <li class="slide_item" style="background-image: url(../img/ROOM-oslo1.jpg);">
+                    <div class="overlay">
+                        <div class="rooms-title">
+                            <p>Oslo</p>
+                            <div>
+                                <a href="" class="btn-oval">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="slide_item" style="background-image: url(../img/ROOM-oslo2.jpg);">
+                    <div class="overlay">
+                        <div class="rooms-title">
+                            <p>Oslo</p>
+                            <div>
+                                <a href="" class="btn-oval">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="slide_item" style="background-image: url(../img/ROOM-lisbon.jpg);">
+                    <div class="overlay">
+                        <div class="rooms-title">
+                            <p>Lisbon</p>
+                            <div>
+                                <a href="" class="btn-oval">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
+        <style>
+                header nav .nav-center a,
+                header nav .nav-left a,
+                header nav .nav-right a{
+                    color: white;
+                }
+                header nav #btn-menu{
+                    background-image: url(../img/menu-toggle.png);
+                }
+                header nav .cart-num::after{
+                    background-color:white;
+                    color: #343339;
+                }
+        </style>
     </section>
+    <script src="../../vendor/jquery-1.10.2.min.js"></script>
+    <script src=".././js/script.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+            // timer();
+            // var interval;
+
+            resize();
+            setTimeout(resize,100);
+
+            function resize(){
+                $width = $(window).innerWidth;
+                $('.slide_item').css({width: $width});
+            };
+
+            $(window).resize(function(){
+                resize();
+            });
+            
+    
+            function timer(){
+                var interval = setInterval(function(){slide()},5000)
+            };
+
+            function slide(){
+                $('.slide_list').animate({"left":"-100vw"},1500,function(){
+                    $(this).css({"left" : 0});
+                    $('.slide_list').append($('.slide_list').children('li').eq(0));
+                });
+            };
+        });
+    </script>
 </body>
 </html>
