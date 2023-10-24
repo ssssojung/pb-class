@@ -21,6 +21,9 @@ section{
     margin: 0 auto;
     width: 1920px;
 }
+header{
+    background: transparent;
+}
 header nav .nav-center a,
 header nav .nav-left a,
 header nav .nav-right a{

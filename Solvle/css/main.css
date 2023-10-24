@@ -17,6 +17,9 @@ body{
     min-height: 100vh;
     width: 100vw;
     overflow-x: hidden;
+  }
+  body::-webkit-scrollbar {
+    display: none;
 }
 /* 공통 스타일 */
 section{
@@ -42,7 +45,7 @@ section{
     border-radius: 500px;
     transition: all 0.7s;
 }
-.featred .title,
+.featured .title,
 .rooms .title{
     margin-bottom: 96px;
 }
@@ -116,21 +119,21 @@ main .btn-oval{
     color: white;
     border:1px solid white;
 }
-.featred{
+.featured{
     margin: 0 161px;
 }
-.featred .title{
+.featured .title{
     font-family: var(--newyork_R);
     font-size: 12.8rem;
     text-align: center;
 }
-.featred .wrap{
+.featured .wrap{
     display: flex;
     justify-content: space-between;
 }
-.featred .product:nth-child(1) .img-oval{background-image: url(../img/SHOP-ModernChair.jpg);}
-.featred .product:nth-child(2) .img-oval{background-image: url(../img/SHOP-ElegantLamp.jpg);}
-.featred .product:nth-child(3) .img-oval{background-image: url(../img/SHOP-BlackChair.jpg);}
+.featured .product:nth-child(1) .img-oval{background-image: url(../img/SHOP-ModernChair.jpg);}
+.featured .product:nth-child(2) .img-oval{background-image: url(../img/SHOP-ElegantLamp.jpg);}
+.featured .product:nth-child(3) .img-oval{background-image: url(../img/SHOP-BlackChair.jpg);}
 .product-name{
     font-size: 2rem;
     text-transform: uppercase;
@@ -376,16 +379,16 @@ main .btn-oval{
         font-size: 13rem;
         line-height: 13.4rem;
       }
-      .featred{
+      .featured{
         margin: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
       }
-      .featred .wrap{
+      .featured .wrap{
         justify-content: space-around;
       }
-      .featred .title{
+      .featured .title{
         font-size: 10.8rem;
       }
       .img-oval{
@@ -516,22 +519,22 @@ main .btn-oval{
             font-size: 8rem;
             line-height: 8.4rem;
           }
-          .featred{
+          .featured{
             margin: 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
           }
-          .featred .wrap{
+          .featured .wrap{
             /* justify-content: space-around; */
             flex-direction: column;
             gap: 30px;
           }
-          .featred .title{
+          .featured .title{
             font-size: 7.8rem;
             margin-bottom: 30px;
           }
-          .featred .txt-area{
+          .featured .txt-area{
             text-align: center;
           }
           .img-oval{
@@ -665,21 +668,21 @@ main .btn-oval{
             font-size: 6rem;
             line-height: 6.4rem;
           }
-          .featred{
+          .featured{
             margin: 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
           }
-          .featred .wrap{
+          .featured .wrap{
             flex-direction: column;
             gap: 30px;
           }
-          .featred .title{
+          .featured .title{
             font-size: 4.8rem;
             margin-bottom: 30px;
           }
-          .featred .txt-area{
+          .featured .txt-area{
             text-align: center;
           }
           .img-oval{

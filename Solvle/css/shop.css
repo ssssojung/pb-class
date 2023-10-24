@@ -18,9 +18,12 @@ body{
     min-height: 100vh;
     width: 100%;
 }
-section{
+/* section{
     margin: 0 auto;
     width: 1920px;
+} */
+header{
+    background: transparent;
 }
 header nav .nav-center a,
 header nav .nav-left a,
@@ -128,36 +131,34 @@ header nav .cart-num::after{
     font-family: var(--cabinet_B);
 }
 .product .txt-area>p{
-    font-family: var(--cabinet_R);
+    font-family: var(--cabinet_M);
     text-transform: uppercase;
 }
 .product-name{
-    font-size: 2.8rem;
+    font-size: 2rem;
     margin-bottom: 8px;
 }
 .product-price{
     font-size: 1.6rem;
 }
 
-.featred .title{
+.featured .title{
     margin-bottom: 96px;
 }
-.featred{
-    padding: 128px 161px;
+.featured{
+    padding: 128px 0;
+    margin: 0 161px;
 }
-.featred .title{
+.featured .title{
     font-family: var(--newyork_R);
     font-size: 12.8rem;
     text-align: center;
 }
-.featred .wrap{
+.featured .wrap{
     display: flex;
     justify-content: space-between;
 }
-.featred .txt-area{
-    font-family: var(--cabinet_M);
-}
-.featred .product{
+.featured .product{
  display: flex;
  flex-direction: column;
  gap: 32px;
@@ -173,13 +174,13 @@ header nav .cart-num::after{
     background-size: 484px 726px;
     position: relative;
    }
-.featred .product:nth-child(1) .img-oval{background-image: url(../img/SHOP-ModernChair.jpg);}
-.featred .product:nth-child(2) .img-oval{background-image: url(../img/SHOP-ElegantLamp.jpg);}
-.featred .product:nth-child(3) .img-oval{background-image: url(../img/SHOP-BlackChair.jpg);}
+.featured .product:nth-child(1) .img-oval{background-image: url(../img/SHOP-ModernChair.jpg);}
+.featured .product:nth-child(2) .img-oval{background-image: url(../img/SHOP-ElegantLamp.jpg);}
+.featured .product:nth-child(3) .img-oval{background-image: url(../img/SHOP-BlackChair.jpg);}
 .shop-main {
     display: flex;
     align-items: center;
-    width: 100%;
+    width: 100vw;
 }
 .shop-main .img-area{
     background-position: center;
@@ -289,7 +290,7 @@ header nav .cart-num::after{
     cursor: pointer;
 }
 .description{
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: center;
     padding: 128px 0;
@@ -366,3 +367,430 @@ header nav .cart-num::after{
 .border-top{
     border-top: 1px solid #CECECE;
 }
+
+/* 테블릿 세로 (해상도 768px ~ 1023px)*/ 
+@media all and (min-width:768px) and (max-width:1023px) { 
+    .shop-content{
+        width: 100vw;
+    }
+    .shop-title {
+        font-size: 10rem;
+    }
+    .product-area .product-img{
+        width: 230px;
+        height: 345px;
+        background-size: cover;
+    }
+    .product-area{
+        max-width: 768px;
+        justify-content: space-around;
+    }
+
+    .featured{
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .featured .wrap{
+      justify-content: space-around;
+    }
+    .featured .title{
+      font-size: 10.8rem;
+    }
+    .img-oval{
+      width: 230px;
+      height: 345px;
+      background-size: 100% auto;
+    }
+    .badge_new::after{
+      top: 0;
+      right: 0;
+    }
+
+    /* shop_single */
+    .shop-main .img-area{
+        height: 100vh;
+        /* background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat; */
+        background-size: cover;
+    }
+    .shop-main .wrap{
+        width: 75%;
+    }
+    .shop-main .text-area .title{
+        font-size: 8.8rem;
+        line-height: 10rem;
+    }
+    .shop-main .text-area span{
+        font-size: 1.8rem;
+        line-height: 3.5rem;
+    }
+    .shop-main .details {
+        width: 100%;
+        justify-content: space-between;
+        gap: 0;
+    }
+    .shop-main .btn-area{
+        flex-direction: column;
+        padding: 40px 0;
+    }
+    .shop-main .btn-area .btn {
+        padding: 12px 20px;
+        width: 190px;
+    }
+    .shop-main .btn-area .addCart{
+        display: flex;
+        justify-content: center;
+    }
+
+    .description {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .description .description-text{
+        padding: 0;
+    }
+    .description>div{
+        width: 75%;
+        word-break: keep-all;
+        margin: 0 auto;
+    }
+
+    /* detail */
+    #details-layout .details-wrap{
+        width: 60%;
+    }
+    #details-layout .details-wrap{
+        padding: 64px 55px;
+    }
+    #details-layout .details-content {
+        padding: 48px 0;
+    }
+    #details-layout .details-title {
+        font-size: 3rem;
+        line-height: 3.3rem;
+        margin-bottom: 20px;
+    }
+    #details-layout .details-text {
+        font-size: 1.6rem;
+        line-height: 2.5rem;
+    }
+    #details-layout .details-text li {
+        font-size: 1.4rem;
+    }
+
+  } 
+  
+  /* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/ 
+  @media all and (min-width:480px) and (max-width:767px) {
+
+    .shop-content{
+        width: 100vw;
+        padding-top: 100px;
+    }
+    .shop-title {
+        font-size: 9rem;
+        margin-bottom: 50px;
+    }
+    .product-area .product-img{
+        width: 140px;
+        height: 210px;
+        background-size: cover;
+    }
+    .product-area{
+        max-width: 480px;
+        justify-content: space-around;
+    }
+    .product-name{
+        font-size: 1.8rem;
+    }
+    .product-price{
+        font-size: 1.4rem;
+    }
+
+    .featured{
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .featured .wrap{
+        /* justify-content: space-around; */
+        flex-direction: column;
+        gap: 30px;
+    }
+    .featured .title{
+        font-size: 7.8rem;
+        margin-bottom: 30px;
+    }
+    .featured .txt-area{
+        text-align: center;
+    }
+    .img-oval{
+        width: 230px;
+        height: 345px;
+        background-size: 100% auto;
+    }
+    .badge_new::after{
+        width: 60px;
+        height: 60px;
+        top: 0;
+        right: 0;
+    }
+
+        /* shop_single */
+        .shop-main{
+            flex-direction: column;
+        }
+        .shop-main .img-area{
+            height: 100vh;
+            width: 100vw;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .shop-main .main-right{
+            width: 80%;
+            margin-top: -220px;
+        }
+        .shop-main .text-area .title{
+            font-size: 8.8rem;
+            line-height: 10rem;
+            color: white;
+        }
+        .shop-main .text-area span{
+            font-size: 1.8rem;
+            line-height: 3.5rem;
+        }
+        .shop-main .details {
+            width: 100%;
+            justify-content: space-between;
+            gap: 0;
+        }
+        .shop-main .btn-area{
+            padding: 40px 0;
+        }
+        .shop-main .btn-area .btn {
+            padding: 15px 20px;
+            width: 190px;
+        }
+        .shop-main .btn-area .addCart{
+            display: flex;
+            justify-content: center;
+        }
+        .description {
+            flex-direction: column;
+            gap: 50px;
+        }
+        .description .description-text{
+            padding: 0;
+            font-size: 2rem;
+            line-height: 4rem;
+        }
+        .description>div{
+            width: 75%;
+            word-break: keep-all;
+            margin: 0 auto;
+        }
+        .description .description-text li, 
+        #details-layout .details-text li{
+            font-size: 1.7rem;
+        }
+
+            /* detail */
+
+    #details-layout .details-wrap{
+        width: 60%;
+    }
+    #details-layout .details-wrap{
+        padding: 50px;
+    }
+    #details-layout .details-content {
+        padding: 32px 0;
+    }
+    #details-layout .details-title {
+        font-size: 2.5rem;
+        line-height: 2.8rem;
+        margin-bottom: 20px;
+    }
+    #details-layout .details-text {
+        font-size: 1.5rem;
+        line-height: 2.1rem;
+    }
+    #details-layout .details-text li {
+        font-size: 1.2rem;
+    }
+
+  } 
+  
+  /* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/ 
+  @media all and (max-width:479px) {
+      
+    .shop-content{
+        width: 100vw;
+        padding-top: 100px;
+    }
+    .shop-title {
+        font-size: 5rem;
+        margin-bottom: 50px;
+    }
+    .cate-item{
+        font-size: 1.5rem;
+    }
+    .product-area .product-img{
+        width: 140px;
+        height: 210px;
+        background-size: cover;
+    }
+    .product-area{
+        max-width: 340px;
+        justify-content: space-around;
+    }
+    .product-name{
+        font-size: 1.8rem;
+    }
+    .product-price{
+        font-size: 1.4rem;
+    }
+
+        .featured{
+          margin: 0;
+          padding: 50px 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        .featured .wrap{
+          flex-direction: column;
+          gap: 30px;
+        }
+        .featured .title{
+          font-size: 4.8rem;
+          margin-bottom: 30px;
+        }
+        .featured .txt-area{
+          text-align: center;
+        }
+        .img-oval{
+          width: 230px;
+          height: 345px;
+          background-size: 100% auto;
+        }
+        .badge_new::after{
+          top: 0;
+          right: 0;
+          width: 60px;
+          height: 60px;
+        }
+        .btn-oval{
+          padding: 12px 20px;
+          font-size: 1.5rem;
+        }
+
+
+        /* shop_single */
+        .shop-main{
+            flex-direction: column;
+        }
+        .shop-main .wrap{
+            width: 100%;
+        }
+        .shop-main .img-area{
+            height: 100vh;
+            width: 100vw;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .shop-main .main-right{
+            width: 80%;
+            margin-top: -220px;
+        }
+        .shop-main .text-area .title{
+            font-size: 8.8rem;
+            line-height: 10rem;
+            color: white;
+        }
+        .shop-main .text-area span{
+            font-size: 1.8rem;
+            line-height: 3.5rem;
+        }
+        .shop-main .details {
+            width: 100%;
+            justify-content: space-between;
+            gap: 0;
+        }
+        .shop-main .details li {
+            font-size: 1.4rem;
+        }
+        .shop-main .btn-area{
+            /* flex-direction: column; */
+            padding: 40px 0;
+        }
+        .shop-main .btn-area .btn {
+            padding: 15px 20px;
+            width: 190px;
+        }
+        .shop-main .btn-area .addCart{
+            display: flex;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+        .description {
+            flex-direction: column;
+            gap: 30px;
+            padding: 50px 0;
+        }
+        .description .description-title{
+            font-size: 2.5rem;
+            line-height: 3rem;
+        }
+        .description .description-text{
+            padding: 0;
+            font-size: 1.6rem;
+            line-height: 3rem;
+        }
+        .description>div{
+            width: 75%;
+            word-break: keep-all;
+            margin: 0 auto;
+        }
+        .description .description-text li, 
+        #details-layout .details-text li{
+            font-size: 1.3rem;
+        }
+
+    /* detail */
+
+    #details-layout .details-wrap{
+        width: 100%;
+        height: 80%;
+        margin: auto 0;
+    }
+    #details-layout .details-wrap{
+        padding: 30px;
+    }
+    #details-layout .details-content {
+        padding: 20px 0;
+    }
+    #details-layout .details-title {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        margin-bottom: 10px;
+    }
+    #details-layout .details-text {
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+    }
+    #details-layout .details-text li {
+        font-size: 1.2rem;
+    }
+
+        
+
+
+  }

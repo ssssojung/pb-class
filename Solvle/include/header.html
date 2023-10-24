@@ -3,7 +3,7 @@
         <a href="#none">LOOKBOOK</a>
     </div>
     <div id="logo" class="nav-center">
-        <a href="#none">
+        <a href="/Solvle/index.html">
             Sølve
         </a>
     </div>
@@ -113,7 +113,7 @@
         <div class="cart-bottom">
             <div class="cart-subtotal">
                 <p>Subtotal</p>
-                <p>$<span class="cart-total"> 0 </span>USD</p>
+                <p>$ <span class="cart-total">0</span> USD</p>
             </div>
             <div class="btn-checkout">continue to checkout</div>
         </div>
@@ -123,13 +123,35 @@
     $('#btn-menu').click(()=>{
 		$('#menu-overlay').toggleClass('show');
         if($('#menu-overlay').hasClass('show')){
+
+            $('header #nav-bar a').css("color","white");
+            $('header #nav-bar #btn-menu').css({
+                
+                "background-image":"url(../img/menu-toggle.png)",
+                 "width":"55px",
+                 "height":"14px",
+                 "backgroundSize":"55px 14px"
+                
+                });
+
             $('#menu-overlay').on('scroll touchmove mousewheel', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
                 return false;
             });
-            // console.log('준비')
+            
         }else{
+            $('header #nav-bar a').css("color","");
+            $('header #nav-bar #btn-menu').css({
+                
+                "background-image":"",
+                 "width":"",
+                 "height":"",
+                 "backgroundSize":""
+                
+                });
+
+
             $('#menu-overlay').off('scroll touchmove mousewheel');
         }
 	});

@@ -15,7 +15,21 @@ $(document).ready(function(){
 		});
 	};
 	
+
 	// $('header').load("./include/header.html");
+
+	let lastScroll = 0;
+	$(window).on('scroll',function(){
+		let scrollTop = $(this).scrollTop();
+		if(scrollTop > lastScroll){
+			$('header').addClass('nav-up');
+		}else{
+			$('header').removeClass('nav-up');
+		}
+		lastScroll = scrollTop;
+	})
+
+
 
 	// shop
 	$('.controls li').click((e)=>{
@@ -64,28 +78,50 @@ $(document).ready(function(){
 		});
 
 		const productadd = () =>{
-			var items = $('.add-item');
+			
 			let title = $('.text-area .title').text();
+			let img = $('.img-area').attr("style");
+			let price = $('.text-area .price > span').text();
 			let totalNum = cartNum;
 			var productInfo = 
-			`                
-				<div class="add-item border-top">  
-					<div class="item-content">
-						<div class="item-img" style="background-image: url(../img/SHOP-ElegantLamp.jpg);"></div>
-						<div class="item-center">
-							<div>
-								<p class="item-name">${title}</p>
-								<p class="item-price">$<span> 249.00 </span>USD</p>
+
+				`                
+					<div class="add-item border-top" data-name="${title}">  
+						<div class="item-content">
+							<div class="item-img" style="${img}"></div>
+							<div class="item-center">
+								<div>
+									<p class="item-name">${title}</p>
+									<p class="item-price">$ <span>${price}</span> USD</p>
+								</div>
+								<span class="btn-remove">Remove</span>
 							</div>
-							<span class="btn-remove">Remove</span>
+						</div>
+						<div class="item-right">
+							<p class="item-quantity">${totalNum}</p>
 						</div>
 					</div>
-					<div class="item-right">
-						<p class="item-quantity">${totalNum}</p>
-					</div>
-				</div>
-			`;
+				`
+			;
+			let totalPrice = totalNum * Number(price)
+			$('#cart-layout .cart-total').text(totalPrice.toFixed(2));
+			
 			$('.cart-center').append(productInfo);
+			var arr = $('.add-item').get();
+			
+			// $.each(arr, function(i,ele){
+			// 	var item = ele.dataset.name;
+			// 	if(arr[i].dataset.name == item){
+			// 		console.log(true);
+			// 		// console.log($(this));
+			// 		$('.add-item[data-name=]')
+			// 		$(this).find('.item-quantity').text(totalNum);
+			// 	}else{
+			// 		$('.cart-center').append(productInfo);
+			// 	}
+			// 	// console.log(item);
+			// 	// console.log(arr[i].dataset.name)
+			// })
 		}
 
 		const productremove = () =>{
