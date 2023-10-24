@@ -175,3 +175,199 @@ header nav .cart-num::after{
     text-align: center;
     margin-top: -161px;
 }
+/* 테블릿 세로 (해상도 768px ~ 1023px)*/ 
+@media all and (min-width:768px) and (max-width:1023px) { 
+    section{
+        width: 100vw;
+    }
+    /* article{
+        height: 100vh;
+    } */
+    .title-left{
+        width: 70%;
+    }
+    .room-title {
+        font-size: 13rem;
+    }
+    .room-sub {
+        font-size: 1.9rem;
+        line-height: 3rem;
+    }
+    .title-area {
+        width: 90%;
+
+    }
+    .title-img{
+        width: 100vw;
+        height: 100vw;
+        background-size: cover;
+    }
+    .product-pop {
+        transform: translate(0,-50%);
+    }
+    .design {
+        width: 100vw;
+        padding: 0 40px;
+        /* flex-direction: column; */
+    }
+    .design .design-title{
+        max-width: 230px;
+        font-size: 4.8rem;
+        line-height: 6.1rem;
+        position: sticky;
+        top: 50%;
+    }
+    .next{
+        width: 100vw;
+        height: 100vh;
+        margin-top: 150px;
+        padding: 0;
+    }
+    .next-img {
+        width: 450px;
+        height: 450px;
+        background-size: cover;
+    }
+    .next-img::after {
+        font-size: 16rem;
+        line-height: 13.4rem;
+        margin-top: -100px;
+    }
+
+  } 
+  
+  /* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/ 
+  @media all and (min-width:480px) and (max-width:767px) {
+    section{
+        width: 100vw;
+    }
+    .room-content {
+        padding-top: 100px;
+    }
+    .title-left{
+        width: 60%;
+    }
+    .room-title {
+        font-size: 8.5rem;
+    }
+    .room-sub {
+        font-size: 1.3rem;
+        line-height: 2.5rem;
+    }
+    .title-area {
+        width: 90%;
+        margin-bottom: 100px;
+
+    }
+    .btn-all{
+        font-size: 1.3rem;
+        gap: 10px;
+    }
+    .title-img{
+        width: 100vw;
+        height: 100vw;
+        background-size: cover;
+    }
+    .product-pop {
+       display: none;
+    }
+    .design {
+        width: 100vw;
+        padding: 0 40px;
+        flex-direction: column;
+        gap: 50px;
+    }
+    .design .design-title{
+        font-size: 3rem;
+        line-height: 4.5rem;
+    }
+    .design > p {
+        font-size: 1.5rem;
+        line-height: 3rem;
+    }
+    .next{
+        width: 100vw;
+        margin-top: 150px;
+        padding-bottom: 150px;
+    }
+    .next-img {
+        width: 300px;
+        height: 300px;
+        background-size: cover;
+    }
+    .next-img::after {
+        font-size: 12rem;
+        line-height: 12.4rem;
+        margin-top: -90px;
+    }
+  } 
+  
+  /* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/ 
+  @media all and (max-width:479px) {
+    section{
+        width: 100vw;
+    }
+    .room-content {
+        padding-top: 100px;
+    }
+    .title-left{
+        width: 100%;
+    }
+    .room-title {
+        font-size: 6.5rem;
+    }
+    .room-sub {
+        font-size: 1.2rem;
+        line-height: 2.5rem;
+    }
+    .title-area {
+        width: 90%;
+        margin-bottom: 50px;
+        flex-direction: column;
+
+    }
+    .title-right{
+        margin-top: 20px;
+    }
+    .btn-all{
+        font-size: 1.3rem;
+        gap: 10px;
+    }
+    .title-img{
+        width: 100vw;
+        height: 100vw;
+        background-size: cover;
+    }
+    .product-pop {
+       display: none;
+    }
+    .design {
+        width: 100vw;
+        padding: 0 40px;
+        flex-direction: column;
+        gap: 50px;
+    }
+    .design .design-title{
+        font-size: 2.5rem;
+        line-height: 3.5rem;
+    }
+    .design > p {
+        font-size: 1.4rem;
+        line-height: 3rem;
+    }
+    .next{
+        width: 100vw;
+        margin-top: 150px;
+        padding-bottom: 150px;
+    }
+    .next-img {
+        width: 250px;
+        height: 250px;
+        background-size: cover;
+    }
+    .next-img::after {
+        font-size: 9rem;
+        line-height: 19.4rem;
+        margin-top: -115px;
+    }
+  }
