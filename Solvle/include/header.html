@@ -1,19 +1,53 @@
 <nav id="nav-bar">
     <div class="nav-left">
-        <a href="//ssssojung.github.io/pb-class/Solve/layout/look.html">LOOKBOOK</a>
+        <a href="//ssssojung.github.io/pb-class/Solve/layout/look">LOOKBOOK</a>
     </div>
     <div id="logo" class="nav-center">
-        <a href="//ssssojung.github.io/pb-class/Solve/index.html">
+        <a href="//ssssojung.github.io/pb-class/Solve/index.h">
             Sølve
         </a>
     </div>
     <div class="nav-right">
         <ul>
             <li>
-                <a href="//ssssojung.github.io/pb-class/Solve/layout/shop.html">SHOP</a>
+                <a href="//ssssojung.github.io/pb-class/Solve/layout/shop">SHOP</a>
             </li>
             <li>
                 <a id="btn-cart">CART <span class="cart-num">0</span></a>
+                <div id="cart-layout">
+                    <div class="cart-wrap">
+                        <div class="cart-content">
+                            <div class="cart-top">
+                                <p class="cart-title">Cart</p>
+                                <p class="btn-close">Close</p>
+                            </div>
+                            <div class="cart-center">
+                                <!-- <div class="add-item border-top">  
+                                    <div class="item-content">
+                                        <div class="item-img" style="background-image: url(../img/SHOP-ElegantLamp.jpg);"></div>
+                                        <div class="item-center">
+                                            <div>
+                                                <p class="item-name">Modern chair</p>
+                                                <p class="item-price">$<span> 249.00 </span>USD</p>
+                                            </div>
+                                            <span class="btn-remove">Remove</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-right">
+                                        <p class="item-quantity">1</p>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="cart-bottom">
+                            <div class="cart-subtotal">
+                                <p>Subtotal</p>
+                                <p>$ <span class="cart-total">0</span> USD</p>
+                            </div>
+                            <div class="btn-checkout">continue to checkout</div>
+                        </div>
+                    </div>
+                </div>
             </li>
             <li>
                 <a id="btn-menu"></a>
@@ -27,10 +61,10 @@
             <p>Sølve</p>
             <ul>
                 <li>
-                    <a href="//ssssojung.github.io/pb-class/Solve/layout/shop.html">Home</a>
+                    <a href="//ssssojung.github.io/pb-class/Solve/layout/shop">Home</a>
                 </li>
                 <li>
-                    <a href="//ssssojung.github.io/pb-class/Solve/layout/rooms.html">Rooms</a>
+                    <a href="//ssssojung.github.io/pb-class/Solve/layout/rooms">Rooms</a>
                 </li>
                 <li>
                     <a href="#none">Journal</a>
@@ -44,10 +78,10 @@
             <p>Shop</p>
             <ul>
                 <li>
-                    <a href="//ssssojung.github.io/pb-class/Solve/layout/shop.html">Home</a>
+                    <a href="//ssssojung.github.io/pb-class/Solve/layout/shop">Home</a>
                 </li>
                 <li>
-                    <a href="//ssssojung.github.io/pb-class/Solve/layout/rooms.html">Rooms</a>
+                    <a href="//ssssojung.github.io/pb-class/Solve/layout/rooms">Rooms</a>
                 </li>
                 <li>
                     <a href="#none">Lookbook</a>
@@ -60,14 +94,14 @@
         <li class="menu-sub">
             <p>Featured</p>
             <div class="menu-product">
-                <a href="//ssssojung.github.io/pb-class/Solve/layout/shop_single2.html" class="menu-item">
+                <a href="//ssssojung.github.io/pb-class/Solve/layout/shop_single2" class="menu-item">
                     <div class="menu-img"></div>
                     <div class="menu-text">
                         <p>Modern Chair</p>
                         <p>$ 249.00 USD</p>
                     </div>
                 </a>
-                <a href="//ssssojung.github.io/pb-class/Solve/layout/shop_single1.html" class="menu-item">
+                <a href="//ssssojung.github.io/pb-class/Solve/layout/shop_single1" class="menu-item">
                     <div class="menu-img"></div>
                     <div class="menu-text">
                         <p>Elegant Lamp</p>
@@ -85,54 +119,22 @@
         </li>
     </ul>
 </nav>
-<section id="cart-layout">
-    <div class="cart-wrap">
-        <div class="cart-content">
-            <div class="cart-top">
-                <p class="cart-title">Cart</p>
-                <p class="btn-close">Close</p>
-            </div>
-            <div class="cart-center">
-                <!-- <div class="add-item border-top">  
-                    <div class="item-content">
-                        <div class="item-img" style="background-image: url(../img/SHOP-ElegantLamp.jpg);"></div>
-                        <div class="item-center">
-                            <div>
-                                <p class="item-name">Modern chair</p>
-                                <p class="item-price">$<span> 249.00 </span>USD</p>
-                            </div>
-                            <span class="btn-remove">Remove</span>
-                        </div>
-                    </div>
-                    <div class="item-right">
-                        <p class="item-quantity">1</p>
-                    </div>
-                </div> -->
-            </div>
-        </div>
-        <div class="cart-bottom">
-            <div class="cart-subtotal">
-                <p>Subtotal</p>
-                <p>$ <span class="cart-total">0</span> USD</p>
-            </div>
-            <div class="btn-checkout">continue to checkout</div>
-        </div>
-    </div>
-</section>
-<script>
+<div style="background-image: url(../img/menu-toggle.png);"></div>
+
+<script type="text/javascript">
     $('#btn-menu').click(()=>{
 		$('#menu-overlay').toggleClass('show');
         if($('#menu-overlay').hasClass('show')){
 
             $('header #nav-bar a').css("color","white");
-            $('header #nav-bar #btn-menu').css({
+            // $('header #nav-bar #btn-menu').css({
                 
-                "background-image":"url(../img/menu-toggle.png)",
-                 "width":"55px",
-                 "height":"14px",
-                 "backgroundSize":"55px 14px"
+            //     "background-image":"url(../img/menu-toggle.png)",
+            //      "width":"55px",
+            //      "height":"14px",
+            //      "backgroundSize":"55px 14px"
                 
-            });
+            // });
 
             $('#menu-overlay').on('scroll touchmove mousewheel', function(e) {
                 e.preventDefault();
@@ -142,14 +144,14 @@
             
         }else{
             $('header #nav-bar a').css("color","");
-            $('header #nav-bar #btn-menu').css({
+            // $('header #nav-bar #btn-menu').css({
                 
-                "background-image":"",
-                 "width":"",
-                 "height":"",
-                 "backgroundSize":""
+            //     "background-image":" ",
+            //      "width":" ",
+            //      "height":" ",
+            //      "backgroundSize":" "
                 
-                });
+            //     });
 
 
             $('#menu-overlay').off('scroll touchmove mousewheel');

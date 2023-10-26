@@ -380,7 +380,8 @@ header nav .cart-num::after{
     width: 100vw;
     height: 100vh;
     position: fixed;
-    overflow: hidden;
+    transition:all 0.3s ease-in-out;
+    /* overflow: hidden; */
 }
 .look-list{
     width: 110vw;
@@ -411,6 +412,7 @@ header nav .cart-num::after{
     background-position: center;
     position: relative;
     overflow: hidden;
+    background-repeat: no-repeat;
     transition: background-size .3s ease;
 
   }

@@ -20,7 +20,8 @@ header{
     z-index: 99;
 }
 #menu-overlay{
-    display: none;
+    /* display: none; */
+    z-index: -2;
     opacity: 0;
     position: fixed;
     overflow: hidden;
@@ -31,8 +32,11 @@ header{
     background-color: rgba(52, 51, 57, 0.8);
 }
 #menu-overlay.show{
+    z-index: 2;
     display: block;
     opacity: 1;
+    transform: translateY(0);
+    transition: all 400ms ease 0s;
 }
 #menu-overlay .menu-wrap{
     margin-top: 159px;
@@ -44,6 +48,12 @@ header{
     justify-content: center;
     padding: 48px;
     gap: 121px;
+    transform: translateY(10px);
+    opacity: 0;
+}
+#menu-overlay.show .menu-wrap{
+    opacity: 1;
+    transition: opacity 300ms ease 0s;
 }
 #menu-overlay .menu-sub{
     display: flex;
@@ -256,6 +266,7 @@ footer .nav-item a{
     z-index: 150;
     background-color: rgba(52, 51, 57, 0.8);
     padding: 0;
+    transition: opacity 300ms ease 0s;
 }
 #cart-layout.show .cart-wrap{
     transform: translateX(0);
@@ -268,7 +279,7 @@ footer .nav-item a{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.7s ease;
+    transition: transform 300ms ease 0s;
     position: absolute;
 }
 #cart-layout .cart-content{
