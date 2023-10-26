@@ -45,44 +45,50 @@ $(document).ready(function(){
 				$('.product-area > a').fadeIn('slow');
 		
 			}else{
-				$('.product-area > a').not('.'+filter).fadeOut('slow');
+				$('.product-area > a').not('.'+filter).hide();
 			}
 			$('.product-area > a').filter('.'+filter).fadeIn('slow');
 		
 	});
 	
-	// $(function(){
-		const $plus = $('.quantity-plus');
-		const $minus = $('.quantity-minus');
+	$(function(){
 
-		var quantity = $('.quantity-num');
-		let i = 1;
+		let quantity = $('.quantity-num');
 		let totalCount = 1;
 		let cartNum = 0;
-
+		
+		let i = 1;
+		const $plus = $('.quantity-plus');
+		const $minus = $('.quantity-minus');
+		
 		$plus.click(function(){
 			i++;
 			totalCount = i;
 			quantity.text(totalCount);
-		});
-
-		$minus.click(function(){
+		 });
+   
+		 $minus.click(function(){
 			if(i > 1){
-				i--;
-				totalCount = i;
-				quantity.text(totalCount);
+			   i--;
+			   totalCount = i;
+			   quantity.text(totalCount);
 			}
 			else{
-				alert('최소수량 입니다.')
+			   alert('최소수량 입니다.')
 			}
-		});
+		 });
+		 
+   
+
+		let title = $('.text-area .title').text();
+		let img = $('.img-area').attr("style");
+		let price = $('.text-area .price > span').text();
+		let totalNum = 0;
+		let totalPrice = 0;
 
 		const productadd = () =>{
 			
-			let title = $('.text-area .title').text();
-			let img = $('.img-area').attr("style");
-			let price = $('.text-area .price > span').text();
-			let totalNum = cartNum;
+			totalNum = totalCount;
 			var productInfo = 
 
 				`                
@@ -92,7 +98,7 @@ $(document).ready(function(){
 							<div class="item-center">
 								<div>
 									<p class="item-name">${title}</p>
-									<p class="item-price">$ <span>${price}</span> USD</p>
+									<p class="item-priceCon">$ <span class="item-price">${(totalNum * Number(price)).toFixed(2)}</span> USD</p>
 								</div>
 								<span class="btn-remove">Remove</span>
 							</div>
@@ -103,49 +109,90 @@ $(document).ready(function(){
 					</div>
 				`
 			;
-			let totalPrice = totalNum * Number(price)
+			
+			
+			// $('.cart-center').append(productInfo);
+			let currProduct = $('.cart-center').append(productInfo);
+
+			$(function(){
+				var PriceArr = currProduct.find('.item-price').get();
+				let num = 0;
+				for(var i=0; i<PriceArr.length; i++){
+					num += Number(PriceArr[i].innerHTML);
+				}
+				totalPrice = num
+
+			})
+	  
 			$('#cart-layout .cart-total').text(totalPrice.toFixed(2));
 			
-			$('.cart-center').append(productInfo);
-			var arr = $('.add-item').get();
+   
+			// const prevProduct = $('.cart-center').find('.add-item');
+   
+
+			// console.log(prevProduct,currProduct)
+
+			// if(prevProduct.length > 1){
+			// 	var ProductArr = prevProduct.get()
+			// 	for(let i=0; i<ProductArr.length; i++){
+			// 		// console.log(ProductArr[i].dataset['name'])
+			// 		console.log(ProductArr[i].dataset['name'])
+
+			// 		if(ProductArr[0].dataset['name']==ProductArr[1].dataset['name']){
+			// 			ProductArr[0].remove()
+			// 			prducuctArr[0].
+			// 			console.log(ProductArr)
+			// 		}
+	
+			// 	};
+			// };
 			
-			// $.each(arr, function(i,ele){
-			// 	var item = ele.dataset.name;
-			// 	if(arr[i].dataset.name == item){
-			// 		console.log(true);
-			// 		// console.log($(this));
-			// 		$('.add-item[data-name=]')
-			// 		$(this).find('.item-quantity').text(totalNum);
-			// 	}else{
-			// 		$('.cart-center').append(productInfo);
-			// 	}
-			// 	// console.log(item);
-			// 	// console.log(arr[i].dataset.name)
-			// })
-		}
+		};
 
 		const productremove = () =>{
 			$('.btn-remove').click(function(){
+				let removeProduct = $(this).closest('.add-item')
+				removeProduct.addClass('remove');
+				let removeNum = Number(removeProduct.find('.item-quantity').text());
+				let removePrice = Number(removeProduct.find('.item-price').text());
+				cartNum -= removeNum
+				totalPrice -= removePrice
+				$('.cart-num').text(cartNum);
+				$('#cart-layout .cart-total').text(totalPrice.toFixed(2));
 				$(this).closest('.add-item').remove();
 			});
-		}
+		};
+
+
 
 		const CartHandler = () =>{ //카트추가
+
 			$('.addCart').click(function(){ 
-				cartNum += totalCount
-				// console.log([cartNum],[totalCount]);
+				cartNum += totalCount;
 				$('.cart-num').text(cartNum);
-				totalCount = 1;
-				i = 1;
+				
 				quantity.text(totalCount);
 				productadd();
+				i = 1;
+				totalCount = 1;
+				quantity.text(totalCount);
+				// totalNum = totalCount;
+
+				$('#cart-layout').addClass('show');
 				productremove();
+
 			});
+
 		};
 		CartHandler();
+		
+
+		
+		
 
 
-	// });
+
+	});
 	
 
 

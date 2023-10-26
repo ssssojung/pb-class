@@ -100,10 +100,16 @@ header nav .cart-num::after{
 }
 .product-area .product-img{
     background-repeat: no-repeat;
-    background-size: 484px 726px;
     width: 484px;
     height: 726px;
     border-radius: 500px;
+    background-size: 100%;
+    background-position: center;
+    overflow: hidden;
+    transition: background-size .3s ease;
+}
+.product-area .product-img:hover{
+    background-size: 110%;
 }
 .product-area a:nth-child(1) .product-img{background-image: url(../img/SHOP-ModernChair.jpg);}
 .product-area a:nth-child(2) .product-img{background-image: url(../img/SHOP-ElegantLamp.jpg);}
@@ -171,8 +177,9 @@ header nav .cart-num::after{
     border-radius: 500px;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 484px 726px;
+    background-size: 100%;
     position: relative;
+    transition: background-size .3s ease;
    }
 .featured .product:nth-child(1) .img-oval{background-image: url(../img/SHOP-ModernChair.jpg);}
 .featured .product:nth-child(2) .img-oval{background-image: url(../img/SHOP-ElegantLamp.jpg);}
@@ -180,7 +187,7 @@ header nav .cart-num::after{
 .shop-main {
     display: flex;
     align-items: center;
-    width: 100vw;
+    /* width: 100vw; */
 }
 .shop-main .img-area{
     background-position: center;
@@ -278,8 +285,8 @@ header nav .cart-num::after{
     display: flex;
     gap: 48px;
     width: 640px;
-    border-top: 1px solid #343339;
-    border-bottom: 1px solid #343339;
+    border-top: 1px solid #CECECE;
+    border-bottom: 1px solid #CECECE;
     padding: 32px 0;
 }
 .shop-main .details li{
@@ -290,7 +297,7 @@ header nav .cart-num::after{
     cursor: pointer;
 }
 .description{
-    width: 100vw;
+    /* width: 100vw; */
     display: flex;
     justify-content: center;
     padding: 128px 0;
@@ -367,6 +374,53 @@ header nav .cart-num::after{
 .border-top{
     border-top: 1px solid #CECECE;
 }
+
+/* lookbook */
+.look-wrap{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    overflow: hidden;
+}
+.look-list{
+    width: 110vw;
+    height: 110vh;
+    background-color: #EDEDED;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+    margin-top: -5vh;
+    margin-left: -5vw;
+    position: relative;
+    transition: transform .5s linear;
+  }
+  .look-list > li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 64px;
+    align-items: center;
+  }
+  .look-item{
+    width: 300px;
+    height: 450px;
+    border-radius: 500px;
+    background-size: 100%;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    transition: background-size .3s ease;
+
+  }
+
+  .look-item:hover,
+  .img-oval:hover{
+    cursor: pointer;
+    background-size: 110%;
+
+  }
 
 /* 테블릿 세로 (해상도 768px ~ 1023px)*/ 
 @media all and (min-width:768px) and (max-width:1023px) { 

@@ -61,10 +61,12 @@ header{
     flex-direction: column;
     justify-content: center;
     gap: 24px;
+    /* font-family: var(--cabinet_R); */
 }
 #menu-overlay .menu-sub a{
     font-size: 1.6rem;
     letter-spacing: 1px;
+    font-family: var(--cabinet_R);
     /* text-transform: uppercase; */
 }
 #menu-overlay .menu-product{
@@ -133,8 +135,8 @@ header nav .cart-num{
     height: 22px;
     border-radius: 50%;
     margin-left: 8px;
-    background-color: white;
-    color: #343339;
+    background-color:#343339;
+    color: white;
 }
 footer .footer-nav{
     padding: 128px 0;   
@@ -235,12 +237,18 @@ footer .nav-item a{
     height: 5px;
     background: url(../img/arrow.svg);
 }
+
 /* cart-layout */
 #cart-layout{
-    display: none;
     opacity: 0;
+    z-index: 0;
+    width: 0;
+}
+#cart-layout.show{
+    opacity: 1;
+    display: flex;
+    justify-content: flex-end;
     position: fixed;
-    overflow: hidden;
     top: 0;
     left: 0;
     width: 100vw;
@@ -249,19 +257,19 @@ footer .nav-item a{
     background-color: rgba(52, 51, 57, 0.8);
     padding: 0;
 }
-#cart-layout.show{
-    display: flex;
-    justify-content: flex-end;
-    opacity: 1;
+#cart-layout.show .cart-wrap{
+    transform: translateX(0);
 }
 #cart-layout .cart-wrap{
     width: 500px;
     height: 100%;
-    
+    transform: translateX(500px);
     background-color: #EDEDED;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: transform 0.7s ease;
+    position: absolute;
 }
 #cart-layout .cart-content{
     display: flex;
@@ -269,6 +277,7 @@ footer .nav-item a{
     justify-content: space-between;
     gap: 48px;
     padding: 32px;
+    overflow: scroll;
 }
 #cart-layout .cart-top{
     font-family: var(--newyork_R);
@@ -319,6 +328,10 @@ footer .nav-item a{
  
 
 }
+.cart-center {
+    overflow: scroll;
+    /* scroll */
+}
 .cart-center .add-item{
     display: flex;
     justify-content: space-between;
@@ -355,7 +368,7 @@ footer .nav-item a{
     font-size: 2rem;
     letter-spacing: 1px;
 }
-.cart-center .add-item .item-price{
+.cart-center .add-item .item-priceCon{
     font-size: 1.6rem;
     letter-spacing: 1px;
 }
@@ -678,5 +691,21 @@ footer .nav-item a{
     .footer-copy {
         font-size: 1rem;
         line-height: 2rem;
+    }
+    #cart-layout .cart-wrap{
+        width: 100vw;
+        height: 100%;
+        transform: translateX(100vw);
+        background-color: #EDEDED;
+    }
+    .cart-center .add-item .item-name{
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    #cart-layout .cart-subtotal {
+        font-size: 1.7rem;
+    }
+    #cart-layout .btn-checkout{
+        padding: 20px 0;
     }
 }
