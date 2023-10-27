@@ -302,6 +302,23 @@ footer .nav-item a{
     letter-spacing: 1px;
     text-transform: uppercase;
     cursor: pointer;
+    display: inline-block;
+    position: relative;
+    padding: 5px;
+}
+#cart-layout .cart-top .btn-close::after{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 0%;
+    height: 1px;
+    background-color: #343339;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.5s;
+}
+#cart-layout .cart-top .btn-close:hover::after{
+    width: 100%;
 }
 #cart-layout .cart-bottom{
     padding: 24px 32px 32px 32px;

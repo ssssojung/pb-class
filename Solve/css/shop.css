@@ -356,6 +356,23 @@ header nav .cart-num::after{
     letter-spacing: 1px;
     text-transform: uppercase;
     cursor: pointer;
+    display: inline-block;
+    position: relative;
+    padding: 5px;
+}
+#details-layout .btn-close::after{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 0%;
+    height: 1px;
+    background-color: #343339;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.5s;
+}
+#details-layout .btn-close:hover::after{
+    width: 100%;
 }
 #details-layout .details-content{
     padding: 64px 0;
@@ -380,8 +397,7 @@ header nav .cart-num::after{
     width: 100vw;
     height: 100vh;
     position: fixed;
-    transition:all 0.3s ease-in-out;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 .look-list{
     width: 110vw;
@@ -394,8 +410,8 @@ header nav .cart-num::after{
     gap: 64px;
     margin-top: -5vh;
     margin-left: -5vw;
-    position: relative;
-    transition: transform .5s linear;
+    position: relative; 
+     transition: transform .5s linear;
   }
   .look-list > li{
     display: flex;
@@ -423,6 +439,92 @@ header nav .cart-num::after{
     background-size: 110%;
 
   }
+
+  #look-overlay{
+    position:absolute;
+    z-index: 150;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(52, 51, 57, 0.8);
+    }
+    .look-modal{
+        background-color: #ededed;
+        width: 600px;
+        height: 100vh;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        top: 0%;
+        bottom: 0%;
+        left: 50%;
+        left: 50%;
+        right: auto;
+        overflow: scroll;
+        transform: translate(-50%);
+        padding: 64px 48px;
+    }
+    #look-overlay p.btn-close{
+        font-family: var(--cabinet_M);
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        padding: 5px;
+    }
+    #look-overlay .btn-close::after{
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        width: 0%;
+        height: 1px;
+        background-color: #343339;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all 0.5s;
+    }
+    #look-overlay .btn-close:hover::after{
+        width: 100%;
+    }
+    #look-overlay .modal-content{
+        width: 400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 32px;
+    }
+    #look-overlay .btn-oval{
+        font-size: 1.6rem;
+        padding: 24px 40px;
+        letter-spacing: 1.6px;
+        text-transform: uppercase;
+        border-radius: 500px;
+        transition: all 0.7s;
+        background-color: #343339;
+        color: white;
+        transition: all 0.7s;
+    }
+    #look-overlay .btn-oval:hover{
+        background-color: #ededed;
+        border: 1px solid #343339;
+        color: #343339;
+    }
+    #look-overlay .modal-title{
+        font-family: var(--newyork_R);
+        font-size: 6.4rem;
+        line-height: 7.84rem;
+    }
+    #look-overlay .modal-sub{
+        font-family: var(--cabinet_R);
+        font-size: 2rem;
+        line-height: 3.6rem;
+    }
 
 /* 테블릿 세로 (해상도 768px ~ 1023px)*/ 
 @media all and (min-width:768px) and (max-width:1023px) { 

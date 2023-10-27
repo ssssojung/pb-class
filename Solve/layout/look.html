@@ -9,78 +9,110 @@
 </head>
 <body>
     <header role="header" data-include="../include/header.html"></header>
-    <!-- <div class="look-pop">
-
-    </div> -->
-    <section class="look-wrap">
-        <!-- <div class="lookbook"> -->
-            <ul class="look-list">
-                <li>
-                    <div class="look-item" ></div>
-                    <div class="look-item" ></div>
-                </li>
-                <li>
-                    <div class="look-item" ></div>
-                    <div class="look-item" ></div>
-                    <div class="look-item" ></div>
-                </li>
-                <li>
-                    <div class="look-item" ></div>
-                    <div class="look-item" ></div>
-                </li>
-                <li>
-                    <div class="look-item" ></div>
-                    <div class="look-item" ></div>
-                    <div class="look-item" ></div>
-                </li>
-                <li>
-                    <div class="look-item" ></div>
-                    <div class="look-item" ></div>
-                </li>
-                <li>
-                    <div class="look-item" ></div>
-                    <div class="look-item" ></div>
-                    <div class="look-item" ></div>
-                </li>
-            </ul>
-        <!-- </div> -->
-    </section>
-    <style>
-        .random0{background-image: url(../img/SHOP-BlackChair.jpg);}
-        .random1{background-image: url(../img/LOOK-CozyHome.jpg);}
-        .random2{background-image: url(../img/LOOK-MinimalDesk.jpg);}
-        .random3{background-image: url(../img/LOOK-BlueChair.jpg);;}
-        .random4{background-image: url(../img/LOOK-Oslo.jpg);}
-        .random5{background-image: url(../img/SHOP-ElegantLamp.jpg);}
-        .random6{background-image: url(../img/LOOK-WoodStool.jpg);}
-        .random7{background-image: url(../img/LOOK-RattanTable.jpg);}
-        .random8{background-image: url(../img/SHOP-LisbonSofa.jpg);}
-        .random9{background-image: url(../img/SHOP-RetroChair.jpg);}
-        .random10{background-image: url(../img/SHOP-ModernChair.jpg);}
-        .random11{background-image: url(../img/SHOP-BlackChair2.jpg);}
-        .random12{background-image: url(../img/SHOP-LisbonSofa.jpg);}
-        .random13{background-image: url(../img/LOOK-WoodenFurniture.jpg);}
-        .random14{background-image: url(../img/LOOK-ModernKitchen.jpg);}
-    </style>
+    <div class="look-wrap">
+        <div id="look-overlay">
+            <div class="look-modal">
+                <div class="modal-content">
+                    <p class="btn-close">close</p>
+                    <div class="modal-title">Norwegian Chair</div>
+                    <a href="//ssssojung.github.io/pb-class/Solve/layout/shop">
+                        <div class="look-item" ></div>
+                    </a>
+                    <p class="modal-sub">
+                        Mauris cursus mattis molestie a iaculis at erat pellentesque adipiscing. Netus et malesuada fames ac turpis egestas integer eget.
+                    </p>
+                    <a href="//ssssojung.github.io/pb-class/Solve/layout/shop_single1">
+                        <p class="btn-oval">Get Product</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <ul class="look-list">
+            <li >
+                <div class="look-item" data-name="Wood Stool" style="background-image: url(../img/LOOK-WoodStool.jpg);"></div>
+                <div class="look-item" data-name="Wooden Furniture" style="background-image: url(../img/LOOK-WoodenFurniture.jpg);"></div>
+            </li>
+            <li>
+                <div class="look-item" data-name="Blue Chair" style="background-image: url(../img/LOOK-BlueChair.jpg);"></div>
+                <div class="look-item" data-name="Black Chair" style="background-image: url(../img/SHOP-BlackChair.jpg);"></div>
+                <div class="look-item" data-name="Black Chair" style="background-image: url(../img/SHOP-BlackChair2.jpg);"></div>
+            </li>
+            <li>
+                <div class="look-item" data-name="Elegant Lamp" style="background-image: url(../img/SHOP-ElegantLamp.jpg);"></div>
+                <div class="look-item" data-name="Minimal Desk" style="background-image: url(../img/LOOK-MinimalDesk.jpg);"></div>
+            </li>
+            <li>
+                <div class="look-item" data-name="Rattan Table" style="background-image: url(../img/LOOK-RattanTable.jpg);"></div>
+                <div class="look-item" data-name="Modern Chair" style="background-image: url(../img/SHOP-ModernChair.jpg);"></div>
+                <div class="look-item" data-name="Lisbon Sofa" style="background-image: url(../img/SHOP-LisbonSofa.jpg);"></div>
+            </li>
+            <li>
+                <div class="look-item" data-name="Madrid" style="background-image: url(../img/LOOK-Madrid.jpg);"></div>
+                <div class="look-item" data-name="Oslo" style="background-image: url(../img/LOOK-Oslo.jpg);"></div>
+            </li>
+            <li>
+                <div class="look-item" data-name="Cozy Home" style="background-image: url(../img/LOOK-CozyHome.jpg);"></div>
+                <div class="look-item" data-name="Modern Kitchen" style="background-image: url(../img/LOOK-ModernKitchen.jpg);"></div>
+                <div class="look-item" data-name="Retro Chair" style="background-image: url(../img/SHOP-RetroChair.jpg);"></div>
+            </li>
+        </ul>
+       
+    </div>
     <script src="../../vendor/jquery-1.10.2.min.js"></script>
-    
     <script type="text/javascript">
-        // $(document).ready(function(){
 
-        //         $(document).on("mousemove", function(event) {
-        //         var window_height = $(this).height();
-        //         var window_width = $(this).width();
-        //         var mouseXpos = event.clientX;
-        //         var mouseYpos = event.clientY;
-        //         var Ymove = (window_width / 2 - mouseXpos) * 0.05;
-        //         var Xmove= (window_height / 2 - mouseYpos) * -0.05;
-        //             $(".look-wrap").css(
-        //                 "transform",
-        //                 `translateX(${Ymove}px) translateY(-${Xmove}px)`
-        //             );
-        //         });
+            $(function(){
 
-        // });
+                $('.look-item').click(function(){
+                    let getData = $(this).attr("data-name");
+                    let getStyle = $(this).attr("style");
+                    $('#look-overlay').fadeIn();
+                    $('#look-overlay .look-item').attr("style",`${getStyle}`);
+                    $('#look-overlay .modal-title').text(getData);
+                    $('header').hide();
+                });
+                var LayerPopup = $("#look-overlay");
+                $(document).mouseup(function (e){
+                    if(LayerPopup.has(e.target).length == 0 ){
+                        $('#look-overlay').fadeOut();
+                         $('header').show();
+                    }
+                });
+                $('#look-overlay').click(function(){
+                    $('#look-overlay').fadeOut();
+                    $('header').show();
+                });
+                
+
+                    
+            });
+          
+    </script>
+       <script src="../js/script.js"></script>
+</body>
+</html>
+    <!-- <script type="text/javascript">
+        $(document).ready(function(){
+            $(function(){
+                var rage = 100;
+                $('.look-wrap').on("mousemove", function(e) {
+                    positionChange(e);
+                });
+    
+                function positionChange(e){
+                    var centerX = e.pageX - $(".look-wrap'").width() / 2;
+                    var centerY = e.pageY - $(".look-wrap'").height() / 2;
+                    var percentX = (centerX / $(".look-wrap'").width()) * range;
+                    var percentY = (centerY / $(".look-wrap'").height()) * range;
+
+                    $('.look-list').css({
+                        "left" : `-${percentX}%`,
+                        "top" : `-${percentY}%`,
+                    })
+                }
+            })
+
+        });
 
             // timer();
             // var interval;
@@ -191,7 +223,5 @@
     
                    
         
-    </script>
-    <script src="../js/script.js"></script> 
-</body>
-</html>
+    </script> -->
+ 
