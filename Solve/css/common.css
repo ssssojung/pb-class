@@ -18,6 +18,8 @@ header{
 }
 #nav-bar{
     z-index: 99;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
 }
 #menu-overlay{
     display: none;
@@ -145,30 +147,37 @@ header nav .cart-num{
     background-color:#343339;
     color: white;
 }
+
+
+/* footer */
+footer{
+    padding: 0 3.5rem;
+    width: 100vw;
+}
 footer .footer-nav{
-    padding: 128px 0;   
     display: flex;
     justify-content: center;
     align-items: center;
-
+    padding-top: 128px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 .footer-nav > ul{
     display: flex;
-    gap: 48px;
+    width: 100%;
 }
 footer .nav-list{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 48px;
-    width: 314px;
+    width: 25%;
 }
 footer .nav-list > ul{
     display: flex;
     flex-direction: column;
     gap: 24px;
     text-align: center;
-
 }
 footer .nav-title{
     font-family: var(--newyork_R);
@@ -183,18 +192,24 @@ footer .nav-item a{
 }
 .footer-copy{
     padding-bottom: 80px;
+    margin-top: 128px;
     text-align: center;
     font-family: var(--cabinet_R);
     font-size: 1.8rem;
     line-height: 2.9rem;
 }
 
+
 .help{
-    width: 1600px;
-    margin: 0 auto;
     padding: 128px 0;
+}
+.help-wrap{
+    padding: 0 3.5rem;
+    flex-wrap: wrap;
     display: flex;
     gap: 80px;
+    justify-content: center;
+
 }
 .help-left{
     width: 514px;
@@ -210,7 +225,7 @@ footer .nav-item a{
 .help-content{
     display: flex;
     flex-direction: column;
-    width: 455px;
+    max-width: 455px;
     gap: 48px;
 }
 .help-content > p{
@@ -219,7 +234,7 @@ footer .nav-item a{
     line-height: 3.96rem;
 }
 .help-content > div{
-    width: 400px;
+    width: max(100%,455px);
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -410,7 +425,6 @@ footer .nav-item a{
 @media all and (min-width:768px) and (max-width:1023px) { 
     header nav{
         width: 100%;
-        justify-content: space-around;
     }
     #menu-overlay .menu-wrap {
         margin-top: 159px;
@@ -438,17 +452,23 @@ footer .nav-item a{
 
     /* help */
     .help{
-        width: 90%;
         justify-content: center;
         flex-direction: column;
+    }
+    .help-wrap{
+        max-width: 700px;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding: 0;
     }
     .help-left{
         font-size: 7.6rem;
         line-height: 8.5rem;
+        width: 100%;
     }
     .help-right{
-        gap: 0;
-        justify-content: space-between;
+        gap: 40px;
+        /* justify-content: space-between; */
     }
     .help-content{
         width: 330px;
@@ -538,7 +558,7 @@ footer .nav-item a{
 
     /* help */
     .help{
-        width: 90%;
+        width: 100%;
         justify-content: space-around;
         gap: 50px;
         padding: 50px 0;
@@ -547,7 +567,7 @@ footer .nav-item a{
     .help-left{
         font-size: 4.6rem;
         line-height: 5.5rem;
-        width: auto;
+        width: 100%;
     }
     .help-right{
         gap: 50px;
@@ -559,7 +579,7 @@ footer .nav-item a{
         gap: 20px;
     }
     .help-content > p{
-        font-size: 2.6rem;
+        font-size: 3rem;
         line-height: 2.96rem;
     }
     .help-content > div{
@@ -575,13 +595,6 @@ footer .nav-item a{
     footer .footer-nav{
         padding: 50px 0;
     }
-    .footer-nav > ul{
-        gap: 0;
-    }
-    footer .nav-list{
-        width: 90px;
-        /* gap: 30px; */
-    }
     footer .nav-title{
         font-size: 1.7rem;
     }
@@ -591,6 +604,8 @@ footer .nav-item a{
     .footer-copy {
         font-size: 1rem;
         line-height: 2rem;
+        padding-bottom: 20px;
+        margin-top: 30px;
     }
 
 
@@ -605,6 +620,9 @@ footer .nav-item a{
         width: 100%;
         padding: 0 20px ;
     }
+    #nav-bar{
+        padding: 0 1rem ;
+    }
     header nav .nav-left,
     header nav .nav-right li:first-child{
         display: none;
@@ -614,8 +632,8 @@ footer .nav-item a{
     }
     header nav .nav-center a{
         margin: 0;
-        font-size: 2.2rem;
-        line-height: 2.5rem;
+        font-size: 3rem;
+        line-height: 3rem;
     }
     header nav #btn-menu{
         width: 50px;
@@ -666,42 +684,55 @@ footer .nav-item a{
         padding: 50px 0;
         flex-direction: column;
     }
+    .help-wrap{
+        gap: 30px;
+        padding: 0 2.5rem;
+    }
     .help-left{
-        font-size: 2.6rem;
+        font-size: 3.5rem;
         line-height: 3.5rem;
-        width: auto;
+        width: 100%;
     }
     .help-right{
         gap: 50px;
         justify-content: space-between;
+        flex-wrap: 100%;
         flex-wrap: wrap;
     }
     .help-content{
-        width: 290px;
+        width: 100%;
         gap: 20px;
     }
     .help-content > p{
-        font-size: 2rem;
-        line-height: 2.3rem;
+        font-size: 2.5rem;
+        line-height: 2.8rem;
     }
     .help-content > div{
-        width: 290px;
+        width: 100%;
         gap: 10px;
     }
     .help-content > div span{
-        font-size: 1.3rem;
-        line-height: 2rem;
+        font-size: 1.5rem;
+        line-height: 2.3rem;
     }
     .help-content .btn-all{
         font-size: 1.4rem;
     }
-    
+
+    footer{
+        padding: 0 2rem;
+    }
+    footer .footer-nav{
+        padding-top: 30px;
+    }
     .footer-nav > ul{
         gap: 0;
     }
     footer .nav-list{
-        width: 90px;
-        /* gap: 30px; */
+        gap: 20px;
+    }
+    footer .nav-list > ul {
+        gap: 10px;
     }
     footer .nav-title{
         font-size: 1.7rem;
@@ -710,14 +741,19 @@ footer .nav-item a{
         font-size: 1rem;
     }
     .footer-copy {
-        font-size: 1rem;
+        font-size: 1.4rem;
         line-height: 2rem;
+        padding-bottom: 30px;
+        margin-bottom: 20px;
     }
     #cart-layout .cart-wrap{
         width: 100vw;
         height: 100%;
         transform: translateX(100vw);
         background-color: #EDEDED;
+    }
+    #cart-layout .btn-checkout {
+        padding: 15px 0;
     }
     .cart-center .add-item .item-name{
         font-size: 1.8rem;
