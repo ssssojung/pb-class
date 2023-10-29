@@ -178,7 +178,7 @@ $(document).ready(function(){
 				quantity.text(totalCount);
 				// totalNum = totalCount;
 
-				$('#cart-layout').addClass('show');
+				$('#cart-layout').addClass('open').fadeIn();
 				productremove();
 
 			});
@@ -197,11 +197,19 @@ $(document).ready(function(){
 
 
 	$('.details').click(()=>{
-        $('#details-layout').addClass('show');
+        $('#details-layout').fadeIn();
     });
 	$('.btn-close').click(()=>{
-        $('#details-layout').removeClass('show');
+        $('#details-layout').fadeOut();
+
     });
+	var detailBg = $("#details-layout");
+        $("#details-layout").mouseup(function (e){
+            if(cartBg.has(e.target).length == 0 ){
+                $('#details-layout').fadeOut();
+                // $("#cart-layout").off('scroll touchmove mousewheel');
+            };
+        });
 
 		
 

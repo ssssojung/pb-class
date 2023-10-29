@@ -324,7 +324,9 @@ header nav .cart-num::after{
 }
 #details-layout{
     display: none;
-    opacity: 0;
+    /* opacity: 1; */
+    display: flex;
+    justify-content: flex-end;
     position: fixed;
     overflow: hidden;
     top: 0;
@@ -334,11 +336,10 @@ header nav .cart-num::after{
     z-index: 150;
     background-color: rgba(52, 51, 57, 0.8);
 }
-#details-layout.show{
-    display: flex;
-    justify-content: flex-end;
+/* #details-layout.open{
+    
     opacity: 1;
-}
+} */
 #details-layout .details-wrap{
     width: 50%;
     background-color: #EDEDED;

@@ -176,9 +176,45 @@ header nav .cart-num::after{
     margin-top: -161px;
 }
 /* rooms */
-.rooms{
-    width: 100vw;
+/* @keyframes move {
+	to {
+		transform: translateX(calc(-100% + 100vw));
+		left: 0px;
+	}
+} */
+
+.rooms {
+	/* height: 300vh;
+	overflow: visible; 
+	view-timeline-name: --rooms-section;
+	view-timeline-axis: block; */
+    margin: 0;
+    width: auto;
 }
+/* .rooms-slide{
+    height: 300vh;
+	position: sticky;
+	top: 0;
+	overflow-x: hidden;
+} */
+/* .slide_list{
+    display: flex;
+    height: 100vh;
+	width: 250vmax;
+	will-change: transform;
+	animation: linear move forwards;
+	animation-timeline: --rooms-section;
+	animation-range: contain 0% contain 100%;
+} */
+.slide_item{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .rooms .overlay{
     width: 100vw;
     height: 100vh;
@@ -216,27 +252,6 @@ header nav .cart-num::after{
     font-size: 16rem;
     line-height: 19.2rem;
     color: white;
-}
-.rooms_slide{
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    position: relative;
-}
-.slide_list{
-    position: absolute;
-    left: 0;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-.slide_item{
-    width: 100vw;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
 }
 /* 테블릿 세로 (해상도 768px ~ 1023px)*/ 
 @media all and (min-width:768px) and (max-width:1023px) { 

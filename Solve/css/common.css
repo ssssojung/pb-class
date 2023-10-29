@@ -21,7 +21,6 @@ header{
 }
 #menu-overlay{
     display: none;
-    opacity: 0;
     position: fixed;
     overflow: hidden;
     top: 0;
@@ -29,13 +28,14 @@ header{
     width: 100vw;
     height: 100vh;
     background-color: rgba(52, 51, 57, 0.8);
+    z-index: 2;
 }
-#menu-overlay.show{
+/* #menu-overlay.open{
     z-index: 2;
     display: block;
     opacity: 1;
     transition: all 400ms ease 0s;
-}
+} */
 #menu-overlay .menu-wrap{
     margin-top: 159px;
     width: 100%;
@@ -48,7 +48,7 @@ header{
     gap: 121px;
     opacity: 0;
 }
-#menu-overlay.show .menu-wrap{
+#menu-overlay.open .menu-wrap{
     opacity: 1;
     transition: opacity 300ms ease 0s;
 }
@@ -246,31 +246,27 @@ footer .nav-item a{
 }
 
 /* cart-layout */
-#cart-layout{
-    opacity: 0;
-    z-index: 0;
-    width: 0;
-}
-#cart-layout.show{
-    opacity: 1;
-    display: flex;
-    justify-content: flex-end;
+#cart-layout.open{
+    display: none;
     position: fixed;
+    overflow: hidden;
     top: 0;
-    left: 0;
-    width: 100vw;
+    right: 0;
+    bottom: 0;
+    width: 100%;
     height: 100vh;
-    z-index: 150;
     background-color: rgba(52, 51, 57, 0.8);
+    z-index: 150;
     padding: 0;
-    transition: opacity 300ms ease 0s;
 }
-#cart-layout.show .cart-wrap{
-    transform: translateX(0);
+#cart-layout.open .cart-wrap{
+    transform: translateX(0); 
+    right: 0;
 }
 #cart-layout .cart-wrap{
+    display: none;
     width: 500px;
-    height: 100%;
+    height: 100vh;
     transform: translateX(500px);
     background-color: #EDEDED;
     display: flex;
@@ -278,14 +274,14 @@ footer .nav-item a{
     justify-content: space-between;
     transition: transform 300ms ease 0s;
     position: absolute;
+    top: 0;
+    right: 0;
 }
 #cart-layout .cart-content{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     gap: 48px;
     padding: 32px;
-    overflow: scroll;
 }
 #cart-layout .cart-top{
     font-family: var(--newyork_R);
@@ -299,6 +295,7 @@ footer .nav-item a{
 #cart-layout .cart-top .btn-close{
     font-family: var(--cabinet_M);
     font-size: 1.6rem;
+    line-height: 1.6rem;
     letter-spacing: 1px;
     text-transform: uppercase;
     cursor: pointer;
@@ -350,12 +347,11 @@ footer .nav-item a{
     background-color: white;
     border: 1px solid #343339;
     color: #343339;
- 
-
 }
 .cart-center {
-    overflow: scroll;
-    /* scroll */
+    padding: 0 32px;
+    height: 100%;
+    overflow-y: scroll;
 }
 .cart-center .add-item{
     display: flex;

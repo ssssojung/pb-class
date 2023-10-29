@@ -19,25 +19,12 @@
                         <div class="cart-content">
                             <div class="cart-top">
                                 <p class="cart-title">Cart</p>
-                                <p class="btn-close">Close</p>
+                                <div>
+                                    <p class="btn-close">Close</p>
+                                </div>
                             </div>
-                            <div class="cart-center">
-                                <!-- <div class="add-item border-top">  
-                                    <div class="item-content">
-                                        <div class="item-img" style="background-image: url(../img/SHOP-ElegantLamp.jpg);"></div>
-                                        <div class="item-center">
-                                            <div>
-                                                <p class="item-name">Modern chair</p>
-                                                <p class="item-price">$<span> 249.00 </span>USD</p>
-                                            </div>
-                                            <span class="btn-remove">Remove</span>
-                                        </div>
-                                    </div>
-                                    <div class="item-right">
-                                        <p class="item-quantity">1</p>
-                                    </div>
-                                </div> -->
-                            </div>
+                        </div>
+                        <div class="cart-center">
                         </div>
                         <div class="cart-bottom">
                             <div class="cart-subtotal">
@@ -119,49 +106,82 @@
         </li>
     </ul>
 </nav>
-<div style="background-image: url(../img/menu-toggle.png);"></div>
 
 <script type="text/javascript">
-    $('#btn-menu').click(()=>{
-		$('#menu-overlay').toggleClass('show');
-        if($('#menu-overlay').hasClass('show')){
 
-            $('header #nav-bar a').css("color","white");
-            // $('header #nav-bar #btn-menu').css({
-                
-            //     "background-image":"url(../img/menu-toggle.png)",
-            //      "width":"55px",
-            //      "height":"14px",
-            //      "backgroundSize":"55px 14px"
-                
+    $(function(){
+
+        var MenuBg = $("#menu-overlay");
+        var $menu = true;
+        $('#btn-menu').click(function(){
+            console.log($menu)
+            if($menu === false){
+                $('#menu-overlay').fadeOut();
+                $('#menu-overlay').removeClass('open');
+                $('header #nav-bar a').css("color","");
+                $('#btn-menu').css("background-image","");
+                $menu = true;
+            }
+            else if($menu === true){
+                $('#menu-overlay').addClass('open');
+                $('#menu-overlay').fadeIn();
+                $('header #nav-bar a').css("color","white");
+                $('#btn-menu').css("background-image","url(../img/menu-toggle.png)");
+                $menu = false
+            }
+        });
+        $("#menu-overlay").mouseup(function (e){
+            if(MenuBg.has(e.target).length == 0){
+                $('#menu-overlay').fadeOut();
+                $('#menu-overlay').removeClass('open');
+                $('header #nav-bar a').css("color","");
+                $('#btn-menu').css("background-image","");
+                $menu = true
+            };
+        });
+           
+        $('#btn-cart').click(()=>{
+            $('#cart-layout').addClass('open');
+            $('#cart-layout').fadeIn();
+            // $("#cart-layout").on('scroll touchmove mousewheel', function(e) {
+            //     console.log(e.target)
+            //     e.preventDefault();
+            //     e.stopPropagation();
+            //     return false;
             // });
-
-            $('#menu-overlay').on('scroll touchmove mousewheel', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                return false;
-            });
             
-        }else{
-            $('header #nav-bar a').css("color","");
-            // $('header #nav-bar #btn-menu').css({
-                
-            //     "background-image":" ",
-            //      "width":" ",
-            //      "height":" ",
-            //      "backgroundSize":" "
-                
-            //     });
+           
+        });
+        
+        $('.btn-close').click(()=>{
+            $('#cart-layout').removeClass('open');
+            $('#cart-layout').fadeOut();
+            // $("#cart-layout").off('scroll touchmove mousewheel');
+        });
+        var cartBg = $("#cart-layout");
+        $("#cart-layout").mouseup(function (e){
+            if(cartBg.has(e.target).length == 0 ){
+                $('#cart-layout').fadeOut();
+                $('#cart-layout').removeClass('open');
+                // $("#cart-layout").off('scroll touchmove mousewheel');
+            };
+        });
+        
+    
+       
+    });
+    // var LayerPopup = $("#look-overlay , #cart-layout");
+    //             $(document).mouseup(function (e){
+    //                 if(LayerPopup.has(e.target).length == 0 ){
+    //                     $('#look-overlay , #cart-layout').fadeOut();
+    //                 }
+    //             });
+
+    
+
+    
 
 
-            $('#menu-overlay').off('scroll touchmove mousewheel');
-        }
-	});
-    $('#btn-cart').click(()=>{
-        $('#cart-layout').addClass('show');
-    });
-    $('.btn-close').click(()=>{
-        $('#cart-layout').removeClass('show');
-    });
+
     
 </script>
