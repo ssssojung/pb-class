@@ -15,20 +15,102 @@ $(document).ready(function(){
 		});
 	};
 	
+	//nav
+	// let lastScroll = 0;
+	// $(window).on('scroll',function(){
+	// 	let scrollTop = $(this).scrollTop();
+	// 	if(scrollTop > lastScroll){
+	// 		$('header').addClass('nav-up');
+	// 	}else{
+	// 		$('header').removeClass('nav-up');
+	// 	}
+	// 	lastScroll = scrollTop;
+	// })
 
-	// $('header').load("./include/header.html");
+	//animate 
+	const options = {
+		root: null,
+		rootMargin: '0px 0px 0px 0px',
+		threshold: 0
+	  }
 
-	let lastScroll = 0;
-	$(window).on('scroll',function(){
-		let scrollTop = $(this).scrollTop();
-		if(scrollTop > lastScroll){
-			$('header').addClass('nav-up');
-		}else{
-			$('header').removeClass('nav-up');
+	const io1 = new IntersectionObserver((entries, observer) => {
+	entries.forEach(entry => {
+		if (entry.intersectionRatio > 0) {
+			entry.target.classList.add('show');
+			entry.target.classList.add('aniTopSlide');
+		}else{	
+			entry.target.classList.add('hide');
+			entry.target.classList.remove('aniTopSlide');
 		}
-		lastScroll = scrollTop;
+	})
+	}, options);
+	
+	const io2 = new IntersectionObserver((entries, observer) => {
+	entries.forEach(entry => {
+		if (entry.intersectionRatio > 0) {
+			entry.target.classList.add('show');
+			entry.target.classList.add('aniBottomSlide');
+		}else{	
+			entry.target.classList.add('hide');
+			entry.target.classList.remove('aniBottomSlide');
+		}
+	})
+	}, options);
+
+	const io3 = new IntersectionObserver((entries, observer) => {
+		entries.forEach(entry => {
+			if (entry.intersectionRatio > 0) {
+				console.log('들어옴')
+				entry.target.classList.add('show');
+				entry.target.classList.add('aniDownScale');
+				
+			}else{	
+				entry.target.classList.add('hide');
+				entry.target.classList.remove('aniDownScale');
+				console.log('냐감')
+			}
+		
+		})
+	}, options);
+	  
+	const aniTop = document.querySelectorAll('.aniEle1');
+	aniTop.forEach((ani_1) => {
+	io1.observe(ani_1);
+	});
+	const aniBottom = document.querySelectorAll('.aniEle2');
+	aniBottom.forEach((ani_2) => {
+	io2.observe(ani_2);
+	});
+	const aniScale = document.querySelectorAll('.aniEle3');
+	aniScale.forEach((ani_3) => {
+	io3.observe(ani_3);
 	})
 
+
+	// window.addEventListener(
+	// 	"scroll",
+	// 	() => {
+	// 		const ani_wrap = document.querySelector('.main-banner');
+	// 		const ani_3 = document.querySelector('.circle-wrap');
+	// 		let ani_3H = ani_3.getBoundingClientRect().height;
+			
+	// 		document.documentElement.style.setProperty('--myColor', '#afafaf');
+	// 		delayV = ani_wrap.scrollY / (ani_3H - window.innerHeight)
+	// 		document.documentElement.style.setProperty(
+	// 			"--scroll",
+	// 			ani_wrap.scrollY / (ani_3H - window.innerHeight)
+	// 		);
+	// 		// console.log(ani_wrap.scrollHeight  , 'ani_wrap.scrollHeight ');
+	// 		// console.log(ani_3H ,'ani_3H');
+	// 		// console.log(window.innerHeight , 'window.innerHeight');
+	// 		// console.log( ani_wrap.getBoundingClientRect())
+			
+
+
+	// 		},
+	// false
+	// );
 
 	// shop
 	$('.controls li').click((e)=>{
@@ -40,16 +122,31 @@ $(document).ready(function(){
 
 
 		var filter = $(e.target).attr('data-filter');
-			if(filter == 'all'){
-				$('.product-area > a').fadeIn('slow');
-		
-			}else{
-				$('.product-area > a').not('.'+filter).hide();
-			}
-			$('.product-area > a').filter('.'+filter).fadeIn('slow');
+		if(filter == 'all'){
+			$('.product-area > a').fadeIn('slow');
+	
+		}else{
+			$('.product-area > a').not('.'+filter).hide();
+		}
+		$('.product-area > a').filter('.'+filter).fadeIn('slow');
 		
 	});
+
+	$('.details').click(()=>{
+        $('#details-layout').fadeIn();
+    });
+	$('.btn-close').click(()=>{
+        $('#details-layout').fadeOut();
+    });
+	var detailBg = $("#details-layout");
+	$("#details-layout").mouseup(function (e){
+		if(detailBg.has(e.target).length == 0 ){
+			$('#details-layout').fadeOut();
+			// $("#cart-layout").off('scroll touchmove mousewheel');
+		};
+	});
 	
+	//shop_single
 	$(function(){
 
 		let quantity = $('.quantity-num');
@@ -195,20 +292,7 @@ $(document).ready(function(){
 	
 
 
-	$('.details').click(()=>{
-        $('#details-layout').fadeIn();
-    });
-	$('.btn-close').click(()=>{
-        $('#details-layout').fadeOut();
-
-    });
-	var detailBg = $("#details-layout");
-        $("#details-layout").mouseup(function (e){
-            if(cartBg.has(e.target).length == 0 ){
-                $('#details-layout').fadeOut();
-                // $("#cart-layout").off('scroll touchmove mousewheel');
-            };
-        });
+	
 
 		
 

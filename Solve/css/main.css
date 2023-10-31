@@ -18,9 +18,9 @@ body{
     width: 100vw;
     overflow-x: hidden;
   }
-  body::-webkit-scrollbar {
+  /* body::-webkit-scrollbar {
     display: none;
-}
+  } */
 /* 공통 스타일 */
 section{
     padding: 128px 0;
@@ -81,11 +81,6 @@ section{
     height: 300px;
     border-radius: 50%;
 }
-.circle-M{
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
-}
 main{
     height: 1330px;
     background-image: url(../img/SHOP-ModernChair.jpg);
@@ -94,6 +89,9 @@ main{
     position: relative;
     background-repeat: no-repeat;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .main-text{
     display: flex;
@@ -102,17 +100,16 @@ main{
     align-items: center;
     gap: 64px;
     position: absolute;
+    top: 25%;
     z-index: 2;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
 }
 .main-text h2{
     text-transform: uppercase;
     text-align: center;
-    font-size: 26rem;
+    font-size: 12.7vw;
     font-family: var(--newyork_R);
-    line-height: 23.4rem;
+    line-height: 13vw;
     color: white;
 }
 main .btn-oval{
@@ -120,7 +117,7 @@ main .btn-oval{
     border:1px solid white;
 }
 .featured{
-    margin: 0 161px;
+    /* margin: 0 161px; */
 }
 .featured .title{
     font-family: var(--newyork_R);
@@ -129,7 +126,14 @@ main .btn-oval{
 }
 .featured .wrap{
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 70px;
+    padding: 0  3.5rem;
+    /* justify-content: space-between; */
+}
+.featured .txt-area{
+  text-align: center;
 }
 .featured .product:nth-child(1) .img-oval{background-image: url(../img/SHOP-ModernChair.jpg);}
 .featured .product:nth-child(2) .img-oval{background-image: url(../img/SHOP-ElegantLamp.jpg);}
@@ -138,19 +142,22 @@ main .btn-oval{
     font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-bottom: 8px;
 }
 .product-price{
     font-size: 1.6rem;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-.about{
-    margin: 0 260px;
-}
+/* .about{
+  height: 100vh;
+} */
 .about .wrap{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 80px;
+    padding: 0 3.5rem;
 
 }
 .about-left{
@@ -171,7 +178,6 @@ main .btn-oval{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 576px;
 
 
 }
@@ -186,15 +192,18 @@ main .btn-oval{
 }
 /* hover 효과 추가하기 */
 
+
+/* main-banner */
 .main-banner{
     width: 100vw;
-    height: 100vh;
+    height: 300vh;
     background-image: url(../img/MAIN-bg2.jpg);
-    background-size: 100%;
+    background-attachment: fixed;
+    background-size: cover;
     background-position: center;
-    position: relative;
+    padding: 0;
     background-repeat: no-repeat;
-    overflow: hidden;
+    position: relative;
 }
 .overlay{
     position: absolute;
@@ -203,44 +212,83 @@ main .btn-oval{
     width: 100%;
     height: 100%;
     background-color: #343339;
-    opacity: 0.4;
+    opacity: 0.2;
 }
-.main-banner p{
-    position: absolute;
+.main-banner .text-wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: sticky;
+  position: -webkit-sticky;
+  z-index: 2;
+  top: 0;
+}
+.main-banner .aniEle2{
     color: white;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
     text-transform: uppercase;
-    z-index: 3;
     font-size: 30rem;
     font-family: var(--newyork_R);
     line-height: 27rem;
-    opacity: 1;
-}
-/* .main-img .circle-S{
-    position: absolute;
-    z-index: 2;
-}
-.main-img .circle-M{
-    position: absolute;
-    z-index: 2;
-}
-.main-img .circle-S:nth-child(1){
-    background-image: url(../img/SHOP_BlackChair.png);
-    left: 645px;
-    top: -107px;
-}
-.main-img .circle-S:nth-child(2){
+    opacity: 0;
     
-} */
-.rooms{
-    margin: 0 160px;
 }
+.main-banner .circle-wrap{
+  width: 100vw;
+  height: 100vw;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  align-items: center;
+  display: grid;
+  position: relative;
+  
+  /* position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  background-color: rgba(255, 0, 0, 0.164); */
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.main-banner .aniEle3{
+  /* position: absolute; */
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    min-width: 142px;
+    min-height: 142px;
+    z-index: 1;
+}
+.main-banner .aniEle3:nth-child(1){ background-image: url(../img/LOOK-WoodenFurniture.jpg); grid-column: 1/2; grid-row: 1/2;}
+.main-banner .aniEle3:nth-child(2){ background-image: url(../img/SHOP-BlackChair2.jpg); grid-column: 2/3; grid-row: 2/3;}
+.main-banner .aniEle3:nth-child(3){ background-image: url(../img/SHOP-ElegantLamp.jpg); grid-column: 4/5; grid-row: 2/3;}
+.main-banner .aniEle3:nth-child(4){ background-image: url(../img/LOOK-RattanTable.jpg); grid-column: 5/6; grid-row: 3/4;}
+.main-banner .aniEle3:nth-child(5){ background-image: url(../img/SHOP-ModernChair.jpg); grid-column: 1/2; grid-row: 4/5;}
+.main-banner .aniEle3:nth-child(6){ background-image: url(../img/LOOK-WoodStool.jpg); grid-column: 3/4; grid-row: 4/5;}
+.main-banner .aniEle3:nth-child(7){ background-image: url(../img/LOOK-BlueChair.jpg); grid-column: 4/5; grid-row: 5/6;}
+/* .main-banner .aniEle3:nth-child(1){ background-image: url(../img/LOOK-WoodenFurniture.jpg); grid-area: 1/1/2/2;}
+.main-banner .aniEle3:nth-child(2){ background-image: url(../img/SHOP-BlackChair2.jpg); grid-area: 2/2/3/3;}
+.main-banner .aniEle3:nth-child(3){ background-image: url(../img/SHOP-ElegantLamp.jpg); grid-area: 2/5/3/6;}
+.main-banner .aniEle3:nth-child(4){ background-image: url(../img/LOOK-RattanTable.jpg); grid-area: 4/1/5/2;}
+.main-banner .aniEle3:nth-child(5){ background-image: url(../img/SHOP-ModernChair.jpg); grid-area: 3/8/4/8;}
+.main-banner .aniEle3:nth-child(6){ background-image: url(../img/LOOK-WoodStool.jpg); grid-area: 4/4/5/5;}
+.main-banner .aniEle3:nth-child(7){ background-image: url(../img/LOOK-BlueChair.jpg); grid-area:5/5/6/6;} */
+
+
+/* .rooms{
+   
+} */
 .rooms .wrap{
     display: flex;
     flex-direction: column;
     gap: 32px;
+    padding: 0 3.5rem;
 }
 .rooms .title{
     text-align: center
@@ -271,6 +319,7 @@ main .btn-oval{
     display: flex;
     gap: 64px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .room-img{
     position: relative;
@@ -310,14 +359,14 @@ main .btn-oval{
     color: white;
 }
 .ourStores{
-    margin: 0 160px;
+    /* margin: 0 160px; */
 }
 .ourStores>.wrap{
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     flex-direction: column;
     gap: 80px;
+    padding: 0 3.5rem;
 }
 .ourStores .title{
     font-family: var(--newyork_R);
@@ -326,6 +375,7 @@ main .btn-oval{
 }
 .ourStores .store-content{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 96px;
 }
@@ -431,9 +481,10 @@ main .btn-oval{
       .main-banner{
         background-size: cover;
       }
-      .main-banner p {
-        font-size: 13rem;
+      .main-banner .aniEle2 {
+        font-size: 22rem;
       }
+
       .rooms{
         margin: 0;
         display: flex;
@@ -463,15 +514,11 @@ main .btn-oval{
         padding: 128px 0;
         
       }
-      .ourStores>.wrap{
-        width: 90%;
-      }
       .ourStores .title {
         font-size: 6.6rem;
         line-height: 7.5rem;
       }
       .ourStores .store-content{
-        gap: 0;
         justify-content: space-between;
       }
       .ourStores .store{
@@ -501,12 +548,24 @@ main .btn-oval{
         font-size: 1.3rem;
         letter-spacing: 1.3px;
       }
-      .store .btn-all::after {
-        content: '';
-        width: 30.5px;
-        height: 5px;
-        background: url(../img/arrow.svg);
+      .main-banner .circle-wrap{
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-auto-columns: 1fr;
+        width: 100vw;
+        height: 100vh;
       }
+      .main-banner .aniEle3{
+          min-width: 142px;
+          min-height: 142px;
+      }
+      .main-banner .aniEle3:nth-child(1){ background-image: url(../img/LOOK-WoodenFurniture.jpg); grid-column: 1/2; grid-row: 1/2;}
+      .main-banner .aniEle3:nth-child(2){ background-image: url(../img/SHOP-BlackChair2.jpg); grid-column: 2/3; grid-row: 2/3;}
+      .main-banner .aniEle3:nth-child(3){ background-image: url(../img/SHOP-ElegantLamp.jpg); grid-column: 4/5; grid-row: 2/3;}
+      .main-banner .aniEle3:nth-child(4){ background-image: url(../img/LOOK-RattanTable.jpg); grid-column: 3/4; grid-row: 3/4;}
+      .main-banner .aniEle3:nth-child(5){ background-image: url(../img/SHOP-ModernChair.jpg); grid-column: 1/2; grid-row: 4/5;}
+      .main-banner .aniEle3:nth-child(6){ background-image: url(../img/LOOK-WoodStool.jpg); grid-column: 2/3; grid-row: 5/6;}
+      .main-banner .aniEle3:nth-child(7){ background-image: url(../img/LOOK-BlueChair.jpg); grid-column: 4/5; grid-row: 6/7;}
     } 
     
     /* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/ 
@@ -556,19 +615,18 @@ main .btn-oval{
           }
           .about .wrap{
             gap: 30px;
-            width: 80%;
             flex-direction: column;
           }
           .about .title{
             font-size: 6.8rem;
             line-height: 7rem;
           }
+          .about .about-left,
           .about .about-right{
-            width: auto;
-            gap: 75px;
+            width: 100%;
           }
-          .about .txt-area{
-            height: auto;
+          .about .about-right{
+            gap: 75px;
           }
           .about .txt-area>p{
             font-size: 1.7rem;
@@ -578,8 +636,8 @@ main .btn-oval{
           .main-banner{
             background-size: cover;
           }
-          .main-banner p {
-            font-size: 12rem;
+          .main-banner .aniEle2{
+            font-size: 15rem;
           }
           .rooms{
             margin: 0;
@@ -614,24 +672,23 @@ main .btn-oval{
             padding: 128px 0;
             
           }
-          .ourStores>.wrap{
-            width: 60%;
-            gap: 50px;
-          }
           .ourStores .title {
-            font-size: 4.6rem;
-            line-height: 5.5rem;
+            font-size: 6.6rem;
+            line-height: 7.5rem;
           }
           .ourStores .store-content{
-            justify-content: flex-start;
-            gap: 20%;
+            justify-content: space-between;
           }
           .ourStores .store{
             width: auto;
             gap: 25px;
           }
+          .circle-S{
+            width: 150px;
+            height: 150px;
+          }
           .store-img{
-            display: none;
+            background-size: cover;
           }
           .store-text {
             width: auto;
@@ -649,12 +706,25 @@ main .btn-oval{
             font-size: 1.3rem;
             letter-spacing: 1.3px;
           }
-          .store .btn-all::after {
-            content: '';
-            width: 30.5px;
-            height: 5px;
-            background: url(../img/arrow.svg);
+          .main-banner .circle-wrap{
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-auto-columns: 1fr;
+            grid-auto-rows: 1fr;
+            width: 100vw;
+            height: 110vh;
           }
+          .main-banner .aniEle3{
+              min-width: 142px;
+              min-height: 142px;
+          }
+          .main-banner .aniEle3:nth-child(1){ background-image: url(../img/LOOK-WoodenFurniture.jpg); grid-column: 1/3; grid-row: 1/3;}
+          .main-banner .aniEle3:nth-child(2){ background-image: url(../img/SHOP-BlackChair2.jpg); grid-column: 4/5; grid-row: 3/4;}
+          .main-banner .aniEle3:nth-child(3){ background-image: url(../img/SHOP-ElegantLamp.jpg); grid-column: 2/4; grid-row: 4/6;}
+          .main-banner .aniEle3:nth-child(4){ background-image: url(../img/LOOK-RattanTable.jpg); grid-column: 4/5; grid-row: 6/7;}
+          .main-banner .aniEle3:nth-child(5){ background-image: url(../img/SHOP-ModernChair.jpg); grid-column: 1/3; grid-row: 7/9;}
+          .main-banner .aniEle3:nth-child(6){ background-image: url(../img/LOOK-WoodStool.jpg); grid-column: 4/5; grid-row: 9/10;}
+          .main-banner .aniEle3:nth-child(7){ background-image: url(../img/LOOK-BlueChair.jpg); grid-column: 2/4; grid-row: 10/12;}
 
     } 
     
@@ -708,7 +778,6 @@ main .btn-oval{
           }
           .about .wrap{
             gap: 30px;
-            width: 80%;
             flex-direction: column;
           }
           .about .title{
@@ -727,11 +796,12 @@ main .btn-oval{
             line-height: 2.5rem;
             word-break: keep-all;
           }
+          .about .about-left,
+          .about .about-right{
+            width: 100%;
+          }
           .main-banner{
             background-size: cover;
-          }
-          .main-banner p {
-            font-size: 8rem;
           }
           .rooms{
             margin: 0;
@@ -767,7 +837,6 @@ main .btn-oval{
             
           }
           .ourStores>.wrap{
-            width: 80%;
             gap: 50px;
           }
           .ourStores .title {
@@ -802,17 +871,39 @@ main .btn-oval{
             font-size: 1.2rem;
             line-height: 1.5rem;
           }
-          .store .btn-all {
+          .main-banner .aniEle2{
+            font-size: 9rem;
+          }
+          .main-banner .circle-wrap{
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-auto-columns: 1fr;
+            grid-auto-rows: 1fr;
+            width: 100vw;
+            height: 110vh;
+          }
+          .main-banner .aniEle3{
+              min-width: 142px;
+              min-height: 142px;
+          }
+          .main-banner .aniEle3:nth-child(1){ background-image: url(../img/LOOK-WoodenFurniture.jpg); grid-column: 1/3; grid-row: 1/3;}
+          .main-banner .aniEle3:nth-child(2){ background-image: url(../img/SHOP-BlackChair2.jpg); grid-column: 4/5; grid-row: 3/4;}
+          .main-banner .aniEle3:nth-child(3){ background-image: url(../img/SHOP-ElegantLamp.jpg); grid-column: 2/4; grid-row: 4/6;}
+          .main-banner .aniEle3:nth-child(4){ background-image: url(../img/LOOK-RattanTable.jpg); grid-column: 4/5; grid-row: 6/7;}
+          .main-banner .aniEle3:nth-child(5){ background-image: url(../img/SHOP-ModernChair.jpg); grid-column: 1/3; grid-row: 7/9;}
+          .main-banner .aniEle3:nth-child(6){ background-image: url(../img/LOOK-WoodStool.jpg); grid-column: 4/5; grid-row: 9/10;}
+          .main-banner .aniEle3:nth-child(7){ background-image: url(../img/LOOK-BlueChair.jpg); grid-column: 2/4; grid-row: 10/12;}
+          /* .store .btn-all {
             gap: 10px;
             font-size: 1.3rem;
             letter-spacing: 1.3px;
-          }
-          .store .btn-all::after {
+          } */
+          /* .store .btn-all::after {
             content: '';
             width: 30.5px;
             height: 5px;
             background: url(../img/arrow.svg);
-          }
+          } */
 
     }
 
