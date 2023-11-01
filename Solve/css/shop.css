@@ -323,9 +323,8 @@ header nav .cart-num::after{
     list-style: inside;
 }
 #details-layout{
-    display: none;
     /* opacity: 1; */
-    display: flex;
+    display: none;
     justify-content: flex-end;
     position: fixed;
     overflow: hidden;
@@ -394,25 +393,20 @@ header nav .cart-num::after{
 }
 
 /* lookbook */
-.look-wrap{
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    overflow: hidden;
-}
-.look-list{
-    width: 110vw;
-    height: 110vh;
+ .look-inner { width: 100%; height: 100vh; overflow: hidden; position: fixed;}
+ .look-wrap { transform: scale(1.2);}
+ .temp-bg-back { transition: 1s ease-out; }
+ .backBg { width: 100%; height: 100%;}
+ 
+ .look-list{
     background-color: #EDEDED;
     display: flex;
     align-content: center;
     justify-content: center;
     align-items: center;
     gap: 64px;
-    margin-top: -5vh;
-    margin-left: -5vw;
-    position: relative; 
-     transition: transform .5s linear;
+    margin-top: -12vh;
+     
   }
   .look-list > li{
     display: flex;
@@ -639,6 +633,11 @@ header nav .cart-num::after{
     #details-layout .details-text li {
         font-size: 1.4rem;
     }
+    .look-item{
+        width: 204px;
+        height: 306px;
+    }
+
 
   } 
   
@@ -781,6 +780,24 @@ header nav .cart-num::after{
     }
     #details-layout .details-text li {
         font-size: 1.2rem;
+    }
+    .look-item{
+        width: 140px;
+        height: 210px;
+    }
+    .look-wrap{
+        transform: scale(1.6);
+    }
+    .look-list{
+        margin-top: 0;
+        gap: 30px;
+    }
+    .look-list > li{
+        gap: 30px;
+    }
+    .look-modal {
+        width: 100vw;
+        display: flex;
     }
 
   } 
@@ -948,8 +965,30 @@ header nav .cart-num::after{
     #details-layout .details-text li {
         font-size: 1.2rem;
     }
-
-        
-
-
+    /* look */
+    .look-item{
+        width: 105px;
+        height: 157px;
+    }
+    .look-wrap{
+        transform: scale(1.6);
+    }
+    .look-list{
+        margin-top: 0;
+        gap: 30px;
+    }
+    .look-list > li{
+        gap: 30px;
+    }
+    .look-modal{
+        width: 100vw;
+        padding: 30px;
+    }
+    #look-overlay .modal-content{
+        width: 100%;
+    }
+    #look-overlay .modal-title{
+        font-size: 5.1rem;
+        line-height: 5.8rem;
+    }
   }
