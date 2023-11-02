@@ -1,4 +1,7 @@
 
+*{
+    -webkit-font-smoothing: antialiased;
+}
 header{
     position: fixed;
     padding-top: 64px;
@@ -8,7 +11,7 @@ header{
     display: flex;
     justify-content: center;
     width: 100vw;
-    user-select: none;
+    /* user-select: none; */
     transition: all 0.7s;
     background: linear-gradient(#34333982,rgba(20, 20, 20, 0));
     backdrop-filter: blur(1px);

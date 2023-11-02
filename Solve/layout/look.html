@@ -88,7 +88,7 @@
 
                 const width = $(window).width();
                 const height = $(window).height();
-                $('.look-inner').on("mousemove , touchmove", function(e) {
+                $('.look-inner').on("mousemove ", function(e) {
                     // console.log(e.originalEvent.touches)
                     // e.originalEvent.touches[0].pageX
                     // e.originalEvent.touches[0].pageY
@@ -102,6 +102,12 @@
                         transform: `translate(${backMoveX}px, ${backMoveY}px)`
                     });
 
+                    
+                });
+
+                $('.look-inener').on("touchmove", function(e){
+
+                    e.stopPropagation();
                      
                     let moveX_M = (e.originalEvent.touches[0].pageX - width /2) / width;
                     let moveY_M = (e.originalEvent.touches[0].pageY - height /2) / height;
@@ -117,28 +123,10 @@
                     $('.temp-bg-back').css({
                         transform: `translate(${backMoveX_M}px, ${backMoveY_M}px)`
                     });
-                });
 
-                $('.look-inner').on("touchmove", function (e) {
-
-  
-                    let moveX_M = (e.originalEvent.touches[0].pageX - width /2) / width;
-                    let moveY_M = (e.originalEvent.touches[0].pageY - height /2) / height;
-
-                    
-                    
-                    const backMoveX_M = moveX_M * 300;
-                    const backMoveY_M = moveY_M * 300;
-                    
-                    console.log(
-                        backMoveX_M,
-                        backMoveY_M
-
-                    )
-                    $('.temp-bg-back').css({
-                        transform: `translate(${backMoveX_M}px, ${backMoveY_M}px)`
-                    });
                 })
+
+ 
                 
                 // let startPoint = 0;
                 // let endPoint = 0;

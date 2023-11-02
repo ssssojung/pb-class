@@ -9,7 +9,7 @@ html{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    user-select: none;
+    /* user-select: none; */
 }
 body{
     /* 16px => 1.6rem으로 변환시킴 */

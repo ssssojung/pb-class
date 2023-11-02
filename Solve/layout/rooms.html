@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="data:image/x-icon" type="image/x-icon">
+
     <title>SØLVE</title>
     <link rel="stylesheet" href="../css/rooms.css">
 </head>
@@ -16,7 +18,7 @@
                         <div class="rooms-title">
                             <p>Oslo</p>
                             <div>
-                                <a href="" class="btn-oval">Explore</a>
+                                <a href="//ssssojung.github.io/pb-class/Solve/layout/oslo_1" class="btn-oval">Explore</a>
                             </div>
                         </div>
                     </div>
@@ -26,7 +28,7 @@
                         <div class="rooms-title">
                             <p>Oslo</p>
                             <div>
-                                <a href="" class="btn-oval">Explore</a>
+                                <a href="//ssssojung.github.io/pb-class/Solve/layout/oslo_2" class="btn-oval">Explore</a>
                             </div>
                         </div>
                     </div>
@@ -36,7 +38,7 @@
                         <div class="rooms-title">
                             <p>Lisbon</p>
                             <div>
-                                <a href="" class="btn-oval">Explore</a>
+                                <a href="//ssssojung.github.io/pb-class/Solve/layout/lisbon" class="btn-oval">Explore</a>
                             </div>
                         </div>
                     </div>
@@ -137,7 +139,7 @@
             }
 
             let chk = true;
-            $('.slide_item').on('mousewheel DOMMouseScroll touchmove', function(){
+            $('.slide_item').bind('wheel', function(){
 
                 if(chk) {
                     // 휠 일정시간동안 막기
@@ -163,6 +165,30 @@
                     }
                 }
             });
+
+            let ts;
+            $('.slide_item').bind('touchstart', function(e){
+                e.stopPropagation();
+                ts = e.originalEvent.touches[0].clientY;
+            });
+
+            $('.slide_item').bind('touchend', function(e){
+                e.stopPropagation();
+                let te = e. originalEvent.changedTouches[0].clientY;
+                if(ts > te + 5 && $(this).next().length > 0){
+                    console.log('touch down');
+                    $('.container').animate({
+                                left: -array[$(this).index()+1]
+                            }, 500)
+                } else if(ts < te - 5 && $(this).prev().length > 0){
+                    console.log('touch up');
+                    $('.container').animate({
+                                left: -array[$(this).index()-1]
+                            }, 500)
+                }
+            });
+           
+            
 
 			//브라우저를 resize했을시를 대비해 박스의 크기는 다시 구해준다.
             $(window).resize(function(){
