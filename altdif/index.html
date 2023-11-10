@@ -102,8 +102,8 @@
                     <form action="">
                         <div class="date-area">
                             <div class="date-top">
-                                <label for="inputDate">Date & Time</label>
-                                <input id="inputDate" title="예약 날짜와 시간을 선택하세요." class="dateSelector" />
+                                <label >Date & Time</label>
+                                <input name="date"class="dateSelector" autofocus />
                             </div>
                             <div class="input-border"></div>
                             <div class="flatpickr">
@@ -116,23 +116,23 @@
                         <div class="text-area">
                             <div>
                                 <label for="inputName">Name</label>
-                                <input type="text" title="이름을 입력하세요." id="inputName" placeholder="Name" required aria-required="true">
+                                <input type="text" title="이름을 입력하세요." name="name" id="inputName" placeholder="Name" required aria-required="true">
                                 <div class="input-border"></div>
                             </div>
                             <div>
                                 <label for="inputEamil">Email</label>
-                                <input type="email" title="이메일을 입력하세요." id="inputEamil" placeholder="Email" required aria-required="true">
+                                <input type="email" title="이메일을 입력하세요." name="email" id="inputEamil" placeholder="Email" required aria-required="true">
                                 <div class="input-border"></div>
                             </div>
                             <div>
                                 <label for="inputPhone">Phone</label>
-                                <input type="text" title="핸드폰 번호를 입력하세요." pattern="[0-9]+" id="inputPhone" placeholder="Phone" pattern="[0-9]+" maxlength="13" required required aria-required="true">
+                                <input type="tel" title="핸드폰 번호를 입력하세요." name="phone" id="inputPhone" placeholder="Phone" pattern="[0-9]+" maxlength="13" required required aria-required="true" oninput="TelChange(this)">
                                 <div class="input-border"></div>
                             </div>
                             <div class="last-form">
                                 <div class="selectBox">
                                     <label for="inputPeople">Number of people</label>
-                                    <select class="people_select" name="number of people" required aria-required="true">
+                                    <select class="people_select" name="people" id="inputPeople" required aria-required="true">
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -142,12 +142,10 @@
                                     </select>
                                     <div class="input-border"></div>
                                 </div>
-                                <!-- <input type="submit" value="SUBMIT" class="booking-btn" onclick="reservation_confirm()"> -->
-                                    <button type="button" value="" class="booking-btn">SUBMIT</button>
+                                <!-- <input type="submit" value="SUBMIT" class="booking-btn" > -->
+                                    <button type="button" class="booking-btn" onclick="checkForm()">SUBMIT</button>
                             </div>
                         </div>
-                       
-
                     </form>
                 </div>
             </div>
@@ -188,6 +186,8 @@
 </body>
 <script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
 <script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
+<!-- <script src="sweetalert2.all.min.js"></script> -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="./js/script.js"></script>
 
 </html>
