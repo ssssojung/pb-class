@@ -8,10 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Serif+KR:wght@200;400;500&family=Noto+Serif:ital,wght@0,300;0,400;0,600;1,600&display=swap" rel="stylesheet">
 
-    <!-- jQuery -->
-    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-    crossorigin="anonymous"></script> -->
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
     <!-- datepicker -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
@@ -70,9 +68,9 @@
         </div>
         <div class="cocktails">
             <div class="content-title">Cocktails <span>Menu</span></div>
-            <div class="menu-wrap">
-                <ul>
-                    <li class="menu-list">
+            <div class="swiper menu-wrap">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide menu-list">
                         <img src="./img/menu-1.png" alt="러빙 파라다이스 티 칵테일" class="menu-img">
                         <div class="menu-text">
                             <div class="menu-name">
@@ -87,11 +85,46 @@
                             </p>
                         </div>
                     </li>
+                    <li class="swiper-slide menu-list">
+                        <img src="./img/menu-2.png" alt="스윗 소주 티 칵테일" class="menu-img">
+                        <div class="menu-text">
+                            <div class="menu-name">
+                                <p class="name-sub">Before Sunset</p>
+                                <p class="name-main">스윗 소주 티 칵테일</p>
+                            </div>
+                            <p class="menu-des">
+                                소주에 상큼 달콤한 자몽향 블렌딩 티와 진저 에일을 사용해 달콤함에 부드러운 밀크폼을 얹어 색다른 풍미를 즐길 수 있습니다.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="swiper-slide menu-list">
+                        <img src="./img/menu-3.png" alt="정화 티 칵테일" class="menu-img">
+                        <div class="menu-text">
+                            <div class="menu-name">
+                                <p class="name-sub">Flower In Mirror</p>
+                                <p class="name-main">정화 티 칵테일</p>
+                            </div>
+                            <p class="menu-des">
+                                훈연향이 매력적인 기문 홍차에 부드러운 한국 겹벚꽃의 우아한 향을 가진 블렌딩 티에 매화수를 더해져 은은한 풍미를 느낄 수 있습니다.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="swiper-slide menu-list">
+                        <img src="./img/menu-4.png" alt="초코 홍차 스무디 칵테일" class="menu-img">
+                        <div class="menu-text">
+                            <div class="menu-name">
+                                <p class="name-sub">Velbet Gold Round</p>
+                                <p class="name-main">초코 홍차 스무디 칵테일</p>
+                            </div>
+                            <p class="menu-des">
+                                묵직한 바디감의 아쌈 베이스에 달콤 쌉싸름한 카카오향의 블렌딩 티와 깔루아 리큐르를 함께 사용해 초콜릿의 달콤함과 은은한 커피향의 조화를 스무디로 즐길 수 있습니다.
+                            </p>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
-        <!-- <div role="button" class="btn-next"></div> -->
-        <!-- <div class="line2"></div> -->
+        <div class="swiper-button-next btn-next"></div>
     </section>
     <section class="bookings">
         <div class="B"></div>
@@ -142,7 +175,6 @@
                                     </select>
                                     <div class="input-border"></div>
                                 </div>
-                                <!-- <input type="submit" value="SUBMIT" class="booking-btn" > -->
                                     <button type="button" class="booking-btn" onclick="checkForm()">SUBMIT</button>
                             </div>
                         </div>
@@ -184,9 +216,10 @@
     </footer>
     
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
 <script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
-<!-- <script src="sweetalert2.all.min.js"></script> -->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="./js/script.js"></script>
 

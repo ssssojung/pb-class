@@ -126,43 +126,18 @@ const TelChange = (target) =>{
 
     }
 
-    // const booking_confirm = () => {
-
-
-    //     if (f.value == null || f.value == "") {
-    //                 return true;
-    //             }
-                
-    //     swal({
-    //         title: "Are you sure?",
-    //         text: "Once deleted, you will not be able to recover this imaginary file!",
-    //         icon: "warning",
-    //         buttons: true,
-    //         dangerMode: true,
-    //       })
-    //       .then((willDelete) => {
-    //         if (willDelete) {
-    //           swal("예약이 완료되었습니다!", {
-    //             icon: "success",
-    //           });
-    //         } else {
-    //           swal("예약이 실패되었습니다.");
-    //         }
-    //       });
-    //     alert(
-    //         name + email + phone + people + date
-    
-    //     )
-    //     if(textBox != null){
-    //         return false
-    //     }
-    
-    // }
-
-// function isNull(input) {
-//     if (input.value == null || input.value == "") {
-//         return true;
-//     }
-//     return false;
-// }
+// swiper
+const swiper = new Swiper('.swiper', {
+    loop: true,
+    keyboard: {
+        enabled: true,
+      },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  
+  });
 
