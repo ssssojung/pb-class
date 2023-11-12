@@ -54,6 +54,7 @@ body{
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
+    background-size: contain;
 }
 .teabar-about{
     width: 100%;
@@ -480,7 +481,7 @@ input:-webkit-autofill {
     flex-direction: column;
     gap: 10px;
     letter-spacing: 0.1rem;
-    height: 100%;
+    /* height: 100%; */
 }
 .contact-text > p:nth-child(2){
     font-size: 2.2rem;
@@ -501,3 +502,307 @@ input:-webkit-autofill {
 .sns-btns img:hover{
     opacity: 1;
 }
+/* 반응형 */
+/* PC , 테블릿 가로 (해상도 768px ~ 1023px)*/ 
+@media all and (min-width:768px) and (max-width:1023px) { 
+    .teabar-main .main-text{
+        font-size: 11rem;
+        transform: translateY(-70%);
+
+    }
+    .title-Box .title{
+        font-size: 5.5rem;
+    }
+    .title-Box .sub-title{
+        font-size: 2.2rem;
+    }
+    .teabar-about .about-des{
+        font-size: 1.8rem;
+    }
+    .opening .opening-info li{
+        font-size: 2rem;
+    }
+    .cocktails .menu-wrap{
+        min-width: 570px;
+        grid-column: 1/6;
+    }
+    .menu-text{
+        min-width: auto;
+        grid-row: 1/6;
+    }
+    .name-main{
+        font-size: 2.9rem;
+    }
+    
+    .flatpickr-calendar.inline{
+        margin: 0 auto;
+    }
+    .bookings {
+        grid-template-columns: 2fr 2fr 1fr;
+        grid-template-rows: 150px 4fr 200px;
+        height: auto;
+    }
+    .bookings .B{
+        grid-row: 2/3;
+    }
+    .booking-info form{
+        flex-direction: column;
+        gap: 50px;
+    }
+    form .text-area{
+        min-height: 360px
+    }
+    .contact-content .contact-text{
+        height: auto;
+    }
+    .bookings .bookings-wrap{
+        display: block;
+    }
+  } 
+  
+  
+  /* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/ 
+  @media all and (min-width:480px) and (max-width:767px) {
+    .teabar-main{
+        align-items: flex-start;
+    }
+    .teabar-main .main-text{
+        font-size: 8rem;
+        transform: translateY(55%);
+
+    }
+    .teabar-about .title-Box{
+        gap: 10px;
+    }
+    .title-Box .title{
+        font-size: 4.5rem;
+        line-height: 4.8rem;
+        letter-spacing: 8px;
+    }
+    .title-Box .sub-title{
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+    }
+    .teabar-about{
+        display: block;
+        height: auto;
+    }
+    .teabar-about .A{
+        height: 100vh;
+        grid-template-columns: 30px auto 30px;
+    }
+
+    .teabar-about .about-des{
+        font-size: 1.8rem;
+        line-height: 4.5rem;
+    }
+    .teabar-info{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 30px;
+        gap: 50px;
+    }
+    .teabar-info .opening{
+        width: 50%;
+    }
+    .content-title{
+        font-size: 3rem;
+        margin-bottom: 30px;
+    }
+    .teabar-info{
+        grid-template-columns: 30px auto 30px;
+        grid-template-rows: 50px 1fr 1fr 50px;
+    }
+    .opening .opening-info li{
+        font-size: 1.8rem;
+    }
+    .menu-img{
+        max-height: 300px;
+    }
+    .menu-name{
+        text-align: center;
+    }
+    .teabar-info .btn-next{
+        display: none;
+    }
+    .teabar-info .cocktails{
+        display: flex;
+        flex-direction: column;
+    }
+    .cocktails .menu-wrap{
+        min-width: 400px;
+    }
+    .cocktails .menu-list{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .menu-des{
+        font-size: 1.6rem;
+    }
+    .name-main{
+        font-size: 2.9rem;
+    }
+    .menu-text{
+        min-width: auto;
+    }
+    .flatpickr-calendar.inline{
+        margin: 0 auto;
+    }
+    .bookings {
+       display: flex;
+       flex-direction: column;
+        height: auto;
+    }
+    .bookings .B{
+        height: 500px;
+        margin: 50px 0;
+    }
+    .booking-info form{
+        flex-direction: column;
+        gap: 50px;
+    }
+    form .text-area{
+        min-height: 360px
+    }
+    .contact-content .contact-text{
+        height: auto;
+    }
+    .bookings .bookings-wrap{
+        display: block;
+        padding: 30px;
+    }
+  } 
+  
+  /* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/ 
+  @media all and (max-width:479px) {
+    .teabar-main{
+        align-items: center;
+    }
+    .teabar-main .main-text{
+        font-size: 6rem;
+        transform: translateY(-50%);
+
+    }
+    .teabar-about .title-Box{
+        gap: 10px;
+    }
+    .title-Box .title{
+        font-size: 3.5rem;
+        line-height: 3.8rem;
+        letter-spacing: 8px;
+    }
+    .title-Box .sub-title{
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+    .teabar-about{
+        display: block;
+        height: auto;
+    }
+    .teabar-about .A{
+        height: 100vh;
+        grid-template-columns: 30px auto 30px;
+    }
+    .teabar-about .about-content{
+        padding: 10px;
+    }
+
+    .teabar-about .about-des{
+        font-size: 1.5rem;
+        line-height: 4rem;
+        word-break: break-all;
+    }
+    .teabar-info{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 30px;
+        gap: 50px;
+    }
+    .teabar-info .opening{
+        width: 50%;
+    }
+    .content-title{
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+    .teabar-info{
+        grid-template-columns: 30px auto 30px;
+        grid-template-rows: 50px 1fr 1fr 50px;
+        height: auto;
+        padding: 20px;
+    }
+    .opening .opening-info li{
+        font-size: 1.6rem;
+    }
+    .menu-img{
+        max-height: 300px;
+    }
+    .menu-name{
+        text-align: center;
+    }
+    .teabar-info .btn-next{
+        display: none;
+    }
+    .teabar-info .cocktails{
+        display: flex;
+        flex-direction: column;
+    }
+    .cocktails .menu-wrap{
+        min-width: 335px;
+    }
+    .cocktails .menu-list{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .menu-des{
+        font-size: 1.5rem;
+    }
+    .name-main{
+        font-size: 2.5rem;
+    }
+    .name-sub{
+        font-size: 1.5rem;
+    }
+    .menu-text{
+        min-width: auto;
+    }
+    .flatpickr-calendar.inline{
+        margin: 0 auto;
+    }
+    .bookings {
+       display: flex;
+       flex-direction: column;
+        height: auto;
+    }
+    .bookings .B{
+        height: 400px;
+        margin: 30px 0;
+    }
+    .booking-info form{
+        flex-direction: column;
+        gap: 50px;
+    }
+    form .text-area{
+        min-height: 360px
+    }
+    .contact-content .contact-text{
+        height: auto;
+    }
+    .bookings .bookings-wrap{
+        display: block;
+        padding: 30px;
+    }
+    .contact-content .contact-text{
+        font-size: 1.6rem;
+    }
+    .contact-text > p:nth-child(2){
+        font-size: 2rem;
+    }
+    .sns-btns img{
+        width: 30px;
+    }
+  }
