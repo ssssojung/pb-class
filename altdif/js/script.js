@@ -132,17 +132,11 @@ const swiper = new Swiper('.swiper', {
     keyboard: {
         enabled: true,
       },
-<<<<<<< HEAD
+
       autoplay: {
         delay: 2500,
         disableOnInteraction: false,
       },
-=======
-      // autoplay: {
-      //   delay: 2500,
-      //   disableOnInteraction: false,
-      // },
->>>>>>> 36e5ed391f38e09d023eb748589a6ef3a204f85c
   
     navigation: {
       nextEl: '.swiper-button-next',
