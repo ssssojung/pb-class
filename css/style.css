@@ -171,6 +171,7 @@ header #menu_btn a {
     height: 100vh;
     transform-style: preserve-3d;
     /* transform: translateZ(-49vw); */
+    will-change: transform; 
 }
 .wall{
     position: absolute;
@@ -331,6 +332,7 @@ header #menu_btn a {
     display: flex;
     align-items: center;
     font-weight: 600;
+    word-break: keep-all;
 }
 .process-item p::before{
     flex-grow: 1;
@@ -346,6 +348,7 @@ header #menu_btn a {
     color: var(--black);
     line-height: 1.8em;
     font-weight: 800;
+    word-break: keep-all;
 }
 .process-item.about__text-main{
     display: block;
@@ -571,10 +574,10 @@ header #menu_btn a {
     animation-iteration-count: infinite;
 }
     
-.banner-1{background-image: url(../img/work_1.png); animation-delay: 1s;}
-.banner-2{background-image: url(../img/clone_2.png); animation-delay: 5s;}
+.banner-1{background-image: url(../img/solve.jpg); animation-delay: 1s;}
+.banner-2{background-image: url(../img/altdif.jpg); animation-delay: 5s;}
 .banner-3{background-image: url(../img/clone_3.png); animation-delay: 10s;}
-.banner-4{background-image: url(../img/react_ui.png); animation-delay: 15s;}
+.banner-4{background-image: url(../img/react_ui.jpg); animation-delay: 15s;}
 @keyframes bganibt {
     0% {
         background-position: 0 top
@@ -644,7 +647,7 @@ header #menu_btn a {
     position: absolute;
     width: 100vw;
     display: flex;
-    animation: marquee2 10s linear infinite;
+    /* animation: marquee2 10s linear infinite; */
 }
 .contact__bg-marquee span{
     font-size: 20vw;

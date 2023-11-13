@@ -276,15 +276,15 @@
             },
             
         },
-        { //4
-            type : 'normal',
-            heightNum : 1.4,
-            scrollHeight : 0,
-            objs: {
-                container: document.querySelector('#scroll-section-4')
-            }
-            //높이세팅 조건문 추가해야함(sticky & normal)
-        },
+        // { //4
+        //     type : 'normal',
+        //     heightNum : 1.4,
+        //     scrollHeight : 0,
+        //     objs: {
+        //         container: document.querySelector('#scroll-section-4')
+        //     }
+        //     //높이세팅 조건문 추가해야함(sticky & normal)
+        // },
         { //5
             type : 'normal',
             heightNum : 1,
@@ -338,6 +338,8 @@
         return rv;
     };
 
+    const animationEleL = document.querySelector('.wall-left');
+    const animationEleR = document.querySelector('.wall-right');
     const playAnimation = () =>{
         const objs = sceneInfo[currentScene].objs;
         const values = sceneInfo[currentScene].values;
@@ -347,11 +349,14 @@
 
         switch (currentScene) {
             case 0 : 
-            // console.log('0 play');
+                animationEleL.classList.add('wall-moving-y');
+                animationEleR.classList.add('wall-moving-y');
             break;
 
             case 1 : 
             // const progress_height = calcValues(values.progress_height,currentYOffset);
+                animationEleL.classList.remove('wall-moving-y');
+                animationEleR.classList.remove('wall-moving-y');
                 objs.progress.style.height = `${calcValues(values.progress_height,currentYOffset)}%`;
             // console.log(sceneInfo[currentScene].objs.progress.style.height);
             break;
@@ -385,9 +390,9 @@
             // console.log('3 play');
             break;
 
-            case 4 : 
-            // console.log('4 play');
-            break;
+            // case 4 : 
+            // // console.log('4 play');
+            // break;
 
             case 5 : 
             // console.log('5 play');

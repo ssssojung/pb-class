@@ -1,6 +1,14 @@
-    @media all and (min-width:1024px) and (max-width:1279px) { 
+    @media all and (min-width:1024px) and (max-width:1400px) { 
+    .about{
+        padding: 0 35px;
+        margin-bottom: 200px;
+    }
     .about__contain{
         gap: 80px;
+    }
+    .about__text {
+        font-size: 19px;
+        transform: translateY(100px);
     }
     .process-item:nth-child(2) { top: calc( var(--center) - 18em ); padding-bottom: calc( var(--center-p) + 18em ); }
     .process-item:nth-child(3) { top: calc( var(--center) - 13em  ); padding-bottom: calc( var(--center-p) + 13em ); }
@@ -12,7 +20,13 @@
     }
     .about__text{
         font-size: 1.2rem;
+        max-width: 770px;
     }
+    #scroll-section-2 .sticky-ele{
+        width: 445px;
+        margin: 0 auto;
+        font-size: 1.3rem;
+    }   
 
     } 
   @media all and (min-width:768px) and (max-width:1023px){
