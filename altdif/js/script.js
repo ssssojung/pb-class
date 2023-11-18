@@ -39,7 +39,7 @@ dateSelector.flatpickr({
     hourIncrement: 2,
     disableMobile: "true",
     appendTo: dateWrap,
-    defaultHour: 11
+    defaultHour: 11,
 })
 
 
