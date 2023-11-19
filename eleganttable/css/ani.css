@@ -6,8 +6,8 @@
   .slide_section .textArea p{
      opacity: 1;
      transform: translateY(50px);
-     -webkit-animation: fade-out-bottom 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-     animation: fade-out-bottom 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+     -webkit-animation: fade-out-bottom 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+     animation: fade-out-bottom 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
   .fade-out-bottom{
     -webkit-animation: fade-out-bottom 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s both;
@@ -38,14 +38,14 @@
      }
    }
 
-   /* .slide_section.active .textArea h2,
+   .slide_section.active .textArea h2,
    .slide_section.active .textArea p{
       transform: translateY(0);
       opacity: 1;
       transition: all 1s;
       -webkit-animation: fade-out-bottom 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
       animation: fade-out-bottom 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-   } */
+   }
 
 
      /* active*/
@@ -157,6 +157,8 @@
 }
 .slide_section.active .contentBox.open .banner-img{
    background-image: none;
+   -webkit-animation: slide-out-right 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.5s both;
+   animation: slide-out-right 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.5s both;
 }
 @-webkit-keyframes slide-out-right {
     0% {
@@ -185,4 +187,17 @@
   .slide_section.active .contentBox.open .textArea>p{
     -webkit-animation: fade-out-bottom 0.7s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.5s both;
             animation: fade-out-bottom 0.7s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.5s both;
+  }
+
+  .slide_section.active .open-layout.open .open-left{
+    -webkit-animation: fade-in-bottom 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1.2s both;
+    animation: fade-in-bottom 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1.2s both;
+  }
+  .slide_section.active .open-layout.open .open-center{
+    -webkit-animation: fade-in-bottom 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1.8s both;
+    animation: fade-in-bottom 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1.8s both;
+  }
+  .slide_section.active .open-layout.open .open-right{
+    -webkit-animation: fade-in-bottom 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1.5s both;
+    animation: fade-in-bottom 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1.5s both;
   }
