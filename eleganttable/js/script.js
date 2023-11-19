@@ -19,26 +19,94 @@ Bg.addEventListener('click',(e)=>{
         slidePrevHandler();
     }
 
+
 });
+
+
+let moving; 
+
+//touch
+let start_X,end_X; 
+window.addEventListener('touchstart', touchStart);
+window.addEventListener('touchend', touchEnd);
+
+function touchStart(e){
+    start_X = e.touches[0].pageX;
+}
+function touchEnd(e){
+    end_X = e.changedTouches[0].pageX;
+    if (!moving) {
+    	console.log('start');
+        if(start_X > end_X ){
+            console.log('다음')
+            slideNextHandler();
+        }else{
+            console.log('이전')
+            slidePrevHandler();
+        }
+        clearInterval(interval);
+        playtoggle = false;
+    }
+
+    clearTimeout(moving);
+    moving = setTimeout(() => {
+        console.log('stop');
+        moving = undefined;
+
+            interval = setInterval(autoPlay, 5000);
+            playtoggle = true;
+    }, 400);
+
+}
 
 //wheel
 window.addEventListener('wheel',(e)=>{
-    console.log(e.deltaY)
-    if(e.deltaY > 0){
-        console.log('다음')
 
-    }else if(e.deltaY < 0){
-        console.log('이전')
+    if (!moving) {
+    	console.log('start');
+            if(e.deltaY > 0){
+                console.log('다음')
+                slideNextHandler();
+
+            }else if(e.deltaY < 0){
+                console.log('이전')
+                slidePrevHandler();
+            }
+
+                clearInterval(interval);
+                playtoggle = false;
     }
+
+    clearTimeout(moving);
+    moving = setTimeout(() => {
+        console.log('stop');
+        moving = undefined;
+
+            interval = setInterval(autoPlay, 5000);
+            playtoggle = true;
+    }, 400);
 })
+
 
 //auto
 function autoPlay(){
+    console.log('5초 끝')
     slideNextHandler();
 }
-
+//autoPlay 막기
 let interval = setInterval(autoPlay, 5000);
-let autotoggle = true;
+let playtoggle = true;
+
+// if(playtoggle){
+//     clearInterval(interval);
+//     playtoggle = false;
+// }else{
+//     interval = setInterval(autoPlay, 5000);
+//     playtoggle = true;
+// }
+
+
+
 
 const slide_section = document.querySelectorAll('.slide_section');
 const slide_btn = document.querySelector('.slide_btn');
@@ -50,14 +118,15 @@ for(let i=0; i<slide_section.length; i++){
         slide_section[i].querySelector('.open-layout').classList.add('open');
         slide_btn.classList.add('fade-out-bottom');
 
-        //autoPlay
-        if(autotoggle){
+
+        // if(playtoggle){
             clearInterval(interval);
-            autotoggle = false;
-        }else{
-            interval = setInterval(text, 500);
-            autotoggle = true;
-        }
+            playtoggle = false;
+        // }else{
+        //     interval = setInterval(autoPlay, 5000);
+        //     playtoggle = true;
+        // }
+
 
     })
 
@@ -110,26 +179,3 @@ const slidePrevHandler = () =>{
 }
 
 
-// if(chk) {
-//     // 휠 일정시간동안 막기
-//     chk = false;
-//     setTimeout(function(){
-//         chk = true;
-//     }, 500)
-
-//     // 휠 방향 감지(아래: -120, 위: 120)
-//     let w_delta = event.wheelDelta / 120;
-    
-//     // 휠 아래로
-//     if(w_delta < 0 && $(this).next().length > 0) {
-//         $('.container').animate({
-//             left: -array[$(this).index()+1]
-//         }, 500)
-//     }
-//     // 휠 위로
-//     else if(w_delta > 0 && $(this).prev().length > 0) {
-//         $('.container').animate({
-//             left: -array[$(this).index()-1]
-//         }, 500)
-//     }
-// }
