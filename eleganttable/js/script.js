@@ -1,7 +1,78 @@
+const cursor = document.querySelector('#cursor');
+const cursorCircle = cursor.querySelector('.cursor__circle');
+const cursorCircle2 = cursor.querySelector('.cursor__circle2');
+
+const mouse = { x: -100, y: -100 }; // mouse pointer's coordinates
+const pos = { x: 0, y: 0 }; // cursor's coordinates
+const speed = 0.1; // between 0 and 1
+
+const updateCoordinates = e => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+}
+
+window.addEventListener('mousemove', updateCoordinates);
+
+
+function getAngle(diffX, diffY) {
+  return Math.atan2(diffY, diffX) * 180 / Math.PI;
+}
+
+function getSqueeze(diffX, diffY) {
+  const distance = Math.sqrt(
+    Math.pow(diffX, 2) + Math.pow(diffY, 2)
+  );
+  const maxSqueeze = 0.15;
+  const accelerator = 1500;
+  return Math.min(distance / accelerator, maxSqueeze);
+}
+
+
+const updateCursor = () => {
+  const diffX = Math.round(mouse.x - pos.x);
+  const diffY = Math.round(mouse.y - pos.y);
+  
+  pos.x += diffX * speed;
+  pos.y += diffY * speed;
+  
+  const angle = getAngle(diffX, diffY);
+  const squeeze = getSqueeze(diffX, diffY);
+  
+  const scale = 'scale(' + (1 + squeeze) + ', ' + (1 - squeeze) +')';
+  const rotate = 'rotate(' + angle +'deg)';
+  const translate = 'translate3d(' + pos.x + 'px ,' + pos.y + 'px, 0)';
+
+  cursor.style.transform = translate;
+  cursorCircle.style.transform = rotate + scale;
+};
+
+function loop() {
+  updateCursor();
+  requestAnimationFrame(loop);
+}
+
+requestAnimationFrame(loop);
+
+
+
+const cursorModifiers = document.querySelectorAll('[cursor-class]');
+
+cursorModifiers.forEach(curosrModifier => {
+  curosrModifier.addEventListener('mouseenter', function() {
+    const className = this.getAttribute('cursor-class');
+    cursor.classList.add(className);
+  });
+  
+  curosrModifier.addEventListener('mouseleave', function() {
+    const className = this.getAttribute('cursor-class');
+    cursor.classList.remove(className);
+  });
+});
+
 
 const Bg = document.querySelector('.BG');
 let i = 0;
-const ColorArr = ['#C2C2C2', '#F7F7F7', '#F4C9C0', '#B7AC90'];
+const ColorArr = ['#C2C2C2','#F7F7F7','#F4C9C0','#B7AC90' ];
 const slideList = document.querySelectorAll('.slide_wrapper>div');
 const $prev = document.querySelector('.slide_btn .prev');
 const $next = document.querySelector('.slide_btn .next');
@@ -12,12 +83,26 @@ const btnline = document.querySelector('.slide_btn span');
 Bg.addEventListener('click',(e)=>{
     console.log(i)
     e.preventDefault;
-    if(e.target === $next){
-        slideNextHandler();
+
+    if (!moving) {
+        if(e.target === $next){
+            slideNextHandler();
+        }
+        if(e.target === $prev){
+            slidePrevHandler();
+        }
+        clearInterval(interval);
+        playtoggle = false;
     }
-    if(e.target === $prev){
-        slidePrevHandler();
-    }
+
+    clearTimeout(moving);
+    moving = setTimeout(() => {
+        console.log('stop');
+        moving = undefined;
+
+            interval = setInterval(autoPlay, 5000);
+            playtoggle = true;
+    }, 400);
 
 
 });
@@ -59,7 +144,7 @@ function touchEnd(e){
 
 }
 
-//wheel
+// //wheel
 window.addEventListener('wheel',(e)=>{
 
     if (!moving) {

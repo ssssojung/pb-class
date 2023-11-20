@@ -157,8 +157,8 @@
 }
 .slide_section.active .contentBox.open .banner-img{
    background-image: none;
-   -webkit-animation: slide-out-right 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.5s both;
-   animation: slide-out-right 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.5s both;
+   -webkit-animation: slide-out-right 0.1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.5s both;
+   animation: slide-out-right 0.1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.5s both;
 }
 @-webkit-keyframes slide-out-right {
     0% {
