@@ -39,22 +39,31 @@ header{
    top: 0;
    left: 0;
    z-index: 100;
-   width: 100%;
-   height: 100px;
-   display: flex;
-   justify-content: space-between;
+   width: 100vw;
+   height: 150px;
+   display: grid;
+   grid-template-columns: repeat(9,1fr);
    align-items: center;
-   padding: 0 20px;
+}
+header h1{
+   grid-column: 2/4;
+}
+header nav{
+   grid-column: 7/9;
+   justify-self: right;
+   width: 100%;
 }
 nav ul{
    display: flex;
    align-items: center;
+   justify-content: right;
+   gap: 70px;
 }
 nav li {
    padding: 5px;
 }
 nav li img{
-   width: 40px;
+   width: 50px;
 
 }
 .slide_wrapper{
@@ -185,9 +194,10 @@ nav li img{
  }
  .textArea p{
     font-family: var(--font-En);
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 400;
-    line-height: 2.6rem;
+    line-height: 4rem;
+    max-width: 600px;
  }
 
 
@@ -242,7 +252,7 @@ nav li img{
    background-repeat: no-repeat;
  }
  .open-layout p{
-   font-size: 1.7rem;
+   font-size: 2.2rem;
    font-weight: 400;
    line-height: 200%;
    word-break: keep-all;
@@ -256,6 +266,7 @@ nav li img{
 }
 .open-left p{
    width: 50%;
+   max-width: 600px;
 }
 .open-left .open-img-left{
    width: 50%;
@@ -294,8 +305,8 @@ nav li img{
    flex-direction: column;
    align-items: end;
    gap:  20px;
-   /* margin-top: 45px; */
    margin-left: 50px;
+   max-width: 400px;
 }
 .open-right p{
    /* width: 240px; */
