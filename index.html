@@ -10,9 +10,13 @@
     <title>이소정 포트폴리오</title>
 </head>
 <body>
+    <div id="cursor">
+        <div class="cursor__dot"></div>
+        <div class="cursor__circle"></div>
+    </div>
     <header id="hd">
         <h2 id="menu_btn">
-            <a>
+            <a href="#none">
                 <span class="t_stick"></span>
                 <span class="b_stick"></span>
             </a>
@@ -104,8 +108,8 @@
                 <ul class="txt_list">
                     <li id="txt_list_1" class="sticky-ele">
                         <p>시멘틱 마크업을 통한 의미있는 구조 설계</p>
-                        <p>적응형 웹사이트 구현</p>
-                        <p>SASS를 이용한 프리프로세싱</p>
+                        <p>반응형 웹사이트 구현</p>
+                        <p>SCSS를 이용한 프리프로세싱</p>
                     </li>
                     <li id="txt_list_2" class="sticky-ele">
                         <p>플러그인 활용 </p>
@@ -133,8 +137,76 @@
             </div>
         </div>
     </section>
-    <section class="work" id="scroll-section-3">
-        <ul class="work__list">
+    <section class="work" id="scroll-section-3"  cursor-class="color-cursor">
+        <div class="work_wrap">
+            <div class="left">
+                <div class="detailsWrapper">
+                    <div class="details">
+                        <span class="headline workH1">RESPONSIVE WEBSITE</span>
+                        <h4>SØLVE</h4>
+                        <p class="page">PAGE : Main + Sub*8</p>
+                        <p class="btn-wrap">
+                            <a class="site_btn" cursor-class="click1" target="_blank" href="//ssssojung.github.io/pb-class/Solve/" alt="solve 페이지 바로가기">VIEW</a>
+                        </p>
+                    </div>
+        
+                    <div class="details">
+                        <span class="headline workH2">RESPONSIVE WEBSITE _ REDESIGN</span>
+                        <h4>ALTDIF <br>TEABAR</h4>
+                        <p class="page">PAGE : Main</p>
+                        <P class="btn-wrap">
+                            <a class="site_btn" cursor-class="click2" target="_blank" href="//ssssojung.github.io/pb-class/Solve/" alt="solve 페이지 바로가기">VIEW</a>
+                            <a class="site_btn" cursor-class="click2" target="_blank" href="//ssssojung.github.io/pb-class/Solve/" alt="solve 페이지 바로가기">FIGMA</a>
+                        </P>
+                    </div>
+        
+                    <div class="details">
+                        <span class="headline workH3">PC WEBSITE _ REDESIGN</span>
+                        <h4>THE ELEGANT TABLE</h4>
+                        <p class="page">PAGE : Main*4</p>
+                        <P class="btn-wrap">
+                            <a class="site_btn" cursor-class="click3" target="_blank" href="//ssssojung.github.io/pb-class/Solve/" alt="solve 페이지 바로가기">VIEW</a>
+                            <a class="site_btn" cursor-class="click3" target="_blank" href="//ssssojung.github.io/pb-class/Solve/" alt="solve 페이지 바로가기">FIGMA</a>
+                        </P>
+
+                    </div>
+
+                    <div class="details">
+                        <span class="headline workH4">PC WEBSITE _ REDESIGN</span>
+                        <h4>MODERN <br>POINT</h4>
+                        <p class="page">PAGE : Main</p>
+                        <P class="btn-wrap">
+                            <a class="site_btn" cursor-class="click4" target="_blank" href="//ssssojung.github.io/pb-class/Solve/" alt="solve 페이지 바로가기">VIEW</a>
+                            <a class="site_btn" cursor-class="click4" target="_blank" href="//ssssojung.github.io/pb-class/Solve/" alt="solve 페이지 바로가기">FIGMA</a>
+                        </P>
+                    </div>
+        
+                </div>
+            </div>
+            <div class="right">
+                <div class="photos">
+                    <div class="link_wrap">
+                        <a href="//ssssojung.github.io/pb-class/Solve/" target="_blank" class="work_link " cursor-class="click1">
+                            <div class="show-img show-img1"></div>
+                        </a>
+                        <a href="//ssssojung.github.io/pb-class/altdif/" target="_blank" class="work_link " cursor-class="click2">
+                            <div class="show-img show-img2"></div>
+                        </a>
+                        <a href="//ssssojung.github.io/pb-class/eleganttable/" target="_blank" class="work_link " cursor-class="click3">
+                            <div class="show-img show-img3"></div>
+                        </a>
+                        <a href="//lsj-react-43b42.web.app/" target="_blank" class="work_link " cursor-class="click4">
+                            <div class="show-img show-img4"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        
+        
+        <!-- <ul class="work__list">
             <li class="work1">
                 <div class="work__left">
                     <span class="color">RESPONSIVE WEBSITE</span>
@@ -151,22 +223,6 @@
                     </div>
                 </div>
             </li>
-            <!-- <li class="work1">
-                <div class="work__left">
-                    <span class="color">RESPONSIVE WEBSITE</span>
-                    <h4>DECK.</h4>
-                    <p>
-                        <a class="site_btn" target="_blank" href="//ssssojung.github.io/pb-class/deck/" alt="deck 페이지 바로가기">
-                           <span>VIEW</span>
-                        </a>
-                    </p>
-                </div>
-                <div class="work__right">
-                    <div class="project__banner">
-                        <div class="banner-img banner-1"></div>
-                    </div>
-                </div>
-            </li> -->
             <li class="work2">
                 <div class="work__left">
                     <span class="color">RESPONSIVE REDESIGN</span>
@@ -183,22 +239,6 @@
                     </div>
                 </div>
             </li>
-            <!-- <li class="work2">
-                <div class="work__left">
-                    <span class="color">CLONE CODING</span>
-                    <h4>RUCO</h4>
-                    <p>
-                        <a class="site_btn" target="_blank" href="//ssssojung.github.io/pb-class/week2-basic/" alt="RUCO 페이지 바로가기">
-                            <span>VIEW</span>
-                        </a>
-                    </p>
-                </div>
-                <div class="work__right">
-                    <div class="project__banner">
-                        <div class="banner-img banner-2"></div>
-                    </div>
-                </div>
-            </li> -->
             <li class="work3">
                 <div class="work__left">
                     <span class="color">LANDING PAGE</span>
@@ -234,7 +274,7 @@
                     </div>
                 </div>
             </li>
-        </ul>
+        </ul> -->
     </section>
     <!-- <section class="js" id="scroll-section-4" >
         <div class="js_list">

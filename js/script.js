@@ -1,3 +1,76 @@
+(()=>{
+//cursor
+const cursor = document.querySelector('#cursor');
+const cursorCircle = cursor.querySelector('.cursor__circle');
+
+const mouse = { x: -100, y: -100 };
+const pos = { x: 0, y: 0 };
+const speed = 0.1; 
+
+const updateCoordinates = e => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+
+}
+
+window.addEventListener('mousemove', updateCoordinates);
+
+
+function getAngle(diffX, diffY) {
+  return Math.atan2(diffY, diffX) * 180 / Math.PI;
+}
+
+function getSqueeze(diffX, diffY) {
+  const distance = Math.sqrt(
+    Math.pow(diffX, 2) + Math.pow(diffY, 2)
+  );
+  const maxSqueeze = 0.15;
+  const accelerator = 1500;
+  return Math.min(distance / accelerator, maxSqueeze);
+}
+
+
+const updateCursor = () => {
+  const diffX = Math.round(mouse.x - pos.x);
+  const diffY = Math.round(mouse.y - pos.y);
+  
+  pos.x += diffX * speed;
+  pos.y += diffY * speed;
+  
+  const angle = getAngle(diffX, diffY);
+  const squeeze = getSqueeze(diffX, diffY);
+  
+  const scale = 'scale(' + (1 + squeeze) + ', ' + (1 - squeeze) +')';
+  const rotate = 'rotate(' + angle +'deg)';
+  const translate = 'translate3d(' + pos.x + 'px ,' + pos.y + 'px, 0)';
+
+  cursor.style.transform = translate;
+  cursorCircle.style.transform = rotate + scale;
+};
+
+function loop() {
+  updateCursor();
+  requestAnimationFrame(loop);
+}
+
+requestAnimationFrame(loop);
+
+
+
+const cursorModifiers = document.querySelectorAll('[cursor-class]');
+
+cursorModifiers.forEach(curosrModifier => {
+  curosrModifier.addEventListener('mouseenter', function() {
+    const className = this.getAttribute('cursor-class');
+    cursor.classList.add(className);
+  });
+  
+  curosrModifier.addEventListener('mouseleave', function() {
+    const className = this.getAttribute('cursor-class');
+    cursor.classList.remove(className);
+  });
+});
+})();
 
 
 (()=>{
@@ -41,6 +114,8 @@
 
 })();
 
+
+
 (() =>{
     //intro;
     const houseEle = document.querySelector('.house');
@@ -66,156 +141,7 @@
     
 })();
 
-// (()=>{
-//     // 버튼스와이퍼_work
-//     const work = document.querySelector('.work .swiper_wrap');
-//     let work_width = work.clientWidth;
-    
-//     const prevBtn = document.querySelector('.work .work_prev_btn');
-//     const nextBtn = document.querySelector('.work .work_next_btn');
 
-//     const work_items = document.querySelectorAll('.work li');
-//     const maxSwiper = work_items.length;
-
-//     let currSwiper = 1; 
-
-    
-
-//     const pagination = document.querySelector('.pagination');
-//     for(let i=0; i< maxSwiper; i++){
-//         if(i===0){
-//             pagination.innerHTML += `<li class="active">●</li>`;
-//         }else{
-//             pagination.innerHTML += `<li>●</li>`;
-//         }
-//     }
-//     const paginationItems = document.querySelectorAll('.pagination>li');
-//     // const paginationActive = document.querySelectorAll('.pagination>li.active');
-
-//     const colorChange = () =>{
-//         switch(currSwiper){
-//             case 1:
-//                 console.log('파랑');
-//                 prevBtn.setAttribute("style","background-color:#5e62d1");
-//                 nextBtn.setAttribute("style","background-color:#5e62d1");
-//                 // paginationActive.setAttribute("style","color:#5e62d1");
-                
-//                 break
-//             case 2:
-//                 console.log('노랑');
-//                 prevBtn.setAttribute("style","background-color:#4a6746");
-//                 nextBtn.setAttribute("style","background-color:#4a6746");
-//                 // paginationActive.setAttribute("style","color:#4a6746");
-//                 break
-//             case 3:
-//                 console.log('주황');
-//                 prevBtn.setAttribute("style","background-color:#ec977c");
-//                 nextBtn.setAttribute("style","background-color:#ec977c");
-//                 // paginationActive.setAttribute("style","color:#5e62d1");
-//                 break
-//             case 4:
-//                 console.log('핑크');
-//                 prevBtn.setAttribute("style","background-color:#e26a83");
-//                 nextBtn.setAttribute("style","background-color:#e26a83");
-//                 // paginationActive.setAttribute("style","color:#5e62d1");
-//                 break
-//             // case 5:
-//             //     console.log('핑크');
-//             //     prevBtn.setAttribute("style","background-color:#e26a83");
-//             //     nextBtn.setAttribute("style","background-color:#e26a83");
-//             //     // paginationActive.setAttribute("style","color:#5e62d1");
-//             //     break
-            
-    
-//         }
-//     }
-
-//     const nextMove = () =>{
-//         currSwiper++;
-//         if(currSwiper <= maxSwiper){
-//             const offset = work_width * (currSwiper -1);
-//             work_items.forEach((i)=>{
-//                 i.setAttribute("style", `left: ${-offset}px`);
-//             });
-//             paginationItems.forEach((i)=>i.classList.remove("active"));
-//             paginationItems[currSwiper-1].classList.add("active");
-//         }else{
-//             currSwiper--;
-//         }
-//     }
-
-//     const prevMove = () =>{
-//         currSwiper--;
-//         if(currSwiper > 0){
-//             const offset = work_width * (currSwiper -1);
-//             work_items.forEach((i)=>{
-//                 i.setAttribute("style", `left: ${-offset}px`);
-//             });
-//             paginationItems.forEach((i)=>i.classList.remove("active"));
-//             paginationItems[currSwiper-1].classList.add("active");
-//         }else{
-//             currSwiper++;
-//         }
-//     }
-
-//     nextBtn.addEventListener("click",()=>{
-//         nextMove();
-//         colorChange();
-//     });
-//     prevBtn.addEventListener("click",()=>{
-//         prevMove();
-//         colorChange();
-//     });
-    
-
-//     for(let i=0; i< maxSwiper; i++){
-//         paginationItems[i].addEventListener("click",()=>{
-//             currSwiper = i+1;
-//             const offset = work_width * (currSwiper-1);
-//             work_items.forEach((i)=>{
-//                 i.setAttribute("style",`left:${-offset}px`)
-//             });
-//             paginationItems.forEach((i)=>i.classList.remove("active"));
-//             paginationItems[currSwiper-1].classList.add("active");
-//             colorChange();
-//         });
-//     }
-    
-//     let startPoint = 0;
-//     let endPoint = 0;
-    
-//     work.addEventListener("mousedown",(e)=>{
-//         startPoint = e.pageX;
-//     });
-//     work.addEventListener("mouseup",(e)=>{
-//         endPoint = e.pageX;
-//         if(startPoint < endPoint){
-//             prevMove();
-//             colorChange();
-//         } else if(startPoint > endPoint){
-//             nextMove();
-//             colorChange();
-//         }
-//     });
-
-//     work.addEventListener("touchstart",(e)=>{
-//         startPoint = e.touches[0].pageX;
-//     });
-//     work.addEventListener("touchend",(e)=>{
-//         endPoint = e.chagedTouches[0].pageX;
-//         if(startPoint < endPoint){
-//             prevMove();
-//             colorChange();
-//         } else if(startPoint > endPoint){
-//             nextMove();
-//             colorChange();
-//         }
-//     });
-//     window.addEventListener("resize",()=>{
-//         work_width = work.clientWidth;
-//     });
-
-// })();
 
 (()=>{
     let yOffset = 0; 
@@ -434,4 +360,56 @@
     window.addEventListener('load',setLayout);
     setLayout();
  
+})();
+
+(()=>{
+    const Bg = document.querySelector('.work');
+    const photos = document.querySelector('.photos');
+    const links = document.querySelectorAll('.work_link');
+
+    const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+        if (entry.intersectionRatio > 0) {
+            if(entry.target.classList.contains('workH1')){
+                console.log('1들어옴')
+                Bg.style.backgroundColor = '#F3EEEA';
+                photos.style.backgroundColor = '#B0A695';
+                links[0].classList.add('Z-up');
+                links[1].classList.remove('Z-up');
+                
+            }else if(entry.target.classList.contains('workH2')){
+                console.log('2들어옴')
+                Bg.style.backgroundColor = '#d3d6f0';
+                photos.style.backgroundColor = '#8982d9';
+                links[0].classList.remove('Z-up');
+                links[1].classList.add('Z-up');
+                links[2].classList.remove('Z-up');
+
+            }else if(entry.target.classList.contains('workH3')){
+                console.log('3들어옴')
+                Bg.style.backgroundColor = '#FFE5E5';
+                photos.style.backgroundColor = '#FFB7B7';
+                links[1].classList.remove('Z-up');
+                links[2].classList.add('Z-up');
+                links[3].classList.remove('Z-up');
+
+            }else if(entry.target.classList.contains('workH4')){
+                console.log('4들어옴')
+                Bg.style.backgroundColor = '#CCD1E4';
+                photos.style.backgroundColor = '#69779B';
+                links[2].classList.remove('Z-up');
+                links[3].classList.add('Z-up');
+
+            }
+        }
+        else {
+            
+        }
+        })
+    })
+    
+    const boxList = document.querySelectorAll('.headline');
+    boxList.forEach((el) => {
+        io.observe(el);
+    })
 })();
