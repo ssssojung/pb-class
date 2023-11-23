@@ -367,6 +367,9 @@
     }
 
     /* skill */
+    .contents_tit h2{
+        transform: translateY(-110%);
+    }
     
     .skills{
         display: block;
@@ -440,7 +443,7 @@
     }
     .details{
         align-items: center;
-        padding: 50px 0;
+        padding: 100px 0;
     }
     .details h4{
         text-align: center;
