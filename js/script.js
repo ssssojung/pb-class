@@ -364,8 +364,8 @@ cursorModifiers.forEach(curosrModifier => {
 
 (()=>{
     const Bg = document.querySelector('.work');
-    const photos = document.querySelector('.photos');
-    const links = document.querySelectorAll('.work_link');
+    const photos = document.querySelector('.right .photos');
+    const links = document.querySelectorAll('.right .work_link');
 
     const io = new IntersectionObserver(entries => {
         entries.forEach(entry => {
