@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+	
+	<script type="text/javascript" src="js/html5shiv.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="shortcut icon" href="images/favicon/favicon.ico">
+	
+	<title>intro</title>
+
+	
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/top_menu.css" media="all" />
+	
+	<script type="text/javascript">
+// HTML5 video
+if(window.addEventListener){
+    window.addEventListener('load', function(){
+        if(window.HTMLVideoElement){
+            var player = document.getElementById('player');
+            player.addEventListener("ended", function(){
+			/*
+                // 동영상 재생이 끝나면 실행될 코드
+                if(player.canPlayType("images/movie/intro.mp4")){
+　                    player.src = "intro.mp4";
+                } else if(player.canPlayType("video/webm")){
+                       player.src = "images/movie/intro.webm";
+                }
+                player.play();
+			*/
+            });
+        }
+    }, false);
+}
+</script>
+	
+</head>
+<body>
+<div id="intro">	
+	<div>
+		<!-- INTRO : 시작 -->
+	<video id="player" width="100%" height="100%" tabindex="0"  preload="auto" autoplay style="z-index:99" >
+		<source src="images/movie/intro.mp4" type="video/mp4">
+		<source src="images/movie/intro.webm" type="video/webm">
+		<!--<object id="ie_player" width="1496px" height="842px" classid="clsid:22D6F312-B0F6-11D0-94AB-0080C74C7E95">-->
+		<object id="ie_player" width="100%" height="842px" classid="clsid:22D6F312-B0F6-11D0-94AB-0080C74C7E95">
+			<param name="AutoStart" value="true">
+			<param name="FileName" value="images/movie/intro.wmv">
+			<param name="ShowControls" value="false"> 
+		</object>
+	</video>
+	<div class="intro_btn"><a href="index_main.php" class="button_intro">SKIP</a></div>
+	<!--[if lt IE 9]>
+	<script for="ie_player" event="playStateChange(NewState)" type="text/javascript">
+	// for less than IE 9
+	if(NewState==0){
+		// 동영상 재생이 끝나면 실행될 코드
+		var ie_player = document.getElementById('ie_player');
+		ie_player.FileName = images/movie/intro.wmv";
+		ie_player.Play();
+	}
+	</script>
+ <![endif]-->
+
+	</div>
+</div>
+</body>
+</html>

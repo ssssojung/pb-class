@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+	
+	<script type="text/javascript" src="../js/html5shiv.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="shortcut icon" href="../images/favicon/favicon.ico">
+	
+	<title>파트너</title>
+
+	
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/top_menu.css" media="all" />
+	
+	
+	
+</head>
+<body>
+<div id="wrap">	
+<!-- Header : TOP MENU & SUB IMAGE시작 -->
+<div id="header_wrap">
+	<h1 class="logo"><a href="../index.html"><img src="../images/logo.png" alt="윈투스시스템"></a></h1>
+	<!-- TOP MENU 시작 -->
+	<div>
+		<ul id="nav">
+			<li><a href="../company_info/greeting.html">윈투스시스템</a>
+				<ul>
+					<li><a href="../company_info/greeting.html">인사말</a></li>
+					<li><a href="../company_info/history.html">연혁</a></li>
+					<li><a href="../company_info/map.html">오시는길</a></li>
+				</ul>
+			</li>
+			<li><a href="../business_info/business_cctv.html">사업분야</a>
+				<ul style="margin-left:-25px;">
+					<li><a href="../business_info/business_cctv.html">CCTV</a></li>
+					<li><a href="../business_info/business_led.html">LED</a></li>
+					<li><a href="../business_info/business_etc_goods.html">기타제품</a></li>
+				</ul>
+			</li>
+			<li><a href="../product_info/goods_cctv.html">제품소개</a>
+				<ul style="margin-left:-25px;">
+					<li><a href="../product_info/goods_cctv.html">CCTV</a></li>
+					<li><a href="../product_info/goods_led.html">LED</a></li>
+					<li><a href="../product_info/goods_etc_goods.html">기타제품</a></li>
+				</ul>
+			</li>
+			<li ><a href="partner.html" style="padding-right:30px;" >파트너</a></li>
+			<li><a href="../customer_info/data.html">고객센터</a>
+				<ul style="margin-left:-25px;">
+					<li><a href="../customer_info/data.html">자료실</a></li>
+					<li><a href="../customer_info/notice.html">공지사항</a></li>
+					<li><a href="../customer_info/qna.html">제품문의</a></li>
+				</ul>
+			</li>
+			<li><a href="../member_info/login.html">로그인</a></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+	$(document).ready(function() {	
+		$('#nav li').hover(function() {
+			$('ul', this).slideDown(200);
+			$(this).children('a:first').addClass("hov");
+		}, function() {
+			$('ul', this).slideUp(100);
+			$(this).children('a:first').removeClass("hov");		
+		});
+	});
+	</script>
+	<!-- TOP MENU 종료 -->	
+	
+	<!--// 페이스북, 블로그, 트위터 : 시작-->
+	<div class="side-menu">	
+		<ul>
+			<li style="background-color:#254bb0;"><a href="">f</a></li>
+			<li style="background-color:#a0ca49;"><a href="">N</a></li>
+			<li style="background-color:#0792ba;"><a href="">t</a></li>
+		</ul>
+	</div>
+	<!--// 페이스북, 블로그, 트위터 : 종료-->
+</div>
+<!-- SUB IMAGE 시작 -->
+<div class="sub_img_back">
+	<div class="sub_img">
+		<ul>
+			<li class="img_font">Partner</li>
+			<li class="img_font_title">파트너</li>
+		</ul>
+	</div>
+</div>
+<!-- SUB IMAGE 종료 -->
+<!-- Hearder : TOP MENU & SUB IMAGE종료 -->
+
+
+
+<!-- 서브:왼쪽메뉴,내용 시작 -->
+<div id="sub_wrap">
+		<!-- LEFT MENU 시작 -->
+		<div class="left_wrap">	
+			<ul class="left_menu_title">
+				<li class="left_menu_title_text"><strong>파트너</strong></li>
+				<li style="padding-top:5px;">Partner</li>
+			</ul>
+			<div class="nav_left">
+				<ul>
+					<li><a href="business_cctv.html">파트너</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- LEFT MENU 종료 -->
+		
+	<div class="content_wrap">
+		<!-- SUB: 타이틀&네비 시작 -->
+		<div class="sub_top">
+			<h1 class="sub_title">파트너</h1>
+			<span class="sub_nav"><img src="../images/icon_home.png" alt="home"> HOME &gt; 파트너</span>
+		</div>
+		<!-- SUB: 타이틀&네비 종료 -->
+		
+		
+		<!-- SUB CONTENTS: 서브 내용 시작 -->
+		<div class="content">	
+			<div class="partner_wrap"> 
+			<video id="player" width="480" height="340"  controls="controls" tabindex="0"  preload="auto">
+				<source src="movie.mp4" type="video/mp4">
+				<source src="movie.webm" type="video/webm">
+				<object id="ie_player" width="480" height="340" classid="clsid:22D6F312-B0F6-11D0-94AB-0080C74C7E95">
+					<param name="AutoStart" value="true">
+					<param name="FileName" value="movie.wmv">
+					<param name="PlayCount" value="1">
+					<param name="ShowControls" value="true">
+				</object>
+			</video>
+
+			<!--[if lt IE 9]>
+			<script for="ie_player" event="playStateChange(NewState)" type="text/javascript">
+			// for less than IE 9
+			if(NewState==0){
+				// 동영상 재생이 끝나면 실행될 코드
+				var ie_player = document.getElementById('ie_player');
+				ie_player.FileName = "http://fllkorea2.mireene.com/test/videos/leedaeho.wmv";
+				ie_player.Play();
+			}
+			</script>
+         <![endif]-->
+			</div>
+		</div>	
+
+		<!-- SUB CONTENTS: 서브 내용 종료 -->
+	</div>
+</div>
+<!-- 서브:왼쪽메뉴,내용 종료 -->
+
+<!-- Footer :  시작 -->
+<div class="footer_wrap">
+	<div class="customer_center_wrap">
+		<div class="customer_center">
+			<div class="customer_center_contents">
+				<ul>
+					<li style="font-size:14px;"><strong>고객센터</strong></li>
+					<li> 070-7798-3698</li>
+					<li>전화문의 평일 : 09:00 ~ 18:00 / 주말-공휴일은 휴무</li>
+					<li>FAX : 02-6455-3698 </li>
+				</ul>
+			</div>
+			<div class="sitemap">
+				<ul>
+					<li><a href="sitemap.html"> 사이트맵</a>  </li>
+					<li><a href=""> 이메일 무단 수집 거부</a>&nbsp;&nbsp; | </li>
+					<li><a href="terms02.html">  개인정보취급방침</a>&nbsp;&nbsp; | </li>
+					<li><a href="terms01.html"> 이용약관</a>&nbsp;&nbsp; |</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<h1><img src="../images/logo_bottom.png" alt="윈투스시스템"></h1>
+		<p>㈜윈투스시스템    대표명 : 신경익 사업자등록번호 : 123-45-6789 <br>
+		본사 : 서울시 성동구 성수동 2가 333-15 서울숲 한라시그마벨리2 9층 905호   |   공장 : 서울시 성동구 성수동 2가 263-10    |   TEL : 070) 7798-3698    FAX : 02) 6455-3698 <br>
+		 COPYRIGHT 2014 WINTUS SYSTEM ALL RIGHTS RESERVED</p>
+	</div>
+</div>
+<!-- Footer :  종료 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+@charset "utf-8";
+@import "reset.css";
+/*구글 웹 폰트*/
+@import url(http://fonts.googleapis.com/css?family=Lato:100);
+
+/*기본 스타일*/
+
+
+/* .tooltip */
+a.tooltip {
+	display: block;
+	position: relative;
+	width: 20px;
+	height: 20px;
+	/*background-size: cover;
+	border: 5px solid #4b4b4b;
+	background: #fff no-repeat center;
+	
+
+	CSS3 Border-radius 
+	-webkit-border-radius: 55px;
+	-khtml-border-radius: 55px;
+	-moz-border-radius: 55px;
+	border-radius: 55px;
+
+	CSS3 Transition 
+	-webkit-transition: all .4s ease-in .3s;
+	-moz-transition: all .4s ease-in .3s;
+	-o-transition: all .4s ease-in .3s;
+	-ms-transition: all .4s ease-in .3s;
+	transition: all .4s ease-in .3s;*/
+
+	/*
+	all: 모든 CSS스타일 적용해서 애니매이션 (border-radius, border-color)
+	.4s : 지연시간
+	ease-in : ease(ease-in, ease-out, ease-in-out);
+	.3s : 애니메이션이 실행되는 시간;
+	*/
+}
+
+a.tooltip:hover, a.tooltip:focus {
+	border-color: #fff;
+}
+
+a.tooltip .tooltip-box {
+	position: absolute;
+	right: 150%;
+	bottom: 20px;
+	padding: .8em;
+	width: 36em; /* (20+0.8+0.8) em*/
+	background: #111;
+	opacity: 0;
+	z-index:9999;
+
+	/* CSS3 Border-radiusc */
+	-webkit-border-radius: 15px 0;
+	-khtml-border-radius: 15px 0;
+	-moz-border-radius: 15px 0;
+	border-radius: 15px 0;
+
+
+	/* CSS3 Transition  */
+	-webkit-transition: all .4s ease-in .3s;
+	-moz-transition: all .4s ease-in .3s;
+	-o-transition: all .4s ease-in .3s;
+	-ms-transition: all .4s ease-in .3s;
+	transition: all .4s ease-in .3s;*/
+
+}
+
+a.tooltip:hover .tooltip-box, a.tooltip:focus .tooltip-box {
+	bottom: 30px; /* bootom: 100px > 90px;*/
+	opacity:1; /* opacity: 0>1 */;
+
+}
+
+/*a.tooltip .tooltip-box:before { /* V 모양 
+	content: "";
+	position: absolute;
+	left: 120px;
+	bottom: -10px;
+	border: 10px solid #111;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: none;	
+}
+*/
+a.tooltip .tooltip-title { /* <h4>태그 */
+	font-family: Arial, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#fff;
+
+}
+
+a.tooltip .tooltip-desc { /* <p>태그 */
+	margin-top: 10px;
+	margin-bottom: 0px;
+	font-size: 11px;
+	color:#7a7a7a;	
+}
+
+/* 사진 */
+a.tooltip.photo1 {
+	background-image: url(../images/icon_help.png);
+	display:block;
+}
+a.tooltip.photo2 {
+	background-image: url(../images/icon_help.png);
+	background-position: 10px 0;
+
+}
+a.tooltip.photo3 {
+	background-image: url(../images/icon_help.png);
+}
+

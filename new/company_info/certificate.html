@@ -1,0 +1,375 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<script type="text/javascript" src="../js/html5shiv.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="shortcut icon" href="../images/favicon/favicon.ico">
+	
+	<title>특허 및 인증현황</title>
+
+	
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/top_menu.css" media="all" />
+	
+	<!--/////////  이미지클릭시 확대  //////->
+	
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="../source/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+	<!-- Add Button helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+	<script type="text/javascript" src="../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
+	<!-- Add Thumbnail helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+	<script type="text/javascript" src="../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+	<!-- Add Media helper (this is optional) -->
+	<script type="text/javascript" src="../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox();
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+	
+	
+	
+</head>
+<body>
+<div id="wrap">
+<!-- Header : TOP MENU & SUB IMAGE시작 -->
+<div id="header_wrap">
+	<h1 class="logo"><a href="../index.html"><img src="../images/logo.png" alt="윈투스시스템"></a></h1>
+	<!-- TOP MENU 시작 -->
+	<div>
+		<ul id="nav">
+			<li><a href="greeting.html">윈투스시스템</a>
+				<ul>
+					<li><a href="greeting.html">인사말</a></li>
+					<li><a href="certificate.html">특허 및 인증현황</a></li>
+					<li><a href="history.html">연혁</a></li>
+					<li><a href="map.html">오시는길</a></li>
+				</ul>
+			</li>
+			<li><a href="../business_info/business_cctv.html">사업분야</a>
+				<ul style="margin-left:-25px;">
+					<li><a href="../business_info/business_cctv.html">CCTV</a></li>
+					<li><a href="../business_info/business_led.html">LED</a></li>
+					<li><a href="../business_info/business_etc_goods.html">기타제품</a></li>
+				</ul>
+			</li>
+			<li><a href="../product_info/goods_cctv.html">제품소개</a>
+				<ul style="margin-left:-25px;">
+					<li><a href="../product_info/goods_cctv.html">CCTV</a></li>
+					<li><a href="../product_info/goods_led.html">LED</a></li>
+					<li><a href="../product_info/goods_etc_goods.html">기타제품</a></li>
+				</ul>
+			</li>
+			<li ><a href="../partner_info/partner.html" style="padding-right:30px;" >파트너</a></li>
+			<li><a href="../customer_info/data.html">고객센터</a>
+				<ul style="margin-left:-25px;">
+					<li><a href="../customer_info/data.html">자료실</a></li>
+					<li><a href="../customer_info/notice.html">공지사항</a></li>
+					<li><a href="../customer_info/qna.html">제품문의</a></li>
+				</ul>
+			</li>
+			<li><a href="../member_info/login.html">로그인</a></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+	$(document).ready(function() {	
+		$('#nav li').hover(function() {
+			$('ul', this).slideDown(200);
+			$(this).children('a:first').addClass("hov");
+		}, function() {
+			$('ul', this).slideUp(100);
+			$(this).children('a:first').removeClass("hov");		
+		});
+	});
+	</script>
+	<!-- TOP MENU 종료 -->
+	
+	<!--// 페이스북, 블로그, 트위터 : 시작-->
+	<div class="side-menu">	
+		<ul>
+			<li style="background-color:#254bb0;"><a href="">f</a></li>
+			<li style="background-color:#a0ca49;"><a href="">N</a></li>
+			<li style="background-color:#0792ba;"><a href="">t</a></li>
+		</ul>
+	</div>
+	<!--// 페이스북, 블로그, 트위터 : 종료-->
+</div>
+<!-- SUB IMAGE 시작 -->
+<div class="sub_img_back">
+	<div class="sub_img">
+		<ul>
+			<li class="img_font">Wintus System</li>
+			<li class="img_font_title">윈투스시스템</li>
+		</ul>
+	</div>
+</div>
+<!-- SUB IMAGE 종료 -->
+<!-- Hearder : TOP MENU & SUB IMAGE종료 -->
+
+
+
+<!-- 서브:왼쪽메뉴,내용 시작 -->
+<div id="sub_wrap">
+		<!-- LEFT MENU 시작 -->
+		<div class="left_wrap">	
+			<ul class="left_menu_title">
+				<li class="left_menu_title_text"><strong>윈투스시스템</strong></li>
+				<li style="padding-top:5px;">Wintus System</li>
+			</ul>
+			<div class="nav_left">
+				<ul>
+					<li><a href="greeting.html">인사말</a></li>
+					<li><a href="certificate.html">특허 및 인증현황</a></li>
+					<li><a href="history.html">연혁</a></li>
+					<li><a href="map.html">오시는길</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- LEFT MENU 종료 -->
+		
+	<div class="content_wrap">
+		<!-- SUB: 타이틀&네비 시작 -->
+		<div class="sub_top">
+			<h1 class="sub_title">특허 및 인증현황</h1>
+			<span class="sub_nav"><img src="../images/icon_home.png" alt="home"> HOME &gt; 윈투스시스템 &gt; 특허 및 인증현황</span>
+		</div>
+		<!-- SUB: 타이틀&네비 종료 -->
+		
+		
+		<!-- SUB CONTENTS: 서브 내용 시작 -->
+		<div class="content">	
+			<div class="certificate_wrap">
+				<img src="../images/img_cer.png" alt="특허 및 인증현황">
+				<p> <img src="../images/icon_bullet_blue.png" alt="아이콘"> 이미지를 클릭하시면 확대된 화면을 보실 수 있습니다.</p>
+				<ul>
+					<li><a class="fancybox" href="../images/img_certificate01.png" data-fancybox-group="gallery" title="사업자등록증"><img src="../images/img_certificate01_s.png" alt="" /></a><br><br><b>사업자등록증</b></li>
+					<li><a class="fancybox" href="../images/img_certificate02.png" data-fancybox-group="gallery" title="정보통신공사사업등록증"><img src="../images/img_certificate02_s.png" alt="" /></a><br><br><b>정보통신공사사업등록증</b></li>
+					<li><a class="fancybox" href="../images/img_certificate03.png" data-fancybox-group="gallery" title="소프트웨어 사업자 확인신고서"><img src="../images/img_certificate03_s.png" alt="" /></a><br><br><b>소프트웨어 사업자 확인신고서</b></li>				
+				</ul>
+			</div>
+		</div>	
+
+		<!-- SUB CONTENTS: 서브 내용 종료 -->
+	</div>
+</div>
+<!-- 서브:왼쪽메뉴,내용 종료 -->
+
+<!-- Footer :  시작 -->
+<div class="footer_wrap">
+	<div class="customer_center_wrap">
+		<div class="customer_center">
+			<div class="customer_center_contents">
+				<ul>
+					<li style="font-size:14px;"><strong>고객센터</strong></li>
+					<li> 070-7798-3698</li>
+					<li>전화문의 평일 : 09:00 ~ 18:00 / 주말-공휴일은 휴무</li>
+					<li>FAX : 02-6455-3698 </li>
+				</ul>
+			</div>
+			<div class="sitemap">
+				<ul>
+					<li><a href="../member_info/sitemap.html"> 사이트맵</a>  </li>
+					<li><a href=""> 이메일 무단 수집 거부</a>&nbsp;&nbsp; | </li>
+					<li><a href="../member_info/terms02.html">  개인정보취급방침</a>&nbsp;&nbsp; | </li>
+					<li><a href="../member_info/terms01.html"> 이용약관</a>&nbsp;&nbsp; |</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<h1><img src="../images/logo_bottom.png" alt="윈투스시스템"></h1>
+		<p>㈜윈투스시스템    대표명 : 신경익 사업자등록번호 : 123-45-6789 <br>
+		본사 : 서울시 성동구 성수동 2가 333-15 서울숲 한라시그마벨리2 9층 905호   |   공장 : 서울시 성동구 성수동 2가 263-10    |   TEL : 070) 7798-3698    FAX : 02) 6455-3698 <br>
+		 COPYRIGHT 2014 WINTUS SYSTEM ALL RIGHTS RESERVED</p>
+	</div>
+</div>
+<!-- Footer :  종료 -->
+
+</div>
+</body>
+</html>
